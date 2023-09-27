@@ -58,3 +58,17 @@ export async function importCSVToDatabase () {
   
     document.getElementsByTagName("body").style.cursor = "auto";
   }
+
+  export async function getlocation() {
+    var location = []
+    location.push(navigator.geolocation.getCurrentPosition())
+    if (navigator.geolocation) {
+        location.push(navigator.geolocation.getCurrentPosition());
+      } else {
+        console.log("nah");
+      }
+      console.log(location);
+      return location;
+  }
+  getlocation();
+  console.log("hello");

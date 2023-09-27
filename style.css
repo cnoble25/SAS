@@ -39,6 +39,17 @@
     padding: 20px;
   }
   
+  #searchbutton {
+    border: none;
+  background-color: inherit;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+  margin-left: auto;
+  margin-right: auto;
+  }
   /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
   /*@media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}

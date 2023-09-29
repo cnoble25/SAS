@@ -7,9 +7,14 @@
     <link href="style.css" rel="stylesheet" type="text/css" />
     
 </head>
-
+<script type="module" src="script.js"></script>
+<script type="module">
+import{getLocation, importCSVToDatabase} from "./script.js";
+window.getLocation = getLocation;
+window.importCSVToDatabase = importCSVToDatabase;
+</script>
 <body style="background-color:rgb(41, 41, 41);text-align:center">
-    <h1>St. Anne's-Belfield All-School Visual Art Show</h1>
+    <h1>St. Anne's-Belfield All-School Visual Art Show <button onclick="getLocation();">get location</button></h1>
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="#">About the show</a>

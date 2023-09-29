@@ -1,8 +1,6 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
+// TODO: import libraries for Cloud Firestore Database
+// https://firebase.google.com/docs/firestore
 import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -18,7 +16,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
 
 export async function importCSVToDatabase () {
     const studentPeices = await getDocs(collection(db, "Student Art Pieces"));
@@ -59,16 +57,13 @@ export async function importCSVToDatabase () {
     document.getElementsByTagName("body").style.cursor = "auto";
   }
 
-  export async function getlocation() {
+  export async function getLocation() {
     var location = []
-    location.push(navigator.geolocation.getCurrentPosition())
+    
     if (navigator.geolocation) {
-        location.push(navigator.geolocation.getCurrentPosition());
-      } else {
-        console.log("nah");
-      }
-      console.log(location);
+       location.push(navigator.geolocation.getCurrentPosition().position.coords.latitude);
+       location.push(navigator.geolocation.getCurrentPosition().position.coords.longitude);
+    }
       return location;
   }
-  getlocation();
   console.log("hello");

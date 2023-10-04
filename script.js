@@ -17,7 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-
+//makes it so you can add csv data to a database
 export async function importCSVToDatabase () {
     const studentPeices = await getDocs(collection(db, "Student Art Pieces"));
   
@@ -55,7 +55,7 @@ export async function importCSVToDatabase () {
   
     document.getElementsByTagName("body").style.cursor = "auto";
   }
-
+// in progress
   export async function getLocation() {
     var location = []
     
@@ -74,7 +74,7 @@ export async function importCSVToDatabase () {
     list.push(stuff.substring(3,4));
     list.push(stuff.substring(3));
     
-    
+
     return list;
   }
 

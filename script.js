@@ -36,13 +36,12 @@ export async function importCSVToDatabase () {
                   year: cells[1],
                   class: cells[2],
                   medium: cells[3],
-                  nameOfArt: cells[4],
-                  campus: cells[5],
-                  building: [6],
-                  floor: cells[7],
-                  room: cells[8],
-                  picture: cells[9],
-                  gif: cells[10],
+                  campus: cells[4],
+                  building: [5],
+                  floor: cells[6],
+                  room: cells[7],
+                  picture: cells[8],
+                  gif: cells[9],
                 });
                 console.log("Document written with ID: ", docRef.id);
               } 
@@ -67,3 +66,18 @@ export async function importCSVToDatabase () {
       return location;
   }
   console.log("hello");
+
+  //separates a room number into its building, floor and room
+  function getBFR(stuff){
+    var list = [];
+    list.push(stuff.substring(0,2));
+    list.push(stuff.substring(3,4));
+    list.push(stuff.substring(3));
+    
+    
+    return list;
+  }
+
+  console.log(getBFR("AS-100"));
+
+

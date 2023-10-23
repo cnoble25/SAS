@@ -5,14 +5,35 @@
     <meta name="viewport" content="width=device-width">
     <title>St. Anne's-Belfield All-School Visual Art Show</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <style>
-        p {
-          background-image: url('');
-        }
-        </style>
+    
 </head>
-
-<body>
-
+<script type="module" src="script.js"></script>
+<script type="module">
+import{getLocation, importCSVToDatabase} from "./script.js";
+window.getLocation = getLocation;
+window.importCSVToDatabase = importCSVToDatabase;
+</script>
+<body style="background-color:rgb(41, 41, 41);text-align:center">
+    <h1>St. Anne's-Belfield All-School Visual Art Show <button onclick="getLocation();">get location</button></h1>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About the show</a>
+        <a href="#">students/artwork search</a>
+        <a href="#">Gratitution</a>
+        <a href="#">Contact</a>
+      </div>
+    <span onclick="openNav()">click for more info</span>
+    <script>
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "250px";
+        }
+        
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        }
+        </script>
+        <div class = "column1">
+            <p>Explore Student's Artwork!</p><button id = "searchbutton" onclick="location.replace('search.html')">Search</button>
+        </div>
 </body>
 </html>

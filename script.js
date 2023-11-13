@@ -56,13 +56,13 @@ export async function importCSVToDatabase () {
     document.getElementsByTagName("body").style.cursor = "auto";
   }
 // in progress
-  // export async function getLocation() {
-  //   var location = []
+  export async function getLocation() {
+    var location = []
     
   
-  //   location.push(successCallback.position.latitude);
-  //     return location;
-  // }
+    location.push(successCallback.position.latitude);
+      return location;
+  }
  
 
   //separates a room number into its building, floor and room and campus
@@ -90,22 +90,22 @@ export async function importCSVToDatabase () {
     }
     return list;
   }
-//   var loc = new GeolocationPosition;
-//   // console.log(getBRFC("AS-100"));
-//   const successCallback = async(position) => {
-//     console.log(position);
-//     loc = position
-//   };
-  
-//   const errorCallback = (error) => {
-//     console.log(error);
-//   };
-  
-//  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+  var latitude;
+  var longitude;
 
- 
-// console.log(loc);
-
- 
+  // console.log(getBRFC("AS-100"));
+  //this function is where geolocation data comes out from so if you need to access the latitude you have to do it asyncronosly
+  const successCallback = async(position) => {
+    latitude = await position.coords.latitude;
+    longitude = await position.coords.longitude;
+    console.log(latitude + ", " + longitude);
+  
+  };
+  
+  const errorCallback = (error) => {
+    console.log(error);
+  };
+  
+ navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 

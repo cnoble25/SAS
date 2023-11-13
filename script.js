@@ -67,8 +67,8 @@ export async function importCSVToDatabase () {
   }
   console.log("hello");
 
-  //separates a room number into its building, floor and room
-  function getBFR(stuff){
+  //separates a room number into its building, floor and room and campus
+  function getBRFC(stuff){
     var list = [];
     for(var i = 0; i<stuff.length; i++ ){
       try{ 

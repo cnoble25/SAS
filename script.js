@@ -56,16 +56,14 @@ export async function importCSVToDatabase () {
     document.getElementsByTagName("body").style.cursor = "auto";
   }
 // in progress
-  export async function getLocation() {
-    var location = []
+  // export async function getLocation() {
+  //   var location = []
     
-    if (navigator.geolocation) {
-       location.push(navigator.geolocation.getCurrentPosition().position.coords.latitude);
-       location.push(navigator.geolocation.getCurrentPosition().position.coords.longitude);
-    }
-      return location;
-  }
-  console.log("hello");
+  
+  //   location.push(successCallback.position.latitude);
+  //     return location;
+  // }
+ 
 
   //separates a room number into its building, floor and room and campus
   function getBRFC(stuff){
@@ -92,7 +90,22 @@ export async function importCSVToDatabase () {
     }
     return list;
   }
+//   var loc = new GeolocationPosition;
+//   // console.log(getBRFC("AS-100"));
+//   const successCallback = async(position) => {
+//     console.log(position);
+//     loc = position
+//   };
+  
+//   const errorCallback = (error) => {
+//     console.log(error);
+//   };
+  
+//  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
-  console.log(getBFR("AS-100"));
+ 
+// console.log(loc);
+
+ 
 
 

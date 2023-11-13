@@ -67,14 +67,29 @@ export async function importCSVToDatabase () {
   }
   console.log("hello");
 
-  //separates a room number into its building, floor and room
-  function getBFR(stuff){
+  //separates a room number into its building, floor and room and campus
+  function getBRFC(stuff){
     var list = [];
-    list.push(stuff.substring(0,2));
-    list.push(stuff.substring(3,4));
-    list.push(stuff.substring(3));
-    
-
+    for(var i = 0; i<stuff.length; i++ ){
+      try{ 
+        if(stuff.substring(i,i+1) == "-"){
+          if(stuff.substring(0, i).toUpperCase() == "SCAS" || stuff.substring(0, i).toUpperCase() == "AS" || stuff.substring(0, i).toUpperCase() == "RH" || stuff.substring(0, i).toUpperCase() == "LLC" || stuff.substring(0, i).toUpperCase() == "GH" || stuff.substring(0, i).toUpperCase() == "LC" || stuff.substring(0, i).toUpperCase() == "LD"){
+            list.push(stuff.substring(0,i));
+            list.push(stuff.substring(i+1));
+            list.push(stuff.substring(i+1, i+2));
+            list.push("US");
+          }else{
+            list.push(stuff.substring(0,i));
+            list.push(stuff.substring(i+1));
+            list.push(stuff.substring(i+1, i+2));
+            list.push("LS");
+          }
+          
+        }
+      } catch(e){
+        console.log("shit");
+      }
+    }
     return list;
   }
 

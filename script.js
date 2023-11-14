@@ -16,11 +16,10 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 //makes it so you can add csv data to a database
 export async function importCSVToDatabase () {
-    const studentPeices = await getDocs(collection(db, "Student Art Pieces"));
-  
     // try{
      var file = document.getElementById("URL").files[0];
           var reader = new FileReader();
@@ -89,7 +88,7 @@ export async function importCSVToDatabase () {
     }else if (painting.campus.toUpperCase() == "LS"){
       return 1;
     }else {
-      return -1
+      return -1;
     }
   }
 
@@ -104,7 +103,7 @@ export async function importCSVToDatabase () {
     //current campus is just to tell which campus the person is on 1 means lower school 2 means highschool
     var currentCampus = null;
     if(latitude > 38.05 && longitude < -78.518){
-      currentCampus = 1
+      currentCampus = 1;
     }else if(latitude < 38.05 && longitude > -78.518){
       currentCampus = 2;
     }
@@ -118,6 +117,16 @@ export async function importCSVToDatabase () {
   };
   
  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+
+ export async function DisplayStudentSearchData(){
+  const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
+
+  studentPieces.forEach((item) => {
+      if(item.data().name.includes(document.getElementById("searchInput"))){
+
+      }
+  });
+ }
  
 
 

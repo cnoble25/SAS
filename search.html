@@ -4,15 +4,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>replit</title>
+  <title>search</title>
+  
   <link href="style.css" rel="stylesheet" type="text/css" />
+  <style>
+    html {
+      height: 100%;
+    }
+    body {
+      height: 100%;
+    }
+    .searchBar{
+      height: 100%;
+    }
+    #searchInput {
+        height: 4%;
+        width: 50%;
+        position: relative;
+        top:10%;
+        left: 5%;
+    }
+
+    #searchButton {
+        height: 5%;
+        width: 10%;
+        position: relative;
+        top: 10%;
+        left: 5%;
+    }
+
+</style>
 </head>
 
 <body>
-  <div class="search bar">
+  <div class="searchBar">
     
-  <input type="text" placeholder="Search.." id="searchInput">
-     <button onclick="searchBar();">go</button>
+  <input type="text" placeholder="Search For Students' Artwork" id="searchInput">
+     <button id="searchButton" onclick="searchBar();">go</button>
   </div>
 
 

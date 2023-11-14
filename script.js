@@ -36,10 +36,10 @@ export async function importCSVToDatabase () {
                   year: cells[1],
                   class: cells[2],
                   medium: cells[3],
-                  campus: BFCList[2],
-                  building: BFCList[0],
-                  floor: BFCList[1],
-                  room: cells[4],
+                  campus: BFCList[3],
+                  building: BFCList[1],
+                  floor: BFCList[2],
+                  room: BFCList[0],
                   picture: cells[5],
                   gif: cells[6],
                 });
@@ -63,10 +63,12 @@ export async function importCSVToDatabase () {
       try{ 
         if(stuff.substring(i,i+1) == "-"){
           if(stuff.substring(0, i).toUpperCase() == "SCAS" || stuff.substring(0, i).toUpperCase() == "AS" || stuff.substring(0, i).toUpperCase() == "RH" || stuff.substring(0, i).toUpperCase() == "LLC" || stuff.substring(0, i).toUpperCase() == "GH" || stuff.substring(0, i).toUpperCase() == "LC" || stuff.substring(0, i).toUpperCase() == "LD"){
+            list.push(stuff.substring(i+1));
             list.push(stuff.substring(0,i));
             list.push(stuff.substring(i+1, i+2));
             list.push("US");
           }else{
+            list.push(stuff.substring(i+1));
             list.push(stuff.substring(0,i));
             list.push(stuff.substring(i+1, i+2));
             list.push("LS");
@@ -74,7 +76,7 @@ export async function importCSVToDatabase () {
           
         }
       } catch(e){
-        console.log("shit");
+        console.log(e);
       }
     }
     return list;
@@ -118,15 +120,6 @@ export async function importCSVToDatabase () {
   
  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
- export async function DisplayStudentSearchData(){
-  const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
 
-  studentPieces.forEach((item) => {
-      if(item.data().name.includes(document.getElementById("searchInput"))){
-
-      }
-  });
- }
- 
 
 

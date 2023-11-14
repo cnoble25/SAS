@@ -24,61 +24,51 @@ export async function importCSVToDatabase () {
     // try{
      var file = document.getElementById("URL").files[0];
           var reader = new FileReader();
+          var BFCList;
           reader.onload = function(event) {
             var csvData = event.target.result;
             var rows = csvData.split("\n");
             for (var i = 0; i < rows.length; i++) {
               var cells = rows[i].split(",");
-              if(cells[7] == "VA"){
+             BFCList = getBFC(cells[4]);
               try {
                 const docRef = addDoc(collection(db, "Student Art Pieces"), {
                   name: cells[0],
                   year: cells[1],
                   class: cells[2],
                   medium: cells[3],
-                  campus: cells[4],
-                  building: [5],
-                  floor: cells[6],
-                  room: cells[7],
-                  picture: cells[8],
-                  gif: cells[9],
+                  campus: BFCList[2],
+                  building: BFCList[0],
+                  floor: BFCList[1],
+                  room: cells[4],
+                  picture: cells[5],
+                  gif: cells[6],
                 });
                 console.log("Document written with ID: ", docRef.id);
               } 
               catch (e) {
                 console.error("Error adding student to database: ", e);
               }
-              }
+              
             }
           };
           reader.readAsText(file);
   
     document.getElementsByTagName("body").style.cursor = "auto";
   }
-// in progress
-  export async function getLocation() {
-    var location = []
-    
-  
-    location.push(successCallback.position.latitude);
-      return location;
-  }
- 
 
   //separates a room number into its building, floor and room and campus
-  function getBRFC(stuff){
+  function getBFC(stuff){
     var list = [];
     for(var i = 0; i<stuff.length; i++ ){
       try{ 
         if(stuff.substring(i,i+1) == "-"){
           if(stuff.substring(0, i).toUpperCase() == "SCAS" || stuff.substring(0, i).toUpperCase() == "AS" || stuff.substring(0, i).toUpperCase() == "RH" || stuff.substring(0, i).toUpperCase() == "LLC" || stuff.substring(0, i).toUpperCase() == "GH" || stuff.substring(0, i).toUpperCase() == "LC" || stuff.substring(0, i).toUpperCase() == "LD"){
             list.push(stuff.substring(0,i));
-            list.push(stuff.substring(i+1));
             list.push(stuff.substring(i+1, i+2));
             list.push("US");
           }else{
             list.push(stuff.substring(0,i));
-            list.push(stuff.substring(i+1));
             list.push(stuff.substring(i+1, i+2));
             list.push("LS");
           }
@@ -92,20 +82,42 @@ export async function importCSVToDatabase () {
   }
   var latitude;
   var longitude;
+ // made tp get which campus a painting is on when asked through the firebase doesn't need to be asyncronys because it will work only in async functions in the first place so its redudant
+  function getPaintingCampus(painting){
+    if(painting.campus.toUpperCase() == "US"){
+      return 2;
+    }else if (painting.campus.toUpperCase() == "LS"){
+      return 1;
+    }else {
+      return -1
+    }
+  }
 
-  // console.log(getBRFC("AS-100"));
-  //this function is where geolocation data comes out from so if you need to access the latitude you have to do it asyncronosly
-  const successCallback = async(position) => {
-    latitude = await position.coords.latitude;
-    longitude = await position.coords.longitude;
+  //poosition can only be accessed asyncronesly so to find someones position in accordance to the buildings would be 
+  const successCallback = (position) => {
+    latitude =  position.coords.latitude;
+    longitude =  position.coords.longitude;
+    longitude = longitude.toPrecision(5);
+    latitude = latitude.toPrecision(5);
     console.log(latitude + ", " + longitude);
-  
+
+    //current campus is just to tell which campus the person is on 1 means lower school 2 means highschool
+    var currentCampus = null;
+    if(latitude > 38.05 && longitude < -78.518){
+      currentCampus = 1
+    }else if(latitude < 38.05 && longitude > -78.518){
+      currentCampus = 2;
+    }
+    console.log(currentCampus);
+    
+
   };
-  
+  //only called when the location of a person isn't given
   const errorCallback = (error) => {
     console.log(error);
   };
   
  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+ 
 
 

@@ -20,6 +20,10 @@ const db = getFirestore(app);
 
 //makes it so you can add csv data to a database
 export async function importCSVToDatabase () {
+  const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
+    studentPieces.forEach((piece) =>{
+      deleteDoc(doc(db, "Student Art Pieces", piece.id));
+    } );
     // try{
      var file = document.getElementById("URL").files[0];
           var reader = new FileReader();

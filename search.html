@@ -40,17 +40,11 @@
   <div class="searchBar">
     
   <input type="text" placeholder="Search For Students' Artwork" id="searchInput">
-     <button id="searchButton" onclick="searchBar();">go</button>
+     <button id="searchButton" onclick="DisplayStudentSearchData();">go</button>
   </div>
 
-
-
-
-
-
-
-  
-  <script>
+  <script type='module' src='./search.js'>
+    
     function goToPage(url) {
     location.replace(url);
     }
@@ -58,12 +52,18 @@
       if (document.getElementById('searchInput').value == "111"){
          goToPage('spy.html') ;
       }
-       
+      
     }
+   
   </script>
+  <script type="module">
+    import {DisplayStudentSearchData} from './search.js';
+     window.DisplayStudentSearchData = DisplayStudentSearchData;
+      
+    </script>
 
   <div id="content">
-    
+
   </div>
   
 </body>

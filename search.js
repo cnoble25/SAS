@@ -19,10 +19,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 export async function DisplayStudentSearchData(){
-    console.log("hello");
     const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
     var content = document.getElementById("content");
-    content.innerHTML = "hello";
     studentPieces.forEach((item) => {
         if(item.data().name.toLocaleUpperCase().includes(document.getElementById("searchInput").value.toUpperCase())){
          
@@ -37,5 +35,5 @@ export async function DisplayStudentSearchData(){
         }
     });
    }
-   DisplayStudentSearchData()
+   DisplayStudentSearchData();
    

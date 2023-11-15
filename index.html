@@ -8,7 +8,14 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 
 </head>
-<script type="module" src="script.js"></script>
+<script type="module" src="script.js">
+
+</script>
+
+<script type="module">
+  import {importCSVToDatabase} from "./script.js"
+  window.importCSVToDatabase = importCSVToDatabase;
+</script>
 
 <body style="background-color:rgb(255, 255, 255);">
   <div class="webtitle">
@@ -62,6 +69,8 @@
     </div>
     <div>
       <span onclick="openNav()">click for more info</span>
+      <input type="file" id="URL">
+      <button onclick="importCSVToDatabase()">upload file</button>
     </div>
     <script>
       function openNav() {

@@ -18,17 +18,17 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-
 export async function DisplayStudentSearchData(){
+    console.log("hello");
     const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
-  
+    var content = document.getElementById("content");
+    content.innerHTML = "hello";
     studentPieces.forEach((item) => {
-        if(item.data().name.includes(document.getElementById("searchInput"))){
-          var content = document.getElementById("content");
-          content.innerHTML = "";
+        if(item.data().name.toLocaleUpperCase().includes(document.getElementById("searchInput").value.toUpperCase())){
+         
   
           var newPara = document.createElement("label");
-          newPara.innerHTML() = item.data().name + ", " + item.data().class + ", " + item.data().campus +  ", " + item.data().building + ", " + item.data().floor + item.data().room;
+          newPara.innerHTML = item.data().name + ", " + item.data().class + ", " + item.data().campus +  ", " + item.data().building + ", " + item.data().floor + ", "+ item.data().room;
           content.appendChild(document.createElement("br"));
           content.appendChild(document.createElement("br"));
           content.appendChild(newPara);
@@ -37,3 +37,5 @@ export async function DisplayStudentSearchData(){
         }
     });
    }
+   DisplayStudentSearchData()
+   

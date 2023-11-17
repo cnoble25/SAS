@@ -68,9 +68,10 @@ body{
       top: 40%; 
       left: 35%;
       transform: translate(-50%, -50%); 
-      font-size: 30px; 
+      font-size: 30%; 
       font-weight: 800; 
       letter-spacing: 5px; 
+      overflow: hidden;
   } 
   
   .webtitle span { 

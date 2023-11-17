@@ -24,15 +24,20 @@ export async function DisplayStudentSearchData(){
     content.innerHTML = "";
     studentPieces.forEach((item) => {
         if(item.data().name.toLocaleUpperCase().includes(document.getElementById("searchInput").value.toUpperCase())){
-         
+            var row = document.createElement("div");
+            row.setAttribute('class', "row");
+            var description = document.createElement("p");
+            description.setAttribute('text-align', "center");
+            row.appendChild(description);
   
           var newPara = document.createElement("label");
           newPara.innerHTML = item.data().name + ", " + item.data().class + ", " + item.data().campus +  ", " + item.data().building + ", " + item.data().floor + ", "+ item.data().room;
           content.appendChild(document.createElement("br"));
           content.appendChild(document.createElement("br"));
-          content.appendChild(newPara);
+          description.appendChild(newPara);
           content.appendChild(document.createElement("br"));
           content.appendChild(document.createElement("br"));
+          content.appendChild(row);
         }
     });
    }

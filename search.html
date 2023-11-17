@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>search</title>
+  <title>St. Anne's-Belfield All-School Visual Art Show</title>
   
   <link href="style.css" rel="stylesheet" type="text/css" />
   <style>
@@ -71,6 +71,30 @@
 
 </style>
 </head>
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About the show</a>
+  <a href="./search.html">students/artwork search</a>
+  <a href="#">Gratitution</a>
+  <a href="#">Contact</a>
+</div>
+<div>
+  <span onclick="openNav()">click for more info</span>
+</div>
+<script>
+  function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  closeNav()
+</script>
+<div class="column1">
+  <p>Explore Student's Artwork!</p><button id="searchbutton"
+    onclick="location.replace('search.html')">Search</button>
+</div>
 
 <body>
   <div class="searchBar">
@@ -99,6 +123,12 @@
     import {DisplayStudentSearchData} from './search.js';
      window.DisplayStudentSearchData = DisplayStudentSearchData;
     </script>
+
+  <div id="content">
+
+  </div>
+ 
+  
 </body>
 
 </html>

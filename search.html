@@ -15,23 +15,59 @@
       height: 100%;
     }
     .searchBar{
-      height: 100%;
+      height: 10%;
     }
     #searchInput {
-        height: 4%;
-        width: 50%;
+        height: 100%;
+        width:10vh;
         position: relative;
-        top:10%;
-        left: 5%;
+        top:0%;
+        left: 0%;
+        background: none;
+        border: 4px solid #ffd52d;
+        border-radius: 50px;
+        box-sizing: border-box;
+        font-family: Comic Sans MS;
+        font-size: 200%;
+        color: #ffd52d;
+        outline: none;
+        transition: .5s;
+    }
+
+    .searchBar:hover #searchInput {
+        width: 350px;
+        background: #3b3640;
+        border-radius: 10px;
+    }
+
+    .searchBar i{
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translate(-50%,-50%);
+    font-size: 26px;
+    color: #ffd52d;
+    transition: .2s;
+    }
+    .searchBar:hover i{
+    opacity: 0;
+    z-index: -1;
     }
 
     #searchButton {
-        height: 5%;
-        width: 10%;
+        height: 100%;
+        width: 5%;
         position: relative;
-        top: 10%;
-        left: 5%;
+        top: 0%;
+        left: 0%;
     }
+
+    #content{
+        position: relative;
+        top: 0%;
+        left: 0%;
+        display: block;
+    } 
 
 </style>
 </head>
@@ -62,9 +98,14 @@
 
 <body>
   <div class="searchBar">
-    
-  <input type="text" placeholder="Search For Students' Artwork" id="searchInput">
-     <button id="searchButton" onclick="DisplayStudentSearchData();">go</button>
+  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" onmouseout="this.value = ''; this.blur();" >
+     <button id="searchButton" onclick="DisplayStudentSearchData();goToCodingPage">go</button>
+     <i class="fas fa-search">
+        
+     </i>
+  </div>
+
+  <div id="content">
   </div>
 
   <script type='module' src='./search.js'>
@@ -72,18 +113,15 @@
     function goToPage(url) {
     location.replace(url);
     }
-    function searchBar(){
+    function goToCodingPage(){
       if (document.getElementById('searchInput').value == "111"){
          goToPage('spy.html') ;
       }
-      
     }
-   
   </script>
   <script type="module">
     import {DisplayStudentSearchData} from './search.js';
      window.DisplayStudentSearchData = DisplayStudentSearchData;
-      
     </script>
 
   <div id="content">

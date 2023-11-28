@@ -51,8 +51,9 @@ body{
     padding: 14px 28px;
     font-size: 16px;
     cursor: pointer;
-    display: inline-block;
+    display: absolute;
     color: white;
+    top: 100%;
     margin-left: auto;
     margin-right: auto;
   }
@@ -68,9 +69,10 @@ body{
       top: 40%; 
       left: 35%;
       transform: translate(-50%, -50%); 
-      font-size: 30px; 
+      font-size: 30%; 
       font-weight: 800; 
       letter-spacing: 5px; 
+      overflow: hidden;
   } 
   
   .webtitle span { 
@@ -189,7 +191,7 @@ body{
   .webtitle span:nth-child(36) { 
     animation-delay: 3.5s; 
   } 
-
+  
 
 
   @keyframes animate { 
@@ -209,3 +211,5 @@ body{
         filter: stop; 
         } 
         } 
+
+  

@@ -24,26 +24,28 @@ export async function DisplayStudentSearchData(){
     content.innerHTML = "";
     studentPieces.forEach((item) => {
         if(item.data().name.toLocaleUpperCase().includes(document.getElementById("searchInput").value.toUpperCase())){
-            var row = document.createElement("div");
-            row.setAttribute('class', "row");
-            //for image
-            var left = document.createElement("div");
-            left.setAttribute("class", "profileleft");
-            //for description
-            var right = document.createElement("div");
-            right.setAttribute("class", "profileright");
-
-            var title = document.createElement("h1");
-            title.innerHTML = item.data().name;
-            right.appendChild(title);
-
-            var classTitle = document.createElement("h3");
+          var row = document.createElement("div");
+          row.setAttribute('class', "row");
+          //for image
+          var left = document.createElement("div");
+          left.setAttribute("class", "profileleft");
+          var image = document.createElement("img")
+          image.setAttribute("src", item.data().picture);
+          left.appendChild(image);
+          var right = document.createElement("div");
+          right.setAttribute("class", "profileright");
+          //make title for each person's artwork (is just their name)
+          var title = document.createElement("h1");
+          title.innerHTML = item.data().name;
+          right.appendChild(title);
+          //creates the class part of the div
+          var classTitle = document.createElement("h3");
           classTitle.innerHTML = "Class: ";
           right.appendChild(classTitle);
           var group = document.createElement("h4");
           group.innerHTML = item.data().class;
           right.appendChild(group);
-
+          //creates the year part of the div
           var yearTitle = document.createElement("h3");
           yearTitle.innerHTML = "year: ";
           right.appendChild(yearTitle);

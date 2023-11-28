@@ -4,7 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebas
 import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-// import { getStorage, ref } from "firebase/storage";
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyBvCDMq7-FjtGDB8-GbftTbo6uJhkG9rXU",
@@ -19,14 +19,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-// const storage = getStorage(app);
-// const storageRef = ref(storage);
-// var pathReference = storage.ref('gs://student-art-show.appspot.com/camera_test_apple_517290.jpg');
-// pathReference.getDownloadURL().then(function(url) {
-//   ref.push().set({
-//   imgurl: url
-//   });
-// });
+
 
 
 
@@ -135,7 +128,7 @@ export async function importCSVToDatabase () {
   const errorCallback = (error) => {
     console.log(error);
   };
-  
+  //gets the location
  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
 
 

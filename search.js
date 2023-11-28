@@ -26,12 +26,13 @@ export async function DisplayStudentSearchData(){
         if(item.data().name.toLocaleUpperCase().includes(document.getElementById("searchInput").value.toUpperCase())){
           var row = document.createElement("div");
           row.setAttribute('class', "row");
-          //for image
+          //make div for image and adds image to div
           var left = document.createElement("div");
           left.setAttribute("class", "profileleft");
           var image = document.createElement("img")
           image.setAttribute("src", item.data().picture);
           left.appendChild(image);
+          // makes div for info for each artwork
           var right = document.createElement("div");
           right.setAttribute("class", "profileright");
           //make title for each person's artwork (is just their name)

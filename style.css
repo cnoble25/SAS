@@ -192,6 +192,9 @@ body{
     animation-delay: 3.5s; 
   } 
   
+  #profileright {
+    float: left;
+  }
 
 
   @keyframes animate { 

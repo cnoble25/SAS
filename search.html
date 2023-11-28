@@ -24,42 +24,53 @@
         top:0%;
         left: 0%;
         background: none;
-        border: 4px solid #ffd52d;
+        border: 4px solid #800000;
         border-radius: 50px;
         box-sizing: border-box;
-        font-family: Comic Sans MS;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         font-size: 200%;
-        color: #ffd52d;
+        color: #800000;
         outline: none;
-        transition: .5s;
+        transition: 0s;
     }
 
-    .searchBar:hover #searchInput {
-        width: 350px;
-        background: #3b3640;
+    #searchInput:active {
+        width: 50vh;
+        background: #e97676;
         border-radius: 10px;
     }
 
-    .searchBar i{
+    .i{
     position: absolute;
     top: 50%;
     right: 15px;
     transform: translate(-50%,-50%);
     font-size: 26px;
     color: #ffd52d;
-    transition: .2s;
+    transition: 0.2s;
     }
-    .searchBar:hover i{
+    .i:active{
     opacity: 0;
     z-index: -1;
     }
 
     #searchButton {
-        height: 100%;
-        width: 5%;
+        display: none;
+        height: 80%;
+        width:10vh;
         position: relative;
-        top: 0%;
+        top:0%;
         left: 0%;
+        background: none;
+        border: 4px solid #800000;
+        border-radius: 0px;
+        box-sizing: border-box;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 200%;
+        color: #800000;
+        outline: none;
+        transition: 0s;
+
     }
 
     #content{
@@ -71,14 +82,14 @@
 
 </style>
 </head>
-<div id="mySidenav" class="sidenav">
+<!-- <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <a href="#">About the show</a>
   <a href="./search.html">students/artwork search</a>
   <a href="#">Gratitution</a>
   <a href="#">Contact</a>
-</div>
-<div>
+</div> -->
+<!-- <div>
   <span onclick="openNav()">click for more info</span>
 </div>
 <script>
@@ -90,19 +101,19 @@
     document.getElementById("mySidenav").style.width = "0";
   }
   closeNav()
-</script>
-<div class="column1">
-  <p>Explore Student's Artwork!</p><button id="searchbutton"
+</script> -->
+<!-- <div class="column1">
+  <button id="searchbutton"
     onclick="location.replace('search.html')">Search</button>
-</div>
+</div> -->
 
 <body>
   <div class="searchBar">
-  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" onmouseout="this.value = ''; this.blur();" >
-     <button id="searchButton" onclick="DisplayStudentSearchData();goToCodingPage">go</button>
-     <i class="fas fa-search">
-        
-     </i>
+  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" onclick="showSearchButton();" >
+  <i class="fas fa-search">
+  </i>
+     <button id="searchButton" onclick="DisplayStudentSearchData();goToCodingPage;location.replace('search.html');">go</button>
+     
   </div>
 
   <div id="content">
@@ -115,8 +126,11 @@
     }
     function goToCodingPage(){
       if (document.getElementById('searchInput').value == "111"){
-         goToPage('spy.html') ;
+         goToPage('unloadPage.html') ;
       }
+    }
+    function showSearchButton() {
+    document.getElementById('searchButton').style.display = "block";
     }
   </script>
   <script type="module">

@@ -8,6 +8,7 @@
   
   <link href="style.css" rel="stylesheet" type="text/css" />
   <style>
+    /* Using percentage for all css blocks, making the search bar and button moblie friendly */
     html {
       height: 100%;
     }
@@ -15,62 +16,23 @@
       height: 100%;
     }
     .searchBar{
-      height: 10%;
+      height: 5%;
     }
+    /* the width is 10% of the height */
     #searchInput {
         height: 100%;
-        width:10vh;
+        width:50vh;
         position: relative;
         top:0%;
         left: 0%;
-        background: none;
-        border: 4px solid #800000;
-        border-radius: 50px;
-        box-sizing: border-box;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 200%;
-        color: #800000;
-        outline: none;
-        transition: 0s;
-    }
-
-     #searchInput:active {
-        width: 50vh;
-        background: #e97676;
-        border-radius: 10px;
-    } 
-
-    .i{
-    position: absolute;
-    top: 50%;
-    right: 15px;
-    transform: translate(-50%,-50%);
-    font-size: 26px;
-    color: #ffd52d;
-    transition: 0.2s;
-    }
-    .i:active{
-    opacity: 0;
-    z-index: -1;
     } 
 
     #searchButton {
-        display: block;
         height: 80%;
         width:10vh;
         position: relative;
-        top:0%;
+        top: 0%;
         left: 0%;
-        background: none;
-        border: 4px solid #800000;
-        border-radius: 0px;
-        box-sizing: border-box;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: 200%;
-        color: #800000;
-        outline: none;
-        transition: 0s;
-
     }
 
     #content{
@@ -91,8 +53,8 @@
 </div> -->
 <!-- <div>
   <span onclick="openNav()">click for more info</span>
-</div>
-<script>
+</div> -->
+<!-- <script>
   function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
   }
@@ -102,47 +64,61 @@
   }
   closeNav()
 </script> -->
-<!-- <div class="column1">
-  <button id="searchbutton"
-    onclick="location.replace('search.html')">Search</button>
-</div> -->
-
 <body>
+  <!-- Adding the search bar and button to html, when the user click on search bar the recommandation of results show up. -->
+  <!-- <div class="searchBar">
+  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" >
+     <button id="searchButton" 
+     onclick="DisplayStudentSearchData();
+     goToCodingPage;
+     location.replace('search.html');">
+      go
+    </button>
+
+  </div> -->
   <div class="searchBar">
-  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" " >
-     <button id="searchButton" onclick="DisplayStudentSearchData();goToCodingPage">go</button>
-     <i class="fas fa-search">
-        
-     </i>
+    <datalist id="searchList">
+      <!-- or build the list from the database at the beginning -->
+      <option value="Grabowski, A.J. '31 (4th)"></option>
+      <option value="McNerney, Brooks '32 (3rd)"></option>
+      <option value="McLaughlin, Keira '32 (3rd)"></option>
+    </datalist>
+    <label for="searchInput"></label><input type="text" placeholder="Search For Students' Artwork" id="searchInput" onInput="updateRecommendation()" list="searchList">
+    <button id="searchButton" onclick="DisplayStudentSearchData();updateSearchHistory()">go</button>
   </div>
 
   <div id="content">
   </div>
 
   <script type='module' src='./search.js'>
-    
+// putting passcode to get into uploadPage
     function goToPage(url) {
     location.replace(url);
     }
     function goToCodingPage(){
       if (document.getElementById('searchInput').value == "111"){
-         goToPage('unloadPage.html') ;
+         goToPage('uploadPage.html') ;
       }
     }
-    function showSearchButton() {
-    document.getElementById('searchButton').style.display = "block";
+
+    function updateRecommendation() {
+    let searchInput = document.getElementById("searchInput").value;
+    // according to the input, update the recommendation list from the database
+    // and display the recommendation list
+  }
+  function updateSearchHistory() {
+        let searchInput = document.getElementById("searchInput").value;
+        // according to the input, update the search history list in local storage
+        let searchHistory = localStorage.getItem("searchHistory")?JSON.parse(localStorage.getItem("searchHistory")):[];
+        searchHistory.push(searchInput);
+        localStorage.setItem("searchHistory",JSON.stringify(searchHistory));
     }
   </script>
   <script type="module">
     import {DisplayStudentSearchData} from './search.js';
      window.DisplayStudentSearchData = DisplayStudentSearchData;
     </script>
-
   <div id="content">
-
   </div>
- <!-- updated -->
-  
 </body>
-
 </html>

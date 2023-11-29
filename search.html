@@ -32,13 +32,13 @@
         color: #ffd52d;
         outline: none;
         transition: .5s;
-    }
+    } 
 
-    .searchBar:hover #searchInput {
+     .searchBar:hover #searchInput {
         width: 350px;
         background: #3b3640;
         border-radius: 10px;
-    }
+    } 
 
     .searchBar i{
     position: absolute;
@@ -52,7 +52,7 @@
     .searchBar:hover i{
     opacity: 0;
     z-index: -1;
-    }
+    } 
 
     #searchButton {
         height: 100%;
@@ -98,7 +98,7 @@
 
 <body>
   <div class="searchBar">
-  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" onmouseout="this.value = ''; this.blur();" >
+  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" this.blur();" >
      <button id="searchButton" onclick="DisplayStudentSearchData();goToCodingPage">go</button>
      <i class="fas fa-search">
         

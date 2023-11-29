@@ -445,6 +445,9 @@ body{
     animation-delay: 7.6s; 
   } 
   
+  #profileright {
+    float: left;
+  }
 
   @keyframes animate { 
     0% { 

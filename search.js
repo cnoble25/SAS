@@ -24,17 +24,45 @@ export async function DisplayStudentSearchData(){
     content.innerHTML = "";
     studentPieces.forEach((item) => {
         if(item.data().name.toLocaleUpperCase().includes(document.getElementById("searchInput").value.toUpperCase())){
-            var row = document.createElement("div");
-            row.setAttribute('class', "row");
-            var description = document.createElement("p");
-            description.setAttribute('text-align', "center");
-            row.appendChild(description);
+          var row = document.createElement("div");
+          row.setAttribute('class', "row");
+          //make div for image and adds image to div
+          var left = document.createElement("div");
+          left.setAttribute("class", "profileleft");
+          var image = document.createElement("img")
+          image.setAttribute("src", item.data().picture);
+          left.appendChild(image);
+          // makes div for info for each artwork
+          var right = document.createElement("div");
+          right.setAttribute("class", "profileright");
+          //make title for each person's artwork (is just their name)
+          var title = document.createElement("h1");
+          title.innerHTML = item.data().name;
+          right.appendChild(title);
+          //creates the class part of the div
+          var classTitle = document.createElement("h3");
+          classTitle.innerHTML = "Class: ";
+          right.appendChild(classTitle);
+          var group = document.createElement("h4");
+          group.innerHTML = item.data().class;
+          right.appendChild(group);
+          //creates the year part of the div
+          var yearTitle = document.createElement("h3");
+          yearTitle.innerHTML = "year: ";
+          right.appendChild(yearTitle);
+          var ygroup = document.createElement("h4");
+          ygroup.innerHTML = item.data().year;
+          right.appendChild(ygroup);
+
+
+
+
+
   
-          var newPara = document.createElement("label");
-          newPara.innerHTML = item.data().name + ", " + item.data().class + ", " + item.data().campus +  ", " + item.data().building + ", " + item.data().floor + ", "+ item.data().room;
           content.appendChild(document.createElement("br"));
           content.appendChild(document.createElement("br"));
-          description.appendChild(newPara);
+            row.appendChild(left);
+            row.appendChild(right);
           content.appendChild(document.createElement("br"));
           content.appendChild(document.createElement("br"));
           content.appendChild(row);

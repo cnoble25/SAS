@@ -19,7 +19,6 @@
 
 <body style="background-color:rgb(255, 255, 255);">
   <div class="webtitle">
-    <div style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-size: 70px;padding-top: 10%;">
       <br><span>S</span> 
         <span>t</span> 
         <span>.</span> 
@@ -70,9 +69,8 @@
       <a href="#">Gratitution</a>
       <a href="#">Contact</a>
     </div>
-    <div>
-      <span onclick="openNav()">click for more info</span>
-    </div>
+    
+    
     <script>
       function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
@@ -83,10 +81,16 @@
       }
       closeNav()
     </script>
-    <div class="column1">
-      <p>Explore Student's Artwork!</p><button id="searchbutton"
-        onclick="location.replace('search.html')">Search</button>
-    </div>
+  <div class="container">
+  <a href="#" class="button">
+    <div class="button_line"></div>
+    <div class="button_line"></div>
+    <span class="botton_text" onclick="openNav()">click for more info</span>
+    <div class="button_drow1"></div>
+    <div class="button_drow2"></div>
+  </a>
+    <button class="search_button" onclick="location.replace('search.html')">Explore Student's Artwork!</button>
+  </div>
 
 </body>
 

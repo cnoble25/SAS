@@ -17,7 +17,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-
+// this function is the search function for the search page it creates displays for each peice of artwork in the database in which it puts them into a dive and then divs the elements for organization
 export async function DisplayStudentSearchData(){
     const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
     var content = document.getElementById("content");
@@ -58,16 +58,18 @@ export async function DisplayStudentSearchData(){
 
 
 
-  
+          //appending the stuff into the row area
           content.appendChild(document.createElement("br"));
           content.appendChild(document.createElement("br"));
-            row.appendChild(left);
-            row.appendChild(right);
-          content.appendChild(document.createElement("br"));
-          content.appendChild(document.createElement("br"));
+          row.appendChild(left);
+          row.appendChild(right);
           content.appendChild(row);
+          content.appendChild(document.createElement("br"));
+          content.appendChild(document.createElement("br"));
+         
         }
     });
    }
+   //run it once so it shows by default when the page is opened
    DisplayStudentSearchData();
    

@@ -67,7 +67,7 @@ export async function importCSVToDatabase () {
     document.getElementsByTagName("body").style.cursor = "auto";
   }
 
-  //separates a room number into its building, floor and room and campus
+  //separates a room number into its building, floor and campus
   function getBFC(stuff){
     var list = [];
     for(var i = 0; i<stuff.length; i++ ){
@@ -128,8 +128,6 @@ export async function importCSVToDatabase () {
   const errorCallback = (error) => {
     console.log(error);
   };
-  //gets the location
+
+  //gets the location of the person then returns the building they're in
  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-
-
-

@@ -40,7 +40,7 @@ body{
   }
 /* 
 /*This is an experiment of setting the css for the button so that it could have an animation effect when hovering on it 
-It takes three parts: the text/the lines/the drows. Each part is */
+It takes three parts: the text/the lines/the drows. Each part has its own css format*/
 .container{
   height: 20%;
   position: absolute;
@@ -53,7 +53,7 @@ It takes three parts: the text/the lines/the drows. Each part is */
   .button{
     --line_color : #000000 ;
     --back_color : #FFECF6  ;
-    position: absolute;
+    position: relative;
     z-index : 0 ;
     width : 240px ;
     height : 56px ;
@@ -68,6 +68,7 @@ It takes three parts: the text/the lines/the drows. Each part is */
     display: flex;
     justify-content: right;
 }
+/*This sets the css for the button/text before and after animation*/
 .button::before,
 .button::after,
 .button_text::before,
@@ -199,6 +200,7 @@ It takes three parts: the text/the lines/the drows. Each part is */
     transform-origin : 16px 16px ;
     transform : rotate( -262deg ) ;
 }
+/*The drow is the stroke on top of the button while on hover, the following css modifies the 4 steos of the drow it taked*/
 .button_drow1,
 .button_drow1::before,
 .button_drow1::after,
@@ -262,7 +264,7 @@ It takes three parts: the text/the lines/the drows. Each part is */
 
 
 
-/*
+/*under construction: phone size viewing--change the css and change the navigation bar to 100% of the screen
 
   @media only screen and (max-width: 950px) {
     .sidenav {

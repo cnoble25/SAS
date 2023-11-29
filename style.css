@@ -1,7 +1,7 @@
 body{
     color:black;
 }
-
+/*This sets the css for †he navigation bar and its css after popping out*/
 .sidenav {
     height: 100%; 
     width: 23%; 
@@ -39,6 +39,8 @@ body{
     margin-left: 50px;
   }
 /* 
+/*This is an experiment of setting the css for the button so that it could have an animation effect when hovering on it 
+It takes three parts: the text/the lines/the drows. Each part is */
 .container{
   height: 20%;
   position: absolute;
@@ -257,7 +259,7 @@ body{
 }
 
 
-*/
+
 
 
 /*

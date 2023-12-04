@@ -42,7 +42,6 @@ body{
 /*This is an experiment of setting the css for the button so that it could have an animation effect when hovering on it 
 It takes three parts: the text/the lines/the drows. Each part has its own css format*/
 .container{
-  height: 20%;
   position: absolute;
   display: flex;
   flex-direction : column ;
@@ -310,7 +309,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
   }
  
 
-  /*This part is the styling of the title, which controls both the padding and the animation of the title.*/
+  /*This sets the padding and the style of the webtitle*/
   .webtitle { 
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
       padding-top: 30%;
@@ -322,10 +321,11 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
       letter-spacing: 5px; 
       overflow: hidden;
   } 
-  /*From here on is animation for the animated title*/
+  /*From here on is animation for the animated title, the animations runs it once and stop*/
   .webtitle span { 
     animation: animate 4s linear; 
   } 
+  /*Apply animation span to each letter*/
   .webtitle span:nth-child(1) { 
     animation-delay: 0s; 
   } 
@@ -448,11 +448,12 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     animation-delay: 3.8s; 
 
   } 
+  /*make sure animation stops after 4 second*/
   .webtitle span::after {
     animation: animate 4s forwards 1;
   }
 
-  
+  /*setting the property of the animation*/
   @keyframes animate {
     0% {
         filter: blur(0);

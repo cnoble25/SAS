@@ -47,12 +47,19 @@ export async function DisplayStudentSearchData(){
           group.innerHTML = item.data().class;
           right.appendChild(group);
           //creates the year part of the div
-          var yearTitle = document.createElement("h3");
-          yearTitle.innerHTML = "year: ";
-          right.appendChild(yearTitle);
-          var ygroup = document.createElement("h4");
-          ygroup.innerHTML = item.data().year;
-          right.appendChild(ygroup);
+          var roomTitle = document.createElement("h3");
+          roomTitle.innerHTML = "Room: ";
+          right.appendChild(roomTitle);
+          var rgroup = document.createElement("h4");
+          rgroup.innerHTML = item.data().room;
+          right.appendChild(rgroup);
+          var goToPage = document.createElement('button');
+          goToPage.innerHTML = 'click here to get more info';
+          goToPage.setAttribute('onclick', function(){
+            localStorage.setItem("itemId", item);
+            location.replace("");
+          });
+          
 
 
 

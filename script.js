@@ -1,9 +1,11 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 // TODO: import libraries for Cloud Firestore Database
 // https://firebase.google.com/docs/firestore
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyBvCDMq7-FjtGDB8-GbftTbo6uJhkG9rXU",
   authDomain: "student-art-show.firebaseapp.com",
@@ -18,6 +20,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+
+
+
 //makes it so you can add csv data to a database
 export async function importCSVToDatabase () {
   const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
@@ -28,12 +33,14 @@ export async function importCSVToDatabase () {
      var file = document.getElementById("URL").files[0];
           var reader = new FileReader();
           var BFCList;
+          var img;
           reader.onload = function(event) {
             var csvData = event.target.result;
             var rows = csvData.split("\n");
             for (var i = 0; i < rows.length; i++) {
               var cells = rows[i].split(",");
              BFCList = getBFC(cells[4]);
+
               try {
                 const docRef = addDoc(collection(db, "Student Art Pieces"), {
                   name: cells[0],
@@ -60,7 +67,7 @@ export async function importCSVToDatabase () {
     document.getElementsByTagName("body").style.cursor = "auto";
   }
 
-  //separates a room number into its building, floor and room and campus
+  //separates a room number into its building, floor and campus
   function getBFC(stuff){
     var list = [];
     for(var i = 0; i<stuff.length; i++ ){
@@ -121,9 +128,6 @@ export async function importCSVToDatabase () {
   const errorCallback = (error) => {
     console.log(error);
   };
-  
+
+  //gets the location of the person then returns the building they're in
  navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-
-
-
-

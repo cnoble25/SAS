@@ -264,7 +264,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
 
 
 /*under construction: phone size viewing--change the css and change the navigation bar to 100% of the screen
-
+*/
   @media only screen and (max-width: 950px) {
     .sidenav {
       height: 100%; 

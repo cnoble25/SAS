@@ -16,8 +16,7 @@
   import {importCSVToDatabase} from "./script.js";
   window.importCSVToDatabase = importCSVToDatabase;
 </script>
-
-<body style="background-color:rgb(255, 255, 255);">
+<body>
   <div class="webtitle">
   <!-- This is the html for the webtitle and it sets the each letter of the webtitle to different spans -->
       <br><span>S</span> 
@@ -58,16 +57,13 @@
         <span>h</span>
         <span>o</span>
         <span>w</span>
-      
-      
-
     </div>
-   </div>
+
    <!-- This sets the html for the navigation bar -->
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
       <a href="#">About the show</a>
-      <a href="./search.html">students/artwork search</a>
+      <a href="./search.html">Student Artwork Search</a>
       <a href="#">Gratitution</a>
       <a href="#">Contact</a>
     </div>
@@ -75,9 +71,11 @@
     
     <script>
       function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("mySidenav").style.width = "20%";
+        if (screen.width >= 450) {
+          document.getElementById("mySidenav").style.width = "100%";
+        }
       }
-
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
       }

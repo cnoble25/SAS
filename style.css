@@ -1,15 +1,17 @@
 body{
+    background-color:whitesmoke;
     color:black;
 }
+
+
 /*This sets the css for †he navigation bar and its css after popping out*/
 .sidenav {
     height: 100%; 
-    width: 23%; 
     position: fixed; 
-    z-index: 1; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     top: 0; 
     left: 0;
-    background-color: whitesmoke; 
+    background-color: rgb(223, 216, 216); 
     overflow-x: hidden; 
     padding-top: 10%; 
     transition: 0.5s; 
@@ -26,7 +28,6 @@ body{
     transition: 0.3s;
   }
   
-
   .sidenav a:hover {
     color: #747474;
   }
@@ -38,7 +39,14 @@ body{
     font-size: 36px;
     margin-left: 50px;
   }
-/* 
+
+
+  @media only screen and (max-width: 450px) {
+    body {
+      background-color: lightgrey;
+    }
+  }
+
 /*This is an experiment of setting the css for the button so that it could have an animation effect when hovering on it 
 It takes three parts: the text/the lines/the drows. Each part has its own css format*/
 .container{
@@ -265,6 +273,8 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
 
 /*under construction: phone size viewing--change the css and change the navigation bar to 100% of the screen
 */
+
+/*
   @media only screen and (max-width: 950px) {
     .sidenav {
       height: 100%; 
@@ -456,7 +466,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
   /*setting the property of the animation*/
   @keyframes animate {
     0% {
-        filter: blur(0);
+        filter: blur(1000px);
     }
 
     40% {

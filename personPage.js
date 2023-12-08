@@ -51,5 +51,68 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivName.appendChild(nameTitle);
   descriptionDivName.appendChild(name);
   description.appendChild(descriptionDivName);
+
+  var descriptionDivYear = document.createElement("div");
+  descriptionDivYear.id = "descriptionDivYear";
+  var yearTitle = document.createElement("h4");
+  yearTitle.innerHTML = "Year: ";
+  var year = document.createElement("h5");
+  year.innerHTML = item.data().year;
+  descriptionDivYear.appendChild(yearTitle);
+  descriptionDivYear.appendChild(year);
+  description.appendChild(descriptionDivYear);
+
+  var descriptionDivCampus = document.createElement("div");
+  descriptionDivCampus.id = "descriptionDivCampus";
+  var campusTitle = document.createElement("h4");
+  campusTitle.innerHTML = "Campus: ";
+  var campus = document.createElement("h5");
+  campus.innerHTML = item.data().campus;
+  descriptionDivYear.appendChild(campusTitle);
+  descriptionDivYear.appendChild(campus);
+  description.appendChild(descriptionDivCampus);
+
+  var descriptionDivRoom = document.createElement("div");
+  descriptionDivRoom.id = "descriptionDivRoom";
+  var roomTitle = document.createElement("h4");
+  roomTitle.innerHTML = "Room: ";
+  var room = document.createElement("h5");
+  room.innerHTML = item.data().building + "-" + item.data().room;
+  descriptionDivYear.appendChild(roomTitle);
+  descriptionDivYear.appendChild(room);
+  description.appendChild(descriptionDivRoom);
+
+  var descriptionDivYear = document.createElement("div");
+  descriptionDivYear.id = "descriptionDivYear";
+  var yearTitle = document.createElement("h4");
+  yearTitle.innerHTML = "Year: ";
+  var year = document.createElement("h5");
+  year.innerHTML = item.data().year;
+  descriptionDivYear.appendChild(yearTitle);
+  descriptionDivYear.appendChild(year);
+  description.appendChild(descriptionDivYear);
+
+  var descriptionDivMedium = document.createElement("div");
+  descriptionDivMedium.id = "descriptionDivMedium";
+  var mediumTitle = document.createElement("h4");
+  mediumTitle.innerHTML = "Medium: ";
+  var medium = document.createElement("h5");
+  medium.innerHTML = item.data().medium;
+  descriptionDivMedium.appendChild(mediumTitle);
+  descriptionDivMedium.appendChild(medium);
+  description.appendChild(descriptionDivMedium);
+
+  var descriptionDivCourse = document.createElement("div");
+  descriptionDivCourse.id = "descriptionDivCourse";
+  var courseTitle = document.createElement("h4");
+  courseTitle.innerHTML = "medium: ";
+  var course = document.createElement("h5");
+  course.innerHTML = item.data().class;
+  descriptionDivCourse.appendChild(courseTitle);
+  descriptionDivCourse.appendChild(course);
+  description.appendChild(descriptionDivCourse);
+
+  
+
 } 
 DisplayPersonalPageInfo();

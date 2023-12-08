@@ -77,12 +77,12 @@ export async function importCSVToDatabase () {
             list.push(stuff.substring(i+1));
             list.push(stuff.substring(0,i));
             list.push(stuff.substring(i+1, i+2));
-            list.push("US");
+            list.push("Upper School");
           }else{
             list.push(stuff.substring(i+1));
             list.push(stuff.substring(0,i));
             list.push(stuff.substring(i+1, i+2));
-            list.push("LS");
+            list.push("Lower School");
           }
           
         }

@@ -5,6 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>St. Anne's-Belfield All-School Visual Art Show</title>
+  <script type="module" src='./search.js'>
+    import {DisplayStudentSearchData, doLocaleStorageStuff} from './search.js';
+     window.DisplayStudentSearchData = DisplayStudentSearchData;
+     window.doLocaleStorageStuff = doLocaleStorageStuff;
+    </script>
   
   <link href="style.css" rel="stylesheet" type="text/css" />
   <style>
@@ -114,10 +119,6 @@
         localStorage.setItem("searchHistory",JSON.stringify(searchHistory));
     }
   </script>
-  <script type="module">
-    import {DisplayStudentSearchData} from './search.js';
-     window.DisplayStudentSearchData = DisplayStudentSearchData;
-    </script>
   <div id="content">
   </div>
 </body>

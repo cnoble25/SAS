@@ -37,6 +37,38 @@ export async function DisplayPersonalPageInfo(){
   Picture.innerHTML = "";
   description.innerHTML = "";
   Navi.innerHTML = "";
+  //happens when you do get geo location position and tells you if you are on the right campus
+  const successCallback = (position) => {
+    var latitude =  position.coords.latitude;
+    var longitude =  position.coords.longitude;
+    longitude = longitude.toPrecision(5);
+    latitude = latitude.toPrecision(5);
+    console.log(latitude + ", " + longitude);
+  
+    //current campus is just to tell which campus the person is on 1 means lower school 2 means highschool
+    var currentCampus = null;
+    if(latitude > 38.05 && longitude < -78.518){
+      currentCampus = "Lower School";
+    }else if(latitude < 38.05 && longitude > -78.518){
+      currentCampus = "Upper School";
+    }
+    // console.log(currentCampus + ", " + item.data().campus);
+    // console.log(currentCampus == item.data().campus);
+
+    if(currentCampus == item.data().campus){
+      NaviCheckCampusButton.innerHTML = "YOU ARE ON THE RIGHT CAMPUS";
+    }else{
+      NaviCheckCampusButton.innerHTML = "YOU ARE NOT ON THE RIGHT CAMPUS";
+    }
+    
+  
+  };
+  //only called when the location of a person isn't given
+  const errorCallback = (error) => {
+    console.log(error);
+  };
+
+
 
   var image = document.createElement("img");
   image.src = item.data().picture;
@@ -62,14 +94,42 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivYear.appendChild(year);
   description.appendChild(descriptionDivYear);
 
+//   var descriptionDivBuilding = document.createElement("div");
+//   descriptionDivBuilding.id = "descriptionDivBuilding";
+//   var buildingTitle = document.createElement("h4");
+//   buildingTitle.innerHTML = "Building: ";
+//   var building = document.createElement("h5");
+//  var buildingFullName = ''
+//  switch(item.data().building.toLowerCase()){
+//   case "rh":
+//     buildingFullName = "Randolph Hall";
+//   break;
+
+//   case "as":
+//     buildingFullName = "";// come back later
+//   break;
+
+//   case "gr":
+//   buildingFullName = "Grisham Hall";
+//   break;
+
+
+//  }
+
+
+  // building.innerHTML =
+  // descriptionDivBuilding.appendChild(campusTitle);
+  // descriptionDivBuilding.appendChild(campus);
+  // description.appendChild(descriptionDivBuilding);
+
   var descriptionDivCampus = document.createElement("div");
   descriptionDivCampus.id = "descriptionDivCampus";
   var campusTitle = document.createElement("h4");
   campusTitle.innerHTML = "Campus: ";
   var campus = document.createElement("h5");
   campus.innerHTML = item.data().campus;
-  descriptionDivYear.appendChild(campusTitle);
-  descriptionDivYear.appendChild(campus);
+  descriptionDivCampus.appendChild(campusTitle);
+  descriptionDivCampus.appendChild(campus);
   description.appendChild(descriptionDivCampus);
 
   var descriptionDivRoom = document.createElement("div");
@@ -112,7 +172,16 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivCourse.appendChild(course);
   description.appendChild(descriptionDivCourse);
 
-  
+  var NaviCheckCampusButtonDiv = document.createElement("div");
+  NaviCheckCampusButtonDiv.setAttribute("id", "NaviCheckCampusButtonDiv");
+  var NaviCheckCampusButton = document.createElement("button");
+  NaviCheckCampusButton.innerHTML = "CLICK HERE TO CHECK IF YOU ARE ON THE CORRECT CAMPUS FOR THIS ARTWORK";
+  NaviCheckCampusButton.onclick = async function(){navigator.geolocation.getCurrentPosition(successCallback, errorCallback);};
+  NaviCheckCampusButtonDiv.appendChild(NaviCheckCampusButton);
+  Navi.appendChild(NaviCheckCampusButtonDiv);
 
 } 
+
+
+
 DisplayPersonalPageInfo();

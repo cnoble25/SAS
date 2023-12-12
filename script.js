@@ -40,6 +40,7 @@ export async function importCSVToDatabase () {
             for (var i = 0; i < rows.length; i++) {
               var cells = rows[i].split(",");
              BFCList = getBFC(cells[4]);
+             img = makeImageUsable(cells[5]);
 
               try {
                 const docRef = addDoc(collection(db, "Student Art Pieces"), {
@@ -51,7 +52,7 @@ export async function importCSVToDatabase () {
                   building: BFCList[1],
                   floor: BFCList[2],
                   room: BFCList[0],
-                  picture: cells[5],
+                  picture: img,
                   gif: cells[6],
                 });
                 console.log("Document written with ID: ", docRef.id);
@@ -63,8 +64,10 @@ export async function importCSVToDatabase () {
             }
           };
           reader.readAsText(file);
+          file.innerHTML = null;
   
     document.getElementsByTagName("body").style.cursor = "auto";
+    
   }
 
   //separates a room number into its building, floor and campus
@@ -77,12 +80,12 @@ export async function importCSVToDatabase () {
             list.push(stuff.substring(i+1));
             list.push(stuff.substring(0,i));
             list.push(stuff.substring(i+1, i+2));
-            list.push("US");
+            list.push("Upper School");
           }else{
             list.push(stuff.substring(i+1));
             list.push(stuff.substring(0,i));
             list.push(stuff.substring(i+1, i+2));
-            list.push("LS");
+            list.push("Lower School");
           }
           
         }
@@ -96,9 +99,9 @@ export async function importCSVToDatabase () {
   var longitude;
  // made tp get which campus a painting is on when asked through the firebase doesn't need to be asyncronys because it will work only in async functions in the first place so its redudant
   function getPaintingCampus(painting){
-    if(painting.campus.toUpperCase() == "US"){
+    if(painting.campus.toUpperCase() == "Upper School"){
       return 2;
-    }else if (painting.campus.toUpperCase() == "LS"){
+    }else if (painting.campus.toUpperCase() == "Lower School"){
       return 1;
     }else {
       return -1;
@@ -106,28 +109,10 @@ export async function importCSVToDatabase () {
   }
 
   //poosition can only be accessed asyncronesly so to find someones position in accordance to the buildings would be 
-  const successCallback = (position) => {
-    latitude =  position.coords.latitude;
-    longitude =  position.coords.longitude;
-    longitude = longitude.toPrecision(5);
-    latitude = latitude.toPrecision(5);
-    console.log(latitude + ", " + longitude);
-
-    //current campus is just to tell which campus the person is on 1 means lower school 2 means highschool
-    var currentCampus = null;
-    if(latitude > 38.05 && longitude < -78.518){
-      currentCampus = 1;
-    }else if(latitude < 38.05 && longitude > -78.518){
-      currentCampus = 2;
-    }
-    console.log(currentCampus);
-    
-
-  };
-  //only called when the location of a person isn't given
-  const errorCallback = (error) => {
-    console.log(error);
-  };
+ 
 
   //gets the location of the person then returns the building they're in
- navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+ function makeImageUsable(imgURL){
+  return "https://drive.google.com/uc?export=view&id=" + imgURL.substring(32, 65);
+
+ }

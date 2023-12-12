@@ -14,11 +14,14 @@ const firebaseConfig = {
   measurementId: "G-860F68ZWPM"
 };
 
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 // this function is the search function for the search page it creates displays for each peice of artwork in the database in which it puts them into a dive and then divs the elements for organization
+var fixOnclick = false;
 export async function DisplayStudentSearchData(){
+  
     const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
     var content = document.getElementById("content");
     content.innerHTML = "";
@@ -55,10 +58,17 @@ export async function DisplayStudentSearchData(){
           right.appendChild(rgroup);
           var goToPage = document.createElement('button');
           goToPage.innerHTML = 'click here to get more info';
-          goToPage.setAttribute('onclick', function(){
-            localStorage.setItem("itemId", item);
-            location.replace("");
-          });
+          goToPage.onclick =   function(){
+    
+            localStorage.setItem("itemId", item.id);
+            //change later it wont work
+            var uRL = location.href;
+            uRL = uRL.substring(0, uRL.length-11);
+            console.log(localStorage.getItem("itemId"));
+            location.replace(uRL + "/personPage.html");
+          
+          };
+          right.appendChild(goToPage);
           
 
 
@@ -75,8 +85,8 @@ export async function DisplayStudentSearchData(){
           content.appendChild(document.createElement("br"));
          
         }
+
     });
    }
    //run it once so it shows by default when the page is opened
    DisplayStudentSearchData();
-   

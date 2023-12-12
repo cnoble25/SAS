@@ -57,8 +57,10 @@ export async function DisplayPersonalPageInfo(){
 
     if(currentCampus == item.data().campus){
       NaviCheckCampusButton.innerHTML = "YOU ARE ON THE RIGHT CAMPUS";
-    }else{
+    }else if(currentCampus != item.data().campus){
       NaviCheckCampusButton.innerHTML = "YOU ARE NOT ON THE RIGHT CAMPUS";
+    }else{
+      NaviCheckCampusButton.innerHTML = "Error";
     }
     
   
@@ -73,7 +75,7 @@ export async function DisplayPersonalPageInfo(){
   var image = document.createElement("img");
   image.src = item.data().picture;
   Picture.appendChild(image);
-
+  //makes info div for name of student
   var descriptionDivName = document.createElement("div");
   descriptionDivName.setAttribute("id", "descriptionDivName");
   var nameTitle = document.createElement("h4");
@@ -83,7 +85,7 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivName.appendChild(nameTitle);
   descriptionDivName.appendChild(name);
   description.appendChild(descriptionDivName);
-
+  // makes info div for year of student
   var descriptionDivYear = document.createElement("div");
   descriptionDivYear.id = "descriptionDivYear";
   var yearTitle = document.createElement("h4");
@@ -93,13 +95,13 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivYear.appendChild(yearTitle);
   descriptionDivYear.appendChild(year);
   description.appendChild(descriptionDivYear);
-
-//   var descriptionDivBuilding = document.createElement("div");
-//   descriptionDivBuilding.id = "descriptionDivBuilding";
-//   var buildingTitle = document.createElement("h4");
-//   buildingTitle.innerHTML = "Building: ";
-//   var building = document.createElement("h5");
-//  var buildingFullName = ''
+  //makes info div for building info
+  var descriptionDivBuilding = document.createElement("div");
+  descriptionDivBuilding.id = "descriptionDivBuilding";
+  var buildingTitle = document.createElement("h4");
+  buildingTitle.innerHTML = "Building: ";
+  var building = document.createElement("h5");
+ var buildingFullName = ''
 //  switch(item.data().building.toLowerCase()){
 //   case "rh":
 //     buildingFullName = "Randolph Hall";
@@ -109,19 +111,36 @@ export async function DisplayPersonalPageInfo(){
 //     buildingFullName = "";// come back later
 //   break;
 
-//   case "gr":
+//   case "gh":
 //   buildingFullName = "Grisham Hall";
 //   break;
+
+//   case "scas":
+//     buildingFullName = "SCAS";
+//   break;
+
+//   case "llc":
+//     buildingFullName = "Lourie Learning Center";
+//   break;
+
+//   case "LD":
+//     buildingFullName = "Lee Duval";
+//   break;
+
+
+
+
+
 
 
 //  }
 
 
-  // building.innerHTML =
-  // descriptionDivBuilding.appendChild(campusTitle);
-  // descriptionDivBuilding.appendChild(campus);
-  // description.appendChild(descriptionDivBuilding);
-
+//   building.innerHTML =
+//   descriptionDivBuilding.appendChild(campusTitle);
+//   descriptionDivBuilding.appendChild(campus);
+//   description.appendChild(descriptionDivBuilding);
+//  // makes info div for campus information
   var descriptionDivCampus = document.createElement("div");
   descriptionDivCampus.id = "descriptionDivCampus";
   var campusTitle = document.createElement("h4");
@@ -131,27 +150,21 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivCampus.appendChild(campusTitle);
   descriptionDivCampus.appendChild(campus);
   description.appendChild(descriptionDivCampus);
-
+ //makes info div for what room the artwork is nearest to
   var descriptionDivRoom = document.createElement("div");
   descriptionDivRoom.id = "descriptionDivRoom";
   var roomTitle = document.createElement("h4");
-  roomTitle.innerHTML = "Room: ";
+  roomTitle.innerHTML = "Nearest Room: ";
   var room = document.createElement("h5");
+  // if(item.data().room.length > 1){
   room.innerHTML = item.data().building + "-" + item.data().room;
+  // }else if(item.data().room.length == 1){
+    // room.innerHTML = realLocation
+  // }
   descriptionDivYear.appendChild(roomTitle);
   descriptionDivYear.appendChild(room);
   description.appendChild(descriptionDivRoom);
-
-  var descriptionDivYear = document.createElement("div");
-  descriptionDivYear.id = "descriptionDivYear";
-  var yearTitle = document.createElement("h4");
-  yearTitle.innerHTML = "Year: ";
-  var year = document.createElement("h5");
-  year.innerHTML = item.data().year;
-  descriptionDivYear.appendChild(yearTitle);
-  descriptionDivYear.appendChild(year);
-  description.appendChild(descriptionDivYear);
-
+  //makes info div for what medium the art is in
   var descriptionDivMedium = document.createElement("div");
   descriptionDivMedium.id = "descriptionDivMedium";
   var mediumTitle = document.createElement("h4");
@@ -161,17 +174,17 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivMedium.appendChild(mediumTitle);
   descriptionDivMedium.appendChild(medium);
   description.appendChild(descriptionDivMedium);
-
+ // makes info div for what course the artwork was made in
   var descriptionDivCourse = document.createElement("div");
   descriptionDivCourse.id = "descriptionDivCourse";
   var courseTitle = document.createElement("h4");
-  courseTitle.innerHTML = "medium: ";
+  courseTitle.innerHTML = "Class: ";
   var course = document.createElement("h5");
   course.innerHTML = item.data().class;
   descriptionDivCourse.appendChild(courseTitle);
   descriptionDivCourse.appendChild(course);
   description.appendChild(descriptionDivCourse);
-
+ // makes button for checking wheather the person is on the right campus or not.
   var NaviCheckCampusButtonDiv = document.createElement("div");
   NaviCheckCampusButtonDiv.setAttribute("id", "NaviCheckCampusButtonDiv");
   var NaviCheckCampusButton = document.createElement("button");

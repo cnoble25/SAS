@@ -1,3 +1,33 @@
-body{
+html {
+    height: 100%;
+  }
+body {
+    height: 100%;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+.searchBar{
+    height: 5%;
+  }
+  /* the width is 10% of the height */
+#searchInput {
+      height: 100%;
+      width:50vh;
+      position: relative;
+      top:0%;
+      left: 0%;
+} 
+
+#searchButton {
+      height: 80%;
+      width:10vh;
+      position: relative;
+      top: 0%;
+      left: 0%;
+}
+
+#content{
+      position: relative;
+      top: 0%;
+      left: 0%;
+      display: block;
+} 

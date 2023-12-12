@@ -268,42 +268,6 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
 }
 
 
-
-
-
-/*under construction: phone size viewing--change the css and change the navigation bar to 100% of the screen
-*/
-
-/*
-  @media only screen and (max-width: 950px) {
-    .sidenav {
-      height: 100%; 
-      width: 100%; 
-      position: fixed; 
-      z-index: 1; 
-      top: 0; 
-      left: 0;
-      background-color: whitesmoke; 
-      overflow-x: hidden; 
-      padding-top: 10%; 
-      transition: 0.5s; 
-      
- }
- .sidenav a {
-  padding: 5% 5% 5% 20%;
-  text-decoration: none;
-  font-size: 25px;
-
-  color: black;
-  display: block;
-  transition: 0.3s;
-}
-}
-  #main {
-    transition: margin-left .5s;
-    padding: 20px;
-  }
-  */
   /*
   .searchbutton {
     border: lavender;
@@ -322,10 +286,10 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
   /*This sets the padding and the style of the webtitle*/
   .webtitle { 
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-      padding-top: 30%;
+
       position: relative;
       left:50%;
-      transform: translate(-50%, -50%); 
+      /*transform: translate(-50%, -50%); */
       font-size: 500%; 
       font-weight: 800; 
       letter-spacing: 5px; 

@@ -34,8 +34,8 @@
       <option value="McNerney, Brooks '32 (3rd)"></option>
       <option value="McLaughlin, Keira '32 (3rd)"></option>
     </datalist>
-    <label for="searchInput"></label><input type="text" placeholder="Search For Students' Artwork" id="searchInput" onInput="updateRecommendation()" list="searchList">
-    <button id="searchButton" onclick="DisplayStudentSearchData(); updateSearchHistory();">go</button>
+    <label for="searchInput"></label><input type="text" placeholder="Search For Students' Artwork" id="searchInput" list="searchList">
+    <button id="searchButton">go</button>
   </div>
 
   <div id="content">
@@ -52,18 +52,7 @@
       }
     }
 
-    function updateRecommendation() {
-    let searchInput = document.getElementById("searchInput").value;
-    // according to the input, update the recommendation list from the database
-    // and display the recommendation list
-  }
-  function updateSearchHistory() {
-        let searchInput = document.getElementById("searchInput").value;
-        // according to the input, update the search history list in local storage
-        let searchHistory = localStorage.getItem("searchHistory")?JSON.parse(localStorage.getItem("searchHistory")):[];
-        searchHistory.push(searchInput);
-        localStorage.setItem("searchHistory",JSON.stringify(searchHistory));
-    }
+   
   </script>
   <div id="content">
   </div>

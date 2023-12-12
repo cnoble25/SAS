@@ -20,6 +20,16 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 // this function is the search function for the search page it creates displays for each peice of artwork in the database in which it puts them into a dive and then divs the elements for organization
 var fixOnclick = false;
+var searchButton = document.getElementById("searchButton");
+searchButton.onclick = function(){
+  DisplayStudentSearchData();
+  updateSearchHistory();
+}
+var searchInput = document.getElementById("searchInput");
+searchInput.oninput = function(){
+  updateRecommendation();
+}
+
 export async function DisplayStudentSearchData(){
   
     const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
@@ -90,3 +100,16 @@ export async function DisplayStudentSearchData(){
    }
    //run it once so it shows by default when the page is opened
    DisplayStudentSearchData();
+
+   function updateRecommendation() {
+    let searchInput = document.getElementById("searchInput").value;
+    // according to the input, update the recommendation list from the database
+    // and display the recommendation list
+  }
+  function updateSearchHistory() {
+        let searchInput = document.getElementById("searchInput").value;
+        // according to the input, update the search history list in local storage
+        let searchHistory = localStorage.getItem("searchHistory")?JSON.parse(localStorage.getItem("searchHistory")):[];
+        searchHistory.push(searchInput);
+        localStorage.setItem("searchHistory",JSON.stringify(searchHistory));
+    }

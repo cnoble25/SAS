@@ -26,7 +26,7 @@ export async function DisplayStudentSearchData(){
     var content = document.getElementById("content");
     content.innerHTML = "";
     studentPieces.forEach((item) => {
-        if(item.data().name.toLocaleUpperCase().includes(document.getElementById("searchInput").value.toUpperCase())){
+        if(item.data().name.toUpperCase().includes(document.getElementById("searchInput").value.toUpperCase())){
           var row = document.createElement("div");
           row.setAttribute('class', "row");
           //make div for image and adds image to div

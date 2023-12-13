@@ -1,0 +1,12 @@
+#PersonalPagePicture{
+    float: left;
+    width: 50vw;
+    background-color: maroon;
+    background-size: 50vw;
+}
+#PersonalPageDescription{
+    float: right;
+    width: 50vw;
+    background-color: lightgray;
+    background-size: 50vw;
+}

@@ -72,8 +72,9 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     transition : all .3s ease ;
   }
   .button_text{
+    margin-top: 5%;
     display: flex;
-    justify-content: right;
+    justify-content: center;
 }
 /*This sets the css for the button/text before and after animation*/
 .button::before,

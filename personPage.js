@@ -71,7 +71,7 @@ export async function DisplayPersonalPageInfo(){
   };
 
 
-
+  //makes the image for the actual page
   var image = document.createElement("img");
   image.src = item.data().picture;
   Picture.appendChild(image);
@@ -95,7 +95,7 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivYear.appendChild(yearTitle);
   descriptionDivYear.appendChild(year);
   description.appendChild(descriptionDivYear);
-  //makes info div for building info
+  //makes info div for building info(in progress)
   var descriptionDivBuilding = document.createElement("div");
   descriptionDivBuilding.id = "descriptionDivBuilding";
   var buildingTitle = document.createElement("h4");
@@ -140,7 +140,7 @@ export async function DisplayPersonalPageInfo(){
 //   descriptionDivBuilding.appendChild(campusTitle);
 //   descriptionDivBuilding.appendChild(campus);
 //   description.appendChild(descriptionDivBuilding);
-//  // makes info div for campus information
+//    makes info div for campus information
   var descriptionDivCampus = document.createElement("div");
   descriptionDivCampus.id = "descriptionDivCampus";
   var campusTitle = document.createElement("h4");
@@ -196,5 +196,5 @@ export async function DisplayPersonalPageInfo(){
 } 
 
 
-
+//run once to show info
 DisplayPersonalPageInfo();

@@ -64,14 +64,15 @@ export async function DisplayStudentSearchData(){
           roomTitle.innerHTML = "Room: ";
           right.appendChild(roomTitle);
           var rgroup = document.createElement("h4");
-          rgroup.innerHTML = item.data().room;
+          rgroup.innerHTML = item.data().building + "-" + item.data().room;
           right.appendChild(rgroup);
+          //creates the go to page for personal page which uses the local storage to store what page to go to/make (still needs testing and bug fixing)
           var goToPage = document.createElement('button');
           goToPage.innerHTML = 'click here to get more info';
           goToPage.onclick =   function(){
-    
+            
             localStorage.setItem("itemId", item.id);
-            //change later it wont work
+            //works
             var uRL = location.href;
             uRL = uRL.substring(0, uRL.length-11);
             console.log(localStorage.getItem("itemId"));

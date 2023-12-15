@@ -30,29 +30,41 @@
     
     
     <script>
+      //This function set the display of the button from none back to flex after clicking on the close button of the navigation bar
+      function appearButton(){
+        var button = document.getElementById("myButtons");
+        button.style.display = "flex";
+      }
+      //This function allow you to open the navigation bar and set the button's display to none(make it disappear)
       function openNav() {
         document.getElementById("mySidenav").style.width = "50vw";
-        
+        var button = document.getElementById("myButtons");
+        button.style.display = "none";
       }
+      //This function actives when the close btn on the navigation bar is clicked
+      //in that case, the navigation bar will close(width=0) 
+      //and will call the appearButton function to make the button appear
       function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        appearButton();
       }
       closeNav()
+      
     </script>
-    <!-- This sets the two buttons that leads to navigation bar/search page -->
-  <div class="container">
-  <a href="#" class="button" >
-    <div class="button_line"></div>
-    <div class="button_line"></div>
-    <span class="botton_text" onclick="openNav()">click for more info</span>
-    <div class="button_drow1"></div>
-    <div class="button_drow2"></div>
+    <!-- This sets the two buttons that leads to navigation bar/search page and link them to css-->
+  <div class="container" id="myButtons">
+    <a href="#" class="button">
+      <div class="button_line"></div>
+      <div class="button_line"></div>
+      <span class="button_text" onclick="openNav()">Click for more info!</span>
+      <div class="button_drow1"></div>
+      <div class="button_drow2"></div>
   </a>
   
-    <a href="#" class="search_button">
+    <a href="#" class="button">
     <div class="button_line"></div>
     <div class="button_line"></div>
-    <span class="botton_text" onclick="location.replace('search.html')">Explore Student's Artwork!</span>
+    <span class="button_text" onclick="location.replace('search.html')">Explore Student's Artwork!</span>
     <div class="button_drow1"></div>
     <div class="button_drow2"></div>
     </a>

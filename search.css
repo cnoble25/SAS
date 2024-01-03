@@ -1,50 +1,35 @@
 html {
-    height: 100%;
-  }
-body {
-    height: 100%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
-}
-.searchBar{
-    height: 10%;
-  }
-  /* the width is 10% of the height */
-#searchInput {
-      height: 50%;
-      width:50vh;
-      position: relative;
-      top:0%;
-      left: 25%;
-} 
-
-#searchButton {
-      height: 60%;
-      width:10vh;
-      position: relative;
-      top: 0%;
-      left: 15%;
-      z-index: +1;
-}
-
-#content{
-      position: relative;
-      top: 0%;
-      left: 0%;
-      display: block;
-} 
-
-#header{
-      height: 50%;
-      width:70vh;
-      position: relative;
-      top: 0%;
-      left: 20%;
-}
-.sidenav .closebtn {
-      position: absolute;
-      top: 0;
-      right: 25px;
-      font-size: 36px;
-      margin-left: 50px;
+      height: 100%;
     }
+  body {
+      height: 100%;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      background-color: whitesmoke;
+  }
+  .searchBar{
+      height: 5%;
+    }
+    /* the width is 10% of the height */
+  #searchInput {
+      
+        height: 100%;
+        width:50vh;
+        position: relative;
+        top:0%;
+        left: 0%;
+  } 
+  
+  #searchButton {
+        height: 80%;
+        width:10vh;
+        position: relative;
+        top: 0%;
+        left: 0%;
+  }
+  
+  #content{
+        position: relative;
+        top: 0%;
+        left: 0%;
+        display: block;
+  } 

@@ -2,59 +2,92 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>St. Anne's-Belfield All-School Visual Art Show</title>
-  <script type="module" src='./search.js'>
-    import {DisplayStudentSearchData, doLocaleStorageStuff} from './search.js';
-     window.DisplayStudentSearchData = DisplayStudentSearchData;
-     window.doLocaleStorageStuff = doLocaleStorageStuff;
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>St. Anne's-Belfield All-School Visual Art Show</title>
+    <script  src="./search.js" >
+        
     </script>
-  
-  <link href="search.css" rel="stylesheet" type="text/css" />
-  
-  </head>
+    <!--<link href="style.css" rel="stylesheet" type="text/css" />-->
+    <style>
+        /* Using percentage for all css blocks, making the search bar and button moblie friendly */
+        html {
+            height: 100%;
+        }
 
-<body>
-  <!-- Adding the search bar and button to html, when the user click on search bar the recommandation of results show up. -->
-  <!-- <div class="searchBar">
-  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" >
-     <button id="searchButton" 
-     onclick="DisplayStudentSearchData();
-     goToCodingPage;
-     location.replace('search.html');">
-      go
-    </button>
+        body {
+            height: 100%;
+        }
 
-  </div> -->
-  <div class="searchBar">
-    <datalist id="searchList">
-      <!-- or build the list from the database at the beginning -->
-      <option value="Grabowski, A.J. '31 (4th)"></option>
-      <option value="McNerney, Brooks '32 (3rd)"></option>
-      <option value="McLaughlin, Keira '32 (3rd)"></option>
-    </datalist>
-    <label for="searchInput"></label><input type="text" placeholder="Search For Students' Artwork" id="searchInput" list="searchList">
-    <button id="searchButton">go</button>
-  </div>
+        .header {
+            position: fixed; 
+            top: 10px; 
+            height: 5%;
+            width: 100%;
+            align-content: center;
+            z-index: 1;
+        }
 
-  <div id="content">
-  </div>
+        .searchBar {
+            height: 100%;
+            margin:auto;
+            width: 50%;
+        }
 
-  <script type='module' src='./search.js'>
-// putting passcode to get into uploadPage
-    function goToPage(url) {
-    location.replace(url);
-    }
-    function goToCodingPage(){
-      if (document.getElementById('searchInput').value == "111"){
-         goToPage('uploadPage.html') ;
-      }
-    }
 
-   
-  </script>
-  <div id="content">
-  </div>
+        /* the width is 10% of the height */
+        #searchInput {
+            height: 100%;
+            width: 50vh;
+            position: relative;
+            top: 0%;
+            left: 0%;
+        }
+
+
+        #searchButton {
+            height: 80%;
+            width: 10vh;
+            position: relative;
+            top: 0%;
+            left: 0%;
+        }
+
+        #searchButtonPic {
+            position: relative;
+            height: 100%;
+            top: 40%;
+        }
+
+        #content {
+            position: relative;
+            top: 10%;
+            left: 0%;
+            display: block;
+        }
+    </style>
+</head>
+<body >
+    <div class="header">
+        <div class="searchBar">
+            <datalist id="searchList">
+            </datalist>
+            <input id="searchInput" type="text" placeholder="Search For Students' Artwork"
+                   onblur="leaveInput()" onclick="startInput()" onInput="updateRecommendation()" list="searchList">
+            <!--<button id="searchButton" onclick="displayStudentSearchData();updateSearchHistory()">go</button>-->
+            <img src="1.png" id="searchButtonPic" onclick="displayStudentSearchData();updateSearchHistory()" />
+            <button onclick="clearHistory()">clear the history</button>
+        </div>
+
+    </div>
+    <div id="content">
+    </div>
+    <script>
+        displaySearchHistory();
+    </script>  
+    <div id="content">
+    </div>
+
+
 </body>
 </html>

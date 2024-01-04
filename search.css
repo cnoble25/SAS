@@ -35,6 +35,6 @@ html {
   } 
 
   img{
-      max-width: device-width/(3/10)px;
+      max-width: 50%;
       height: auto;
   }

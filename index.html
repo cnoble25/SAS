@@ -17,59 +17,7 @@
   window.importCSVToDatabase = importCSVToDatabase;
 </script>
 <body>
- 
-
-   <!-- This sets the html for the navigation bar -->
-    <div id="mySidenav" class="sidenav">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">About the show</a>
-      <a href="./search.html">Student Artwork Search</a>
-      <a href="#">Gratitution</a>
-      <a href="#">Contact</a>
-    </div>
-    
-    
-    <script>
-      //This function set the display of the button from none back to flex after clicking on the close button of the navigation bar
-      function appearButton(){
-        var button = document.getElementById("myButtons");
-        button.style.display = "flex";
-      }
-      //This function allow you to open the navigation bar and set the button's display to none(make it disappear)
-      function openNav() {
-        document.getElementById("mySidenav").style.width = "50vw";
-        var button = document.getElementById("myButtons");
-        button.style.display = "none";
-      }
-      //This function actives when the close btn on the navigation bar is clicked
-      //in that case, the navigation bar will close(width=0) 
-      //and will call the appearButton function to make the button appear
-      function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-        appearButton();
-      }
-      closeNav()
-      
-    </script>
-    <!-- This sets the two buttons that leads to navigation bar/search page and link them to css-->
-  <div class="container" id="myButtons">
-    <a href="#" class="button">
-      <div class="button_line"></div>
-      <div class="button_line"></div>
-      <span class="button_text" onclick="openNav()">Click for more info!</span>
-      <div class="button_drow1"></div>
-      <div class="button_drow2"></div>
-  </a>
-  
-    <a href="#" class="button">
-    <div class="button_line"></div>
-    <div class="button_line"></div>
-    <span class="button_text" onclick="location.replace('search.html')">Explore Student's Artwork!</span>
-    <div class="button_drow1"></div>
-    <div class="button_drow2"></div>
-    </a>
-  </div>
-  <div class="webtitle">
+  <div id="webtitle">
     <!-- This is the html for the webtitle and it sets the each letter of the webtitle to different spans -->
         <br><span>S</span> 
           <span>t</span> 
@@ -109,6 +57,58 @@
           <span>h</span>
           <span>o</span>
           <span>w</span>
+      </div>
+
+   <!-- This sets the html for the navigation bar -->
+    <div id="mySidenav" class="sidenav">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="#">About the show</a>
+      <a href="./search.html">Student Artwork Search</a>
+      <a href="#">Gratitution</a>
+      <a href="#">Contact</a>
+    </div>
+    
+    
+    <script>
+      //This function set the display of the button from none back to flex after clicking on the close button of the navigation bar
+      function appearButton(){
+        var button = document.getElementById("myButtons");
+        button.style.display = "flex";
+      }
+      //This function allow you to open the navigation bar and set the button's display to none(make it disappear)
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "50vw";
+        var button = document.getElementById("myButtons");
+        button.style.display = "none";
+      }
+      //This function actives when the close btn on the navigation bar is clicked
+      //in that case, the navigation bar will close(width=0) 
+      //and will call the appearButton function to make the button appear
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        appearButton();
+      }
+      closeNav()
+      
+    </script>
+    <!-- This sets the two buttons that leads to navigation bar/search page and link them to css-->
+
+      <div class="container" id="myButtons">
+        <a href="#" class="button">
+          <div class="button_line"></div>
+          <div class="button_line"></div>
+          <span class="button_text" onclick="openNav()">Click for more info!</span>
+          <div class="button_drow1"></div>
+          <div class="button_drow2"></div>
+      </a>
+      
+        <a href="#" class="button">
+        <div class="button_line"></div>
+        <div class="button_line"></div>
+        <span class="button_text" onclick="location.replace('search.html')">Explore Student's Artwork!</span>
+        <div class="button_drow1"></div>
+        <div class="button_drow2"></div>
+        </a>
       </div>
 
 </body>

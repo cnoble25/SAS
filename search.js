@@ -44,6 +44,7 @@ export async function DisplayStudentSearchData(){
           left.setAttribute("class", "profileleft");
           var image = document.createElement("img")
           image.setAttribute("src", item.data().picture);
+          image.setAttribute("id", "img");
           left.appendChild(image);
           // makes div for info for each artwork
           var right = document.createElement("div");

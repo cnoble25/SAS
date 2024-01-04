@@ -34,7 +34,7 @@ html {
         display: block;
   } 
 
-  img {
-      max-width: 30%;
+  img{
+      max-width: device-width/(3/10)px;
       height: auto;
   }

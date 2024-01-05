@@ -95,6 +95,7 @@ export async function DisplayStudentSearchData(){
           content.appendChild(row);
           content.appendChild(document.createElement("br"));
           content.appendChild(document.createElement("br"));
+          content.appendChild(document.createElement("hr"));
          
         }
 
@@ -102,7 +103,7 @@ export async function DisplayStudentSearchData(){
    }
    //run it once so it shows by default when the page is opened
    DisplayStudentSearchData();
-
++
    function updateRecommendation() {
     let searchInput = document.getElementById("searchInput").value;
     // according to the input, update the recommendation list from the database

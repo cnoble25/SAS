@@ -35,6 +35,20 @@ html {
   } 
 
   img{
-      max-width: 50%;
+      max-width: 45%;
       height: auto;
+  }
+  .profileright{
+      position: relative;
+      right: 40%;
+      
+  }
+
+  .profileleft{
+      position: relative;
+      left: 0%;
+      size: 48%;
+  }
+  .row{
+      display: flex;
   }

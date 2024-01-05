@@ -62,7 +62,7 @@ export async function DisplayStudentSearchData(){
           right.appendChild(group);
           //creates the year part of the div
           var roomTitle = document.createElement("h3");
-          roomTitle.innerHTML = "Room: ";
+          roomTitle.innerHTML = "Nearby-Room: ";
           right.appendChild(roomTitle);
           var rgroup = document.createElement("h4");
           rgroup.innerHTML = item.data().building + "-" + item.data().room;

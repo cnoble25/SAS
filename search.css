@@ -40,7 +40,7 @@ html {
   }
   .profileright{
       position: relative;
-      right: 40%;
+      right: 35%;
       
   }
 
@@ -51,4 +51,8 @@ html {
   }
   .row{
       display: flex;
+  }
+
+  h4 {
+      font-size: medium;
   }

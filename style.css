@@ -289,11 +289,12 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 
       position: relative;
-      left:50%;
+      left:0%;
+      
       /*transform: translate(-50%, -50%); */
-      font-size: 500%; 
+      font-size: 400%; 
       font-weight: 800; 
-      letter-spacing: 5px; 
+      letter-spacing: -2px; 
       overflow: hidden;
   } 
   /*From here on is animation for the animated title, the animations runs it once and stop*/
@@ -388,7 +389,6 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
   .webtitle span:nth-child(29) { 
     animation-delay: 2.8s; 
   } 
-
   .webtitle span:nth-child(30) { 
     animation-delay: 2.9s; 
   } 

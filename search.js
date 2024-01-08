@@ -44,6 +44,7 @@ export async function DisplayStudentSearchData(){
           left.setAttribute("class", "profileleft");
           var image = document.createElement("img")
           image.setAttribute("src", item.data().picture);
+          image.setAttribute("id", "img");
           left.appendChild(image);
           // makes div for info for each artwork
           var right = document.createElement("div");
@@ -64,14 +65,15 @@ export async function DisplayStudentSearchData(){
           roomTitle.innerHTML = "Room: ";
           right.appendChild(roomTitle);
           var rgroup = document.createElement("h4");
-          rgroup.innerHTML = item.data().room;
+          rgroup.innerHTML = item.data().building + "-" + item.data().room;
           right.appendChild(rgroup);
+          //creates the go to page for personal page which uses the local storage to store what page to go to/make (still needs testing and bug fixing)
           var goToPage = document.createElement('button');
           goToPage.innerHTML = 'click here to get more info';
           goToPage.onclick =   function(){
-    
+            
             localStorage.setItem("itemId", item.id);
-            //change later it wont work
+            //works
             var uRL = location.href;
             uRL = uRL.substring(0, uRL.length-11);
             console.log(localStorage.getItem("itemId"));
@@ -93,6 +95,7 @@ export async function DisplayStudentSearchData(){
           content.appendChild(row);
           content.appendChild(document.createElement("br"));
           content.appendChild(document.createElement("br"));
+          content.appendChild(document.createElement("hr"));
          
         }
 
@@ -100,7 +103,7 @@ export async function DisplayStudentSearchData(){
    }
    //run it once so it shows by default when the page is opened
    DisplayStudentSearchData();
-
++
    function updateRecommendation() {
     let searchInput = document.getElementById("searchInput").value;
     // according to the input, update the recommendation list from the database

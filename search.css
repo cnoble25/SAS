@@ -1,35 +1,54 @@
 html {
-    height: 100%;
-  }
-body {
-    height: 100%;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    background-color: whitesmoke;
-}
-.searchBar{
-    height: 5%;
-  }
-  /* the width is 10% of the height */
-#searchInput {
-    
       height: 100%;
-      width:50vh;
-      position: relative;
-      top:0%;
-      left: 0%;
-} 
+    }
+  body {
+      height: 100%;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      background-color: whitesmoke;
+  }
+  .searchBar{
+      height: 5%;
+    }
+    /* the width is 10% of the height */
+  #searchInput {
+      
+        height: 100%;
+        width:50%;
+        position: relative;
+        top:0%;
+        left: 0%;
+  } 
+  
+  #searchButton {
+        height: 100%;
+        width:10%;
+        position: relative;
+        top: 0%;
+        left: 0%;
+  }
+  
+  #content{
+        position: relative;
+        top: 0%;
+        left: 0%;
+        display: block;
+  } 
 
-#searchButton {
-      height: 80%;
-      width:10vh;
+  img{
+      max-width: 45%;
+      height: auto;
+  }
+  .profileright{
       position: relative;
-      top: 0%;
-      left: 0%;
-}
+      right: 40%;
+      
+  }
 
-#content{
+  .profileleft{
       position: relative;
-      top: 0%;
       left: 0%;
-      display: block;
-} 
+      size: 48%;
+  }
+  .row{
+      display: flex;
+  }

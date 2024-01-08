@@ -109,6 +109,7 @@ async function displayStudentSearchData() {
                 content.appendChild(row);
                 content.appendChild(document.createElement("br"));
                 content.appendChild(document.createElement("br"));
+          content.appendChild(document.createElement("hr"));
 
             }
 

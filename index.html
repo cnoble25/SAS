@@ -37,6 +37,7 @@
       }
       //This function allow you to open the navigation bar and set the button's display to none(make it disappear)
       function openNav() {
+        if (screen)
         document.getElementById("mySidenav").style.width = "50vw";
         var button = document.getElementById("myButtons");
         button.style.display = "none";

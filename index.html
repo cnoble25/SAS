@@ -17,6 +17,7 @@
   window.importCSVToDatabase = importCSVToDatabase;
 </script>
 <body>
+ 
   <div class="webtitle">
     <!-- This is the html for the webtitle and it sets the each letter of the webtitle to different spans -->
         <br><span>S</span> 
@@ -58,7 +59,7 @@
           <span>o</span>
           <span>w</span>
       </div>
-
+      
    <!-- This sets the html for the navigation bar -->
     <div id="mySidenav" class="sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -92,24 +93,25 @@
       
     </script>
     <!-- This sets the two buttons that leads to navigation bar/search page and link them to css-->
+  <div class="container" id="myButtons">
+    <a href="#" class="button">
+      <div class="button_line"></div>
+      <div class="button_line"></div>
+      <span class="button_text" onclick="openNav()">Click for more info!</span>
+      <div class="button_drow1"></div>
+      <div class="button_drow2"></div>
+  </a>
+  
+    <a href="#" class="button">
+    <div class="button_line"></div>
+    <div class="button_line"></div>
+    <span class="button_text" onclick="location.replace('search.html')">Explore Student's Artwork!</span>
+    <div class="button_drow1"></div>
+    <div class="button_drow2"></div>
+    </a>
+  </div>
+  
 
-      <div class="container" id="myButtons">
-        <a href="#" class="button">
-          <div class="button_line"></div>
-          <div class="button_line"></div>
-          <span class="button_text" onclick="openNav()"><center>Click for more info!</center></span>
-          <div class="button_drow1"></div>
-          <div class="button_drow2"></div>
-      </a>
-      
-        <a href="#" class="button">
-        <div class="button_line"></div>
-        <div class="button_line"></div>
-        <span class="button_text" onclick="location.replace('search.html')"><center>Explore Student's Artwork!</center></span>
-        <div class="button_drow1"></div>
-        <div class="button_drow2"></div>
-        </a>
-      </div>
 
 </body>
 

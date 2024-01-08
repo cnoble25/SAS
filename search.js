@@ -46,7 +46,6 @@ async function displayStudentSearchData() {
     // ������������
     content.innerHTML = "";
     // �����Ϊ��ʱ,��ʾ�������
-    if (input.length > 0) {
         const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
         var flag = false;// ƥ�����Ŀ���
         studentPieces.forEach(item => {
@@ -115,7 +114,7 @@ async function displayStudentSearchData() {
             content.appendChild(document.createElement("br"));
             content.appendChild(document.createElement("br"));
         }
-    }
+    
     else {
         // �����Ϊ��ʱ,��ʾ������ʷ
         displaySearchHistory();

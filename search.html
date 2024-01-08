@@ -2,59 +2,45 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>St. Anne's-Belfield All-School Visual Art Show</title>
-  <script type="module" src='./search.js'>
-    import {DisplayStudentSearchData, doLocaleStorageStuff} from './search.js';
-     window.DisplayStudentSearchData = DisplayStudentSearchData;
-     window.doLocaleStorageStuff = doLocaleStorageStuff;
-    </script>
-  
-  <link href="search.css" rel="stylesheet" type="text/css" />
-  
-  </head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>St. Anne's-Belfield All-School Visual Art Show</title>
+ 
+   <link href="search.css" rel="stylesheet" type="text/css" />
+
+</head>
 
 <body>
-  <!-- Adding the search bar and button to html, when the user click on search bar the recommandation of results show up. -->
-  <!-- <div class="searchBar">
-  <input type="text" placeholder="Search For Students' Artwork" id="searchInput" >
-     <button id="searchButton" 
-     onclick="DisplayStudentSearchData();
-     goToCodingPage;
-     location.replace('search.html');">
-      go
-    </button>
+    <div class="header">
+        <div class="searchBar">
+            <datalist id="searchList">
+            </datalist>
+            <input id="searchInput" type="text" placeholder="Search For Students' Artwork"
+                   list="searchList">
+            <!-- <button id="searchButton" onclick="displayStudentSearchData();updateSearchHistory()">go</button> -->
+            <img src="wow.png" id="searchButtonPic" />
+            <button id="clearHistoryButton">clear the history</button>
+        </div>
 
-  </div> -->
-  <div class="searchBar">
-    <datalist id="searchList">
-      <!-- or build the list from the database at the beginning -->
-      <option value="Grabowski, A.J. '31 (4th)"></option>
-      <option value="McNerney, Brooks '32 (3rd)"></option>
-      <option value="McLaughlin, Keira '32 (3rd)"></option>
-    </datalist>
-    <label for="searchInput"></label><input type="text" placeholder="Search For Students' Artwork" id="searchInput" list="searchList">
-    <button id="searchButton">go</button>
-  </div>
+    </div>
+    <div id="content">
+    </div>
 
-  <div id="content">
-  </div>
+    <!--<script  src='./search.js'>
+    // putting passcode to get into uploadPage
+        /*function goToPage(url) {
+        location.replace(url);
+        }
+        function goToCodingPage(){
+          if (document.getElementById('searchInput').value == "111"){
+             goToPage('uploadPage.html') ;
+          }
+        }*./
 
-  <script type='module' src='./search.js'>
-// putting passcode to get into uploadPage
-    function goToPage(url) {
-    location.replace(url);
-    }
-    function goToCodingPage(){
-      if (document.getElementById('searchInput').value == "111"){
-         goToPage('uploadPage.html') ;
-      }
-    }
 
-   
-  </script>
-  <div id="content">
-  </div>
+    </script>-->
+    <script type="module" src='./search.js'></script>
+    <div id="content">
+    </div>
 </body>
 </html>

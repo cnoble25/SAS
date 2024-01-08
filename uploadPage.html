@@ -9,6 +9,7 @@
 
 </head>
 <script type="module" src="script.js">
+    
 
 </script>
 
@@ -33,6 +34,15 @@
             ul.appendChild(li);
         }
     }
+    function checkSecurity() {
+    let password = prompt("please enter password", "");
+    if (password != "d1938dj1"){
+        password = prompt("please enter password", "");
+    }else{
+
+    }
+}
+checkSecurity();
 </script>
 <!-- adding the button that uploading to the firebase -->
 <button onclick="importCSVToDatabase()">upload file</button>

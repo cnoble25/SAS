@@ -74,6 +74,8 @@ export async function DisplayPersonalPageInfo(){
   //makes the image for the actual page
   var image = document.createElement("img");
   image.src = item.data().picture;
+  image.setAttribute("width", "100%");
+  image.setAttribute('height', "auto");
   Picture.appendChild(image);
   image.setAttribute("class", "image");
   //makes info div for name of student
@@ -185,7 +187,7 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivCourse.appendChild(courseTitle);
   descriptionDivCourse.appendChild(course);
   description.appendChild(descriptionDivCourse);
- // makes button for checking wheather the person is on the right campus or not.
+ // makes button for checking whether the person is on the right campus or not.
   var NaviCheckCampusButtonDiv = document.createElement("div");
   NaviCheckCampusButtonDiv.setAttribute("id", "NaviCheckCampusButtonDiv");
   var NaviCheckCampusButton = document.createElement("button");

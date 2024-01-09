@@ -5,7 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>St. Anne's-Belfield All-School Visual Art Show</title>
- 
+ <script type="module" src='./search.js'>
+    import {displayStudentSearchData, doLocaleStorageStuff} from './search.js';
+     window.displayStudentSearchData = displayStudentSearchData;
+     window.doLocaleStorageStuff = doLocaleStorageStuff;
+     displayStudentSearchData();
+    </script>
    <link href="search.css" rel="stylesheet" type="text/css" />
 
 </head>
@@ -18,7 +23,7 @@
             <input id="searchInput" type="text" placeholder="Search For Students' Artwork"
                    list="searchList">
             <!-- <button id="searchButton" onclick="displayStudentSearchData();updateSearchHistory()">go</button> -->
-            <img src="wow.png" id="searchButtonPic" />
+            <img src="thing.png" id="searchButtonPic" />
             <button id="clearHistoryButton">clear the history</button>
         </div>
 

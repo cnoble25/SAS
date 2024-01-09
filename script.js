@@ -34,6 +34,8 @@ export async function importCSVToDatabase () {
           var reader = new FileReader();
           var BFCList;
           var img;
+          var makeSure = prompt("please enter the name of the file to upload the file to the database");
+          if(makeSure != file.innerHTML || file.innerHTML.subtring(file.innerHTML.length-1) == "v"){
           reader.onload = function(event) {
             var csvData = event.target.result;
             var rows = csvData.split("\n");
@@ -67,7 +69,10 @@ export async function importCSVToDatabase () {
           file.innerHTML = null;
   
     document.getElementsByTagName("body").style.cursor = "auto";
-    
+        }else{
+          console.log(file.innerHTML);
+          alert("file not uploaded for safety")
+        }
   }
 
   //separates a room number into its building, floor and campus
@@ -114,5 +119,4 @@ export async function importCSVToDatabase () {
   //gets the location of the person then returns the building they're in
  function makeImageUsable(imgURL){
   return "https://drive.google.com/uc?export=view&id=" + imgURL.substring(32, 65);
-
  }

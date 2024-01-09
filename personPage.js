@@ -77,6 +77,7 @@ export async function DisplayPersonalPageInfo(){
   image.setAttribute("width", "100%");
   image.setAttribute('height', "auto");
   Picture.appendChild(image);
+  image.setAttribute("class", "image");
   //makes info div for name of student
   var descriptionDivName = document.createElement("div");
   descriptionDivName.setAttribute("id", "descriptionDivName");

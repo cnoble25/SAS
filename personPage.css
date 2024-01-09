@@ -1,12 +1,23 @@
 #PersonalPagePicture{
     float: left;
-    width: 50vw;
+    width: 100%;
+    height: auto;
     background-color: maroon;
+    border: 5px;
+    border-radius: 5px;
+    border-color: maroon;
     background-size: 50vw;
 }
+img{
+    width: 100%;
+    border: 5px;
+    border-color: maroon;
+
+}
 #PersonalPageDescription{
+    position: relative;
     float: right;
-    width: 50vw;
+    width: 50%;
     background-color: lightgray;
     background-size: 50vw;
     align-content: center;
@@ -20,3 +31,7 @@
     color: blue
 
 }
+
+/* .everthing{
+    floar
+} */

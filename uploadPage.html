@@ -9,6 +9,7 @@
 
 </head>
 <script type="module" src="script.js">
+    
 
 </script>
 
@@ -33,6 +34,19 @@
             ul.appendChild(li);
         }
     }
+    function checkSecurity(limit) {
+    if (limit > 0){
+    let password = prompt("please enter password", "");
+    if (password != "d1938dj1"){
+        checkSecurity(limit-1);
+    }else{
+
+    }
+}else{
+    alert("you have reached the limit on number of attempts");
+}
+}
+checkSecurity(20);
 </script>
 <!-- adding the button that uploading to the firebase -->
 <button onclick="importCSVToDatabase()">upload file</button>

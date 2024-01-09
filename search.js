@@ -58,6 +58,7 @@ async function displayStudentSearchData() {
                 left.setAttribute("class", "profileleft");
                 var image = document.createElement("img")
                 image.setAttribute("src", item.data().picture);
+                image.setAttribute("class", "imagesForSearch");
                 left.appendChild(image);
                 // makes div for info for each artwork
                 var right = document.createElement("div");

@@ -20,6 +20,7 @@
  
   <div class="webtitle">
     <!-- This is the html for the webtitle and it sets the each letter of the webtitle to different spans -->
+      <div class="webtitleWords">
         <br><span>S</span> 
           <span>t</span> 
           <span>.</span> 
@@ -31,6 +32,8 @@
           <span>'</span>
           <span>s</span>
         <br>
+      </div>
+      <div class="webtitleWords">
           <span>B</span>
           <span>e</span>
           <span>l</span>
@@ -40,6 +43,8 @@
           <span>l</span>
           <span>d</span>
         <br>
+      </div>
+      <div class="webtitleWords">
           <span>A</span>
           <span>l</span>
           <span>l</span>
@@ -51,6 +56,8 @@
           <span>o</span>
           <span>l</span>
         <br>
+      </div>
+      <div class="webtitleWords">
           <span>A</span>
           <span>r</span>
           <span>t</span>
@@ -58,6 +65,7 @@
           <span>h</span>
           <span>o</span>
           <span>w</span>
+        </div>
       </div>
       
    <!-- This sets the html for the navigation bar -->
@@ -93,19 +101,19 @@
       
     </script>
     <!-- This sets the two buttons that leads to navigation bar/search page and link them to css-->
-  <div class="container" id="myButtons">
+  <div class="container" onclick="openNav()" id="myButtons">
     <a href="#" class="button">
       <div class="button_line"></div>
       <div class="button_line"></div>
-      <span class="button_text" onclick="openNav()">Click for more info!</span>
+      <span class="button_text" >Click for more info!</span>
       <div class="button_drow1"></div>
       <div class="button_drow2"></div>
   </a>
   
-    <a href="#" class="button">
+    <a href="#" onclick="location.replace('search.html')" class="button">
     <div class="button_line"></div>
     <div class="button_line"></div>
-    <span class="button_text" onclick="location.replace('search.html')">Explore Student's Artwork!</span>
+    <span class="button_text">Explore Student's Artwork!</span>
     <div class="button_drow1"></div>
     <div class="button_drow2"></div>
     </a>

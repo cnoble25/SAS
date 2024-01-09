@@ -61,7 +61,6 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     --line_color : #000000 ;
     --back_color : #FFECF6  ;
     position: relative;
-    left: ;
     z-index : 0 ;
     width : 50vw;
     height : 56px ;

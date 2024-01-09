@@ -1,6 +1,11 @@
+body{
+    font-family: brandon-grotesque, sans-serif;
+    font-feature-settings: "liga";
+    background-color: gray;
+}
 #PersonalPagePicture{
     float: left;
-    width: 100%;
+    width: 50%;
     height: auto;
     background-color: maroon;
     border: 5px;
@@ -18,7 +23,7 @@ img{
     position: relative;
     float: right;
     width: 50%;
-    background-color: lightgray;
+    background-color: rgb(216, 216, 216);
     background-size: 50vw;
     align-content: center;
 }

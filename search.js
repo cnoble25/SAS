@@ -126,12 +126,12 @@ async function displayStudentSearchData() {
 // ��������ʱ,������������ťͼƬ
 function startInput() {
     var btnPic = document.getElementById("searchButtonPic");
-    btnPic.src = "search.png";
+    btnPic.src = "go.png";
 }
 // �����뿪�����ʱ,������������ťͼƬ
 function leaveInput() {
     var btnPic = document.getElementById("searchButtonPic");
-    btnPic.src = "go.png";
+    btnPic.src = "search.png";
 }
 async function updateRecommendation() {
     var input = document.getElementById("searchInput").value;

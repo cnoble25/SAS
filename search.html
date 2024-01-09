@@ -16,11 +16,12 @@
 </head>
 
 <body>
+  <h1 id="title">Search For students' Artwork</h1>
     <div class="header">
         <div class="searchBar">
             <datalist id="searchList">
             </datalist>
-            <input id="searchInput" type="text" placeholder="Search For Students' Artwork"
+            <input id="searchInput" type="text" placeholder="Search..."
                    list="searchList">
             <!-- <button id="searchButton" onclick="displayStudentSearchData();updateSearchHistory()">go</button> -->
             <img src="thing.png" id="searchButtonPic" />
@@ -30,20 +31,6 @@
     </div>
     <div id="content">
     </div>
-
-    <!--<script  src='./search.js'>
-    // putting passcode to get into uploadPage
-        /*function goToPage(url) {
-        location.replace(url);
-        }
-        function goToCodingPage(){
-          if (document.getElementById('searchInput').value == "111"){
-             goToPage('uploadPage.html') ;
-          }
-        }*./
-
-
-    </script>-->
     <script type="module" src='./search.js'></script>
     <div id="content">
     </div>

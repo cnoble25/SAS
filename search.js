@@ -13,20 +13,16 @@ const firebaseConfig = {
     appId: "1:448958994593:web:aa904aab9761338e2e78e0",
     measurementId: "G-860F68ZWPM"
 };
-
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 // this function is the search function for the search page it creates displays for each peice of artwork in the database in which it puts them into a dive and then divs the elements for organization
 var fixOnclick = false;
-
 var searchButtonPic = document.getElementById("searchButtonPic");
 searchButtonPic.onclick = function () {
     displayStudentSearchData();
     updateSearchHistory()
 }
-
 var searchInput = document.getElementById("searchInput");
 searchInput.oninput = function () {
     updateRecommendation();
@@ -37,7 +33,6 @@ searchInput.onblur = function () {
 searchInput.onclick = function () {
     startInput();
 }
-
 var clearHistoryButton = document.getElementById("clearHistoryButton");
 clearHistoryButton.onclick = function () {
     localStorage.removeItem("searchHistory");
@@ -45,15 +40,12 @@ clearHistoryButton.onclick = function () {
     listobj.innerHTML = "";
     
 }
-
-
 async function displayStudentSearchData() {
     var input = document.getElementById("searchInput").value;
     var content = document.getElementById("content");
     // ������������
     content.innerHTML = "";
     // �����Ϊ��ʱ,��ʾ�������
-    if (input.length > 0) {
         const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
         var flag = false;// ƥ�����Ŀ���
         studentPieces.forEach(item => {
@@ -83,7 +75,7 @@ async function displayStudentSearchData() {
                 right.appendChild(group);
                 //creates the year part of the div
                 var roomTitle = document.createElement("h3");
-                roomTitle.innerHTML = "Room: ";
+                roomTitle.innerHTML = "Nearby-Room: ";
                 right.appendChild(roomTitle);
                 var rgroup = document.createElement("h4");
                 rgroup.innerHTML = item.data().room;
@@ -92,15 +84,13 @@ async function displayStudentSearchData() {
                 goToPage.innerHTML = 'click here to get more info';
                 goToPage.onclick = function () {
                     localStorage.setItem("itemId", item.id);
-                    //change later it wont work
+                    //just makes url so that the thing goes to person page properly cause i dont knwo what the url will be called in the end
                     var uRL = location.href;
                     uRL = uRL.substring(0, uRL.length - 11);
                     console.log(localStorage.getItem("itemId"));
                     location.replace(uRL + "/personPage.html");
-
                 };
                 right.appendChild(goToPage);
-
                 //appending the stuff into the row area
                 content.appendChild(document.createElement("br"));
                 content.appendChild(document.createElement("br"));
@@ -124,25 +114,22 @@ async function displayStudentSearchData() {
             content.appendChild(document.createElement("br"));
             content.appendChild(document.createElement("br"));
         }
-    }
+    
     else {
         // �����Ϊ��ʱ,��ʾ������ʷ
         displaySearchHistory();
     }
 }
-
 // ��������ʱ,������������ťͼƬ
 function startInput() {
     var btnPic = document.getElementById("searchButtonPic");
     btnPic.src = "111.png";
 }
-
 // �����뿪�����ʱ,������������ťͼƬ
 function leaveInput() {
     var btnPic = document.getElementById("searchButtonPic");
     btnPic.src = "wow.png";
 }
-
 async function updateRecommendation() {
     var input = document.getElementById("searchInput").value;
     if (input.length > 0) {
@@ -163,7 +150,6 @@ async function updateRecommendation() {
         displaySearchHistory();
     }
 }
-
 function updateSearchHistory() {
     let input = document.getElementById("searchInput").value;
     // according to the input, update the search history list in local storage
@@ -173,7 +159,6 @@ function updateSearchHistory() {
     }
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
-
 function displaySearchHistory() {
     let input = document.getElementById("searchInput").value;
     if (input.length == 0) {
@@ -187,5 +172,5 @@ function displaySearchHistory() {
             listobj.appendChild(obj);
         });
     }
-
 }
+displayStudentSearchData();

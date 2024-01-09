@@ -40,7 +40,7 @@ html {
   }
   .profileright{
       position: relative;
-      right: 40%;
+      right: 35%;
       
   }
 
@@ -51,7 +51,4 @@ html {
   }
   .row{
       display: flex;
-  }
-  #searchButtonPic{
-    
   }

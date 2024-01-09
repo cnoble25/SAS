@@ -3,7 +3,9 @@ html {
     }
   body {
       height: 100%;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+      font-family: brandon-grotesque, sans-serif;
+      font-feature-settings: "liga";
+      
       background-color: whitesmoke;
 }
   .searchBar{

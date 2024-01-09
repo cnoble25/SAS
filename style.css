@@ -61,12 +61,12 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     --line_color : #000000 ;
     --back_color : #FFECF6  ;
     position: relative;
-    left: 20%;
+    left: ;
     z-index : 0 ;
-    width : 120%;
+    width : 50vw;
     height : 56px ;
     text-decoration : none ;
-    font-size : 80% ; 
+    font-size : 2vw; 
     font-weight : bold ;
     color : var(--line_color) ;
     letter-spacing : 2px ;
@@ -297,7 +297,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
       left:0%;
       
       /*transform: translate(-50%, -50%); */
-      font-size: 400%; 
+      font-size: 7vw; 
       font-weight: 800; 
       letter-spacing: -2px; 
       overflow: hidden;

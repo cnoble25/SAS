@@ -5,9 +5,12 @@ html {
       height: 100%;
       font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
       background-color: whitesmoke;
-  }
+}
   .searchBar{
       height: 5%;
+    }
+    hr{
+      border: 1px solid gray;
     }
     
     /* the width is 10% of the height */
@@ -41,28 +44,36 @@ html {
   .imagesForSearch{
       max-width: 100%;
       height: auto;
-      border: 5px solid #555;
+      border: 3px solid #555;
   }
   .profileright{
       font-size: 2vw;
-      size: 48%
+     width: 48%;
+      background: #9F212C;
+      border: 3px solid #9F212C;
   }
 
-  .profileright > button{
-      size: 1vw;
+  .profileright button{
+      font-size: 2vw;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+      color: white;
+      background: #9F212C;
+      border: 2px solid white;
   }
 
   .profileleft{
       position: relative;
       /* left: 0%; */
       max-width: 48%;
+      
 
   }
   .row{
       display: flex;
       flex-wrap:nowrap;
       overflow: none;
-      background-color: whitesmoke;
+      color: whitesmoke;
+      border: 5px solid maroon;
 
   }
   .row > div{

@@ -5,7 +5,7 @@ html {
       height: 100%;
       font-family: brandon-grotesque, sans-serif;
       font-feature-settings: "liga";
-      
+
       background-color: whitesmoke;
 }
   .searchBar{
@@ -46,13 +46,14 @@ html {
   .imagesForSearch{
       max-width: 100%;
       height: auto;
-      border: 3px solid #555;
+      padding: 1%
   }
   .profileright{
       font-size: 2vw;
      width: 48%;
       background: #9F212C;
       border: 3px solid #9F212C;
+      padding: 1%;
   }
 
   .profileright button{

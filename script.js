@@ -119,5 +119,4 @@ export async function importCSVToDatabase () {
   //gets the location of the person then returns the building they're in
  function makeImageUsable(imgURL){
   return "https://drive.google.com/uc?export=view&id=" + imgURL.substring(32, 65);
-
  }

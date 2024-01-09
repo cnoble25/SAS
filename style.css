@@ -61,20 +61,25 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     --line_color : #000000 ;
     --back_color : #FFECF6  ;
     position: relative;
+    left: 20%;
     z-index : 0 ;
-    width : 240px ;
+    width : 120%;
     height : 56px ;
     text-decoration : none ;
-    font-size : 14px ; 
+    font-size : 80% ; 
     font-weight : bold ;
     color : var(--line_color) ;
     letter-spacing : 2px ;
     transition : all .3s ease ;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .button_text{
     margin-top: 5%;
     display: flex;
     justify-content: center;
+
 }
 /*This sets the css for the button/text before and after animation*/
 .button::before,
@@ -426,6 +431,11 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
   /*make sure animation stops after 4 second*/
   .webtitle span::after {
     animation: animate 4s forwards 1;
+  }
+  .webtitleWords{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: none;
   }
 
   /*setting the property of the animation*/

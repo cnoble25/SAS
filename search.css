@@ -3,22 +3,31 @@ html {
     }
   body {
       height: 100%;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      font-family: brandon-grotesque, sans-serif;
+      font-feature-settings: "liga";
+      
       background-color: whitesmoke;
-  }
+}
   .searchBar{
       height: 5%;
     }
+    hr{
+      border: 1px solid gray;
+    }
+    
     /* the width is 10% of the height */
   #searchInput {
-      
+            font-size: 150%;
         height: 100%;
         width:50%;
         position: relative;
         top:0%;
         left: 0%;
+        
   } 
-  
+  #searchButtonPic{
+      max-width: 5%;
+  }
   #searchButton {
         height: 100%;
         width:10%;
@@ -34,21 +43,43 @@ html {
         display: block;
   } 
 
-  img{
-      max-width: 45%;
+  .imagesForSearch{
+      max-width: 100%;
       height: auto;
+      border: 3px solid #555;
   }
   .profileright{
-      position: relative;
-      right: 35%;
-      
+      font-size: 2vw;
+     width: 48%;
+      background: #9F212C;
+      border: 3px solid #9F212C;
+  }
+
+  .profileright button{
+      font-size: 2vw;
+      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+      color: white;
+      background: #9F212C;
+      border: 2px solid white;
   }
 
   .profileleft{
       position: relative;
-      left: 0%;
-      size: 48%;
+      /* left: 0%; */
+      max-width: 48%;
+      
+
   }
   .row{
       display: flex;
+      flex-wrap:nowrap;
+      overflow: none;
+      color: whitesmoke;
+      border: 5px solid maroon;
+
   }
+  .row > div{
+      margin: 10px;
+  }
+
+ 

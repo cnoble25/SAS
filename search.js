@@ -58,6 +58,7 @@ async function displayStudentSearchData() {
                 left.setAttribute("class", "profileleft");
                 var image = document.createElement("img")
                 image.setAttribute("src", item.data().picture);
+                image.setAttribute("class", "imagesForSearch");
                 left.appendChild(image);
                 // makes div for info for each artwork
                 var right = document.createElement("div");
@@ -65,6 +66,7 @@ async function displayStudentSearchData() {
                 //make title for each person's artwork (is just their name)
                 var title = document.createElement("h1");
                 title.innerHTML = item.data().name;
+                title.setAttribute("class", "titleForArtwork");
                 right.appendChild(title);
                 //creates the class part of the div
                 var classTitle = document.createElement("h3");
@@ -81,6 +83,7 @@ async function displayStudentSearchData() {
                 rgroup.innerHTML = item.data().room;
                 right.appendChild(rgroup);
                 var goToPage = document.createElement('button');
+                goToPage.setAttribute("class", "personPageButton");
                 goToPage.innerHTML = 'click here to get more info';
                 goToPage.onclick = function () {
                     localStorage.setItem("itemId", item.id);

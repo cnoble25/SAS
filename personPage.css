@@ -22,6 +22,16 @@ img{
     background-size: 50vw;
     align-content: center;
 }
+#NaviCheckCampusButtonDiv{
+    background-color: maroon;
+}
+    
+
+#GoBackButton{
+    color: blue
+
+}
+
 /* .everthing{
     floar
 } */

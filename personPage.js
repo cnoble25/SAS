@@ -188,13 +188,13 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivCourse.appendChild(course);
   description.appendChild(descriptionDivCourse);
  // makes button for checking whether the person is on the right campus or not.
-  var NaviCheckCampusButtonDiv = document.createElement("div");
-  NaviCheckCampusButtonDiv.setAttribute("id", "NaviCheckCampusButtonDiv");
+ const menu = document.getElementsByClassName("menu")
   var NaviCheckCampusButton = document.createElement("button");
+  NaviCheckCampusButton.setAttribute("class", "menuButtons");
   NaviCheckCampusButton.innerHTML = "CLICK HERE TO CHECK IF YOU ARE ON THE CORRECT CAMPUS FOR THIS ARTWORK";
   NaviCheckCampusButton.onclick = async function(){navigator.geolocation.getCurrentPosition(successCallback, errorCallback);};
-  NaviCheckCampusButtonDiv.appendChild(NaviCheckCampusButton);
-  Navi.appendChild(NaviCheckCampusButtonDiv);
+  menu.appendChild(NaviCheckCampusButton);
+  
 
 } 
 

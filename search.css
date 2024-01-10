@@ -64,7 +64,8 @@ html {
 
   .profileright button{
       font-size: 2vw;
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+       font-family: brandon-grotesque, sans-serif;
+      font-feature-settings: "liga";
       color: white;
       background: #9F212C;
       border: 2px solid white;

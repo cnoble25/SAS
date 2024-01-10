@@ -88,7 +88,9 @@ html {
       color: whitesmoke;
       border: 5px solid maroon;
 
+      
   }
+  /* sets the margins  */
   .row > div{
       margin: 10px;
   }
@@ -106,7 +108,7 @@ html {
     transition: 0.5s; 
     
   }
-  
+  /* side bar stuff */
   .sidenav a {
     padding: 5% 5% 5% 20%;
     text-decoration: none;
@@ -116,11 +118,11 @@ html {
     display: block;
     transition: 0.3s;
   }
-  
+  /* side bar stuff */
   .sidenav a:hover {
     color: #747474;
   }
-  
+  /* side bar stuff */
   .sidenav .closebtn {
     position: absolute;
     top: 0;
@@ -128,28 +130,20 @@ html {
     font-size: 36px;
     margin-left: 50px;
   }
-
+  /* fix the navi bar to the top of the screen with this */
   .sticky {
     position: fixed;
     top: 0;
     width: 100%
   }
-
+  /* padding to fix the cliping at the top of the screen  */
   .sticky + .content {
     padding-top: 102px;
   }
-
+  /* styling for the navibar stuff */
  .header{
     background-color:#9F212C;
     padding: 1vw;
     height: 6.5vw;
  }
  
- .searchBarAndContent{
-    display: flex;
-
- }
-
- .searchBarAndContent > div{
-  
- }

@@ -51,7 +51,8 @@ html {
   .imagesForSearch{
       max-width: 100%;
       height: auto;
-      padding: 1%
+      padding: 1%;
+      border: 5px grey;
   }
   .profileright{
       font-size: 2vw;
@@ -140,8 +141,8 @@ html {
 
  .header{
     background-color:#9F212C;
-    padding: 10px;
-    height: 6.5%;
+    padding: 1vw;
+    height: 6.5vw;
  }
  
  .searchBarAndContent{

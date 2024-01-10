@@ -102,7 +102,7 @@ async function displayStudentSearchData() {
                 content.appendChild(row);
                 content.appendChild(document.createElement("br"));
                 content.appendChild(document.createElement("br"));
-          content.appendChild(document.createElement("hr"));
+                content.appendChild(document.createElement("hr"));
 
             }
 
@@ -111,11 +111,11 @@ async function displayStudentSearchData() {
         if (!flag) {
             var row = document.createElement("h1");
             row.innerHTML = "no resource";
-            content.appendChild(document.createElement("br"));
+           
             content.appendChild(document.createElement("br"));
             content.appendChild(row);
             content.appendChild(document.createElement("br"));
-            content.appendChild(document.createElement("br"));
+           
         }
     
     else {

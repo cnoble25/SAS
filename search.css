@@ -26,8 +26,12 @@ html {
         
   } 
   #searchButtonPic{
-      max-width: 5%;
+      max-width: 3%;
   }
+  #menuButtonPic{
+    width: 5%;
+    height: auto;
+}
   #searchButton {
         height: 100%;
         width:10%;

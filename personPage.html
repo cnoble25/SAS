@@ -24,5 +24,50 @@
 <button id="GoBackButton" onclick="location.replace('search.html')">Go Back To Search Page</button>
         <div id="Navi"></div>
     </div>
+
+    <div class="header" id="headerID">
+        <div class="searchBar">
+             <img src="menu.png" id="menuButtonPic" onclick="openNav()"/>
+              </a>
+            <datalist id="searchList">
+            </datalist>
+            <!-- <button id="searchButton" onclick="displayStudentSearchData();updateSearchHistory()">go</button> -->
+                </div>
+
+    </div>
+
+    
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="./index.html">Home</a>
+        <a href="#">About the show</a>
+        <a href="./search.html">Student Artwork Search</a>
+        <a href="#">Gratitution</a>
+        <a href="#">Contact</a>
+      </div>
+
+      <script>
+        //This function set the display of the button from none back to flex after clicking on the close button of the navigation bar
+        //This function allow you to open the navigation bar and set the button's display to none(make it disappear)
+        function openNav() {
+          document.getElementById("mySidenav").style.width = "50vw";
+          var button = document.getElementById("myButtons");
+        //   button.style.display = "none";
+        }
+        //This function actives when the close btn on the navigation bar is clicked
+        //in that case, the navigation bar will close(width=0) 
+        //and will call the appearButton function to make the button appear
+        function closeNav() {
+          document.getElementById("mySidenav").style.width = "0";
+        //   appearButton();
+        }
+        closeNav();
+        
+        var header = document.getElementById("headerID");
+         header.classList.add("sticky");
+         header.classList.add("center");
+
+      </script>
 </body>
 </html>

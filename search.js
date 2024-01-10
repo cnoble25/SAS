@@ -43,11 +43,11 @@ clearHistoryButton.onclick = function () {
 async function displayStudentSearchData() {
     var input = document.getElementById("searchInput").value;
     var content = document.getElementById("content");
-    // ������������
+
     content.innerHTML = "";
-    // �����Ϊ��ʱ,��ʾ�������
+
         const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
-        var flag = false;// ƥ�����Ŀ���
+        var flag = false;
         studentPieces.forEach(item => {
             if (item.data().name.toLocaleUpperCase().includes(input.toUpperCase())) {
                 flag = true;
@@ -107,7 +107,7 @@ async function displayStudentSearchData() {
             }
 
         });
-        // û��ƥ�䵽��Ŀ,��ʾ��ʾ��Ϣ
+        // when the user search for a unexist result, the canvas will show no resource
         if (!flag) {
             var row = document.createElement("h1");
             row.innerHTML = "no resource";
@@ -119,20 +119,20 @@ async function displayStudentSearchData() {
         }
     
     else {
-        // �����Ϊ��ʱ,��ʾ������ʷ
         displaySearchHistory();
     }
 }
-// ��������ʱ,������������ťͼƬ
+// when users click the search bar, the img of searching will change to img of go
 function startInput() {
     var btnPic = document.getElementById("searchButtonPic");
     btnPic.src = "go.png";
 }
-// �����뿪�����ʱ,������������ťͼƬ
+// when users click any places except the search bar, the img of go will change to img of searching
 function leaveInput() {
     var btnPic = document.getElementById("searchButtonPic");
     btnPic.src = "search.png";
 }
+//this function gives the most relative results of what users put into the search bar
 async function updateRecommendation() {
     var input = document.getElementById("searchInput").value;
     if (input.length > 0) {
@@ -153,6 +153,7 @@ async function updateRecommendation() {
         displaySearchHistory();
     }
 }
+//this function stores the searching history to users' local memery
 function updateSearchHistory() {
     let input = document.getElementById("searchInput").value;
     // according to the input, update the search history list in local storage
@@ -162,6 +163,7 @@ function updateSearchHistory() {
     }
     localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
+//this function allows users to clear their local searching history
 function displaySearchHistory() {
     let input = document.getElementById("searchInput").value;
     if (input.length == 0) {

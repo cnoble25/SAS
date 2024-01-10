@@ -26,6 +26,9 @@ img{
     width: 50%;
     background-size: 50vw;
     align-content: center;
+    font-family: brandon-grotesque, sans-serif;
+    font-feature-settings: "liga";
+    background-color: rgb(223, 216, 216); 
 }
 /*#NaviCheckCampusButtonDiv{
     
@@ -35,7 +38,8 @@ img{
 .sidenav {
     height: 100%; 
     position: fixed; 
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: brandon-grotesque, sans-serif;
+    font-feature-settings: "liga";
     top: 0; 
     left: 0;
     background-color: rgb(223, 216, 216); 
@@ -67,12 +71,13 @@ img{
     margin-left: 50px;
   }
 
-.menuButtons{
+#menu{
     background-color: white;
     color:maroon;
     border: 2px solid maroon;
     display: inline-block
   }
+
 
 .everything{
     

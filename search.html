@@ -41,7 +41,7 @@
 
     <div class="header" id="headerID">
         <div class="searchBar">
-            <button onclick="openNav()"><img scr="menu.png" id="menuButtonPic"/></button>
+             <img src="menu.png" id="menuButtonPic" onclick="openNav()"/>
               </a>
             <datalist id="searchList">
             </datalist>
@@ -58,6 +58,7 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="./index.html">Home</a>
         <a href="#">About the show</a>
         <a href="./search.html">Student Artwork Search</a>
         <a href="#">Gratitution</a>
@@ -85,6 +86,7 @@
         
         var header = document.getElementById("headerID");
          header.classList.add("sticky");
+         header.classList.add("center");
 
       </script>
 </body>

@@ -61,7 +61,8 @@ img{
 .sidenav {
   height: 100%; 
   position: fixed; 
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: brandon-grotesque, sans-serif;
+    font-feature-settings: "liga";
   top: 0; 
   left: 0;
   background-color: rgb(223, 216, 216); 
@@ -106,7 +107,7 @@ img{
 .header{
   background-color:#9F212C;
   padding: 1vw;
-  height: 6.5vw;
+  height: 7.5vw;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: none;
@@ -114,7 +115,8 @@ img{
 
 .header button{
   font-size: 2vw;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+  font-family: brandon-grotesque, sans-serif;
+font-feature-settings: "liga";
   color: white;
   background: #9F212C;
   border: 2px solid white;
@@ -123,6 +125,14 @@ img{
 #menuButtonPic{
 max-width: 5%;
 height: auto;
+
+}
+#GoBackButton{
+font-size: 2vw;
+font-family: brandon-grotesque, sans-serif;
+font-feature-settings: "liga";
+  color: black;
+  border: 2px solid white;
 
 }
 

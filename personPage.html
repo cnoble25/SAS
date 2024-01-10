@@ -5,53 +5,21 @@
     import{DisplayPersonalPageInfo} from './personPage.js';
     window.DisplayPersonalPageInfo = DisplayPersonalPageInfo;
     console.log(localStorage.getItem("itemId"));
-     // Function to open the navigation bar and hide the button
 </script>
 <body>
-    <!-- makes the picture div for the personal pages -->
-        <!-- makes the picture div for the personal pages -->
-        
-        <div class="menu">
-            <button class="menuButtons" id="menuButton" onclick="openNav()">Navi</button>
-            <button class="menuButtons" id="GoBackButton" onclick="location.replace('search.html')">Go Back To Search Page</button>
-            
-        </div>
-
-        <!-- Navigation Sidebar -->
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="./index.html">Home</a>
-            <a href="#">About the show</a>
-            <a href="./search.html">Student Artwork Search</a>
-            <a href="#">Gratitution</a>
-            <a href="#">Contact</a>
-        </div>
-        <div id="PersonalPagePicture">
-            
-        </div>
-        <!-- makes the description div for the personal pages -->
-        <div id="PersonalPageDescription">
-        
-        </div>
-
-       
+<!-- makes the picture div for the personal pages -->
+<div id="PersonalPagePicture">
     
-        
-    
-</body>
+</div>
+<!-- makes the description div for the personal pages -->
+<div id="PersonalPageDescription">
 
-    <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "50vw";
-            var button = document.getElementById("menuButton");
-            button.style.display = "none";
-        }
+</div>
+<!-- makes the navigation (cant be comleted till I get the maps of the buildings) -->
 
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            appearButton();
-        }
-        closeNav(); // Close the navigation initially
-    </script>
+<div>
+<button id="GoBackButton" onclick="location.replace('search.html')">Go Back To Search Page</button>
+        <div id="Navi"></div>
+    </div>
 </body>
 </html>

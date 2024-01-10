@@ -139,4 +139,11 @@ html {
     height: 6.5%;
  }
 
- 
+ .searchBarAndContent{
+    display: flex;
+
+ }
+
+ .searchBarAndContent > div{
+  
+ }

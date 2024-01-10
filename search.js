@@ -125,7 +125,7 @@ async function displayStudentSearchData() {
 // when users click the search bar, the img of searching will change to img of go
 function startInput() {
     var btnPic = document.getElementById("searchButtonPic");
-    btnPic.src = "go.png";
+    btnPic.src = "gobutton.png";
 }
 // when users click any places except the search bar, the img of go will change to img of searching
 function leaveInput() {

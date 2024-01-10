@@ -91,7 +91,7 @@ async function displayStudentSearchData() {
                     var uRL = location.href;
                     uRL = uRL.substring(0, uRL.length - 11);
                     console.log(localStorage.getItem("itemId"));
-                    location.replace(uRL + "/personPage.html");
+                    location.replace(uRL + "personPage.html");
                 };
                 right.appendChild(goToPage);
                 //appending the stuff into the row area
@@ -102,7 +102,7 @@ async function displayStudentSearchData() {
                 content.appendChild(row);
                 content.appendChild(document.createElement("br"));
                 content.appendChild(document.createElement("br"));
-          content.appendChild(document.createElement("hr"));
+                content.appendChild(document.createElement("hr"));
 
             }
 
@@ -111,11 +111,11 @@ async function displayStudentSearchData() {
         if (!flag) {
             var row = document.createElement("h1");
             row.innerHTML = "no resource";
-            content.appendChild(document.createElement("br"));
+           
             content.appendChild(document.createElement("br"));
             content.appendChild(row);
             content.appendChild(document.createElement("br"));
-            content.appendChild(document.createElement("br"));
+           
         }
     
     else {
@@ -179,3 +179,5 @@ function displaySearchHistory() {
     }
 }
 displayStudentSearchData();
+
+

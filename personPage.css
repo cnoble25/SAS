@@ -1,7 +1,8 @@
 body{
     font-family: brandon-grotesque, sans-serif;
     font-feature-settings: "liga";
-    background-color: gray;
+    background-color: rgb(223, 216, 216); 
+    
 }
 #PersonalPagePicture{
     float: left;
@@ -23,20 +24,56 @@ img{
     position: relative;
     float: right;
     width: 50%;
-    background-color: rgb(216, 216, 216);
     background-size: 50vw;
     align-content: center;
 }
-#NaviCheckCampusButtonDiv{
-    background-color: maroon;
-}
+/*#NaviCheckCampusButtonDiv{
     
+}*/
 
-#GoBackButton{
-    color: blue
+/*This sets the css for †he navigation bar and its css after popping out*/
+.sidenav {
+    height: 100%; 
+    position: fixed; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    top: 0; 
+    left: 0;
+    background-color: rgb(223, 216, 216); 
+    overflow-x: hidden; 
+    padding-top: 10%; 
+    transition: 0.5s; 
+    
+  }
+  
+  .sidenav a {
+    padding: 5% 5% 5% 20%;
+    text-decoration: none;
+    font-size: 25px;
 
-}
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #747474;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
 
-/* .everthing{
-    floar
-} */
+.menuButtons{
+    background-color: white;
+    color:maroon;
+    border: 2px solid maroon;
+    display: inline-block
+  }
+
+.everything{
+    
+} 

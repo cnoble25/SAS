@@ -18,7 +18,7 @@ html {
     /* the width is 10% of the height */
   #searchInput {
             font-size: 150%;
-        height: 100%;
+        height: 1500%;
         width:50%;
         position: relative;
         top:0%;
@@ -28,6 +28,11 @@ html {
   #searchButtonPic{
       max-width: 5%;
   }
+  #menuButtonPic{
+    max-width: 5%;
+    height: auto;
+   
+}
   #searchButton {
         height: 100%;
         width:10%;
@@ -38,7 +43,7 @@ html {
   
   #content{
         position: relative;
-        top: 0%;
+        top: 5%;
         left: 0%;
         display: block;
   } 
@@ -46,7 +51,8 @@ html {
   .imagesForSearch{
       max-width: 100%;
       height: auto;
-      padding: 1%
+      padding: 1%;
+      border: 5px grey;
   }
   .profileright{
       font-size: 2vw;
@@ -63,6 +69,10 @@ html {
       background: #9F212C;
       border: 2px solid white;
   }
+  .profileright button :hover{
+     color: #9F212C;
+     background: white;
+  }
 
   .profileleft{
       position: relative;
@@ -78,9 +88,62 @@ html {
       color: whitesmoke;
       border: 5px solid maroon;
 
+      
   }
+  /* sets the margins  */
   .row > div{
       margin: 10px;
   }
 
+  /*This sets the css for †he navigation bar and its css after popping out*/
+.sidenav {
+    height: 100%; 
+    position: fixed; 
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    top: 0; 
+    left: 0;
+    background-color: rgb(223, 216, 216); 
+    overflow-x: hidden; 
+    padding-top: 10%; 
+    transition: 0.5s; 
+    
+  }
+  /* side bar stuff */
+  .sidenav a {
+    padding: 5% 5% 5% 20%;
+    text-decoration: none;
+    font-size: 25px;
+
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  /* side bar stuff */
+  .sidenav a:hover {
+    color: #747474;
+  }
+  /* side bar stuff */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  /* fix the navi bar to the top of the screen with this */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  /* padding to fix the cliping at the top of the screen  */
+  .sticky + .content {
+    padding-top: 102px;
+  }
+  /* styling for the navibar stuff */
+ .header{
+    background-color:#9F212C;
+    padding: 1vw;
+    height: 6.5vw;
+ }
  

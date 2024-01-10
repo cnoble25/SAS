@@ -4,6 +4,11 @@ body{
     background-color: rgb(223, 216, 216); 
     
 }
+
+.everything{
+  position: relative;
+  top:10vw;
+}
 #PersonalPagePicture{
     float: left;
     width: 50%;

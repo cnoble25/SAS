@@ -187,8 +187,8 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivCourse.appendChild(course);
   description.appendChild(descriptionDivCourse);
  // makes button for checking whether the person is on the right campus or not.
-  var menu = document.getElementById("menu");
-  menu.innerHTML = "";
+  var menu = document.getElementById("headerID");
+  
   var NaviCheckCampusButton = document.createElement("button");
   NaviCheckCampusButton.innerHTML = "CLICK HERE TO CHECK IF YOU ARE ON THE CORRECT CAMPUS FOR THIS ARTWORK";
   NaviCheckCampusButton.onclick = async function(){navigator.geolocation.getCurrentPosition(successCallback, errorCallback);};

@@ -103,11 +103,19 @@ img{
   background-color:#9F212C;
   padding: 1vw;
   height: 6.5vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: none;
 }
 
-#searchButtonPic{
-  max-width: 5%;
+.header button{
+  font-size: 2vw;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', sans-serif;
+  color: white;
+  background: #9F212C;
+  border: 2px solid white;
 }
+
 #menuButtonPic{
 max-width: 5%;
 height: auto;

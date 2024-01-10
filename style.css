@@ -63,7 +63,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     position: relative;
     z-index : 0 ;
     width : 50vw;
-    height : 56px ;
+    height : 8vw;
     text-decoration : none ;
     font-size : 2vw; 
     font-weight : bold ;
@@ -73,6 +73,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    
   }
   .button_text{
     margin-top: 5%;

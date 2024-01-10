@@ -91,7 +91,7 @@ async function displayStudentSearchData() {
                     var uRL = location.href;
                     uRL = uRL.substring(0, uRL.length - 11);
                     console.log(localStorage.getItem("itemId"));
-                    location.replace(uRL + "/personPage.html");
+                    location.replace(uRL + "personPage.html");
                 };
                 right.appendChild(goToPage);
                 //appending the stuff into the row area
@@ -102,7 +102,7 @@ async function displayStudentSearchData() {
                 content.appendChild(row);
                 content.appendChild(document.createElement("br"));
                 content.appendChild(document.createElement("br"));
-          content.appendChild(document.createElement("hr"));
+                content.appendChild(document.createElement("hr"));
 
             }
 
@@ -111,11 +111,11 @@ async function displayStudentSearchData() {
         if (!flag) {
             var row = document.createElement("h1");
             row.innerHTML = "no resource";
-            content.appendChild(document.createElement("br"));
+           
             content.appendChild(document.createElement("br"));
             content.appendChild(row);
             content.appendChild(document.createElement("br"));
-            content.appendChild(document.createElement("br"));
+           
         }
     
     else {
@@ -126,12 +126,12 @@ async function displayStudentSearchData() {
 // ��������ʱ,������������ťͼƬ
 function startInput() {
     var btnPic = document.getElementById("searchButtonPic");
-    btnPic.src = "111.png";
+    btnPic.src = "go.png";
 }
 // �����뿪�����ʱ,������������ťͼƬ
 function leaveInput() {
     var btnPic = document.getElementById("searchButtonPic");
-    btnPic.src = "wow.png";
+    btnPic.src = "search.png";
 }
 async function updateRecommendation() {
     var input = document.getElementById("searchInput").value;
@@ -177,3 +177,5 @@ function displaySearchHistory() {
     }
 }
 displayStudentSearchData();
+
+

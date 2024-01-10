@@ -91,7 +91,7 @@ async function displayStudentSearchData() {
                     var uRL = location.href;
                     uRL = uRL.substring(0, uRL.length - 11);
                     console.log(localStorage.getItem("itemId"));
-                    location.replace(uRL + "/personPage.html");
+                    location.replace(uRL + "personPage.html");
                 };
                 right.appendChild(goToPage);
                 //appending the stuff into the row area
@@ -177,3 +177,5 @@ function displaySearchHistory() {
     }
 }
 displayStudentSearchData();
+
+

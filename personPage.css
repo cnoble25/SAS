@@ -55,13 +55,6 @@ img{
   }
   
 
-.menuButtons{
-    background-color: white;
-    color:maroon;
-    border: 2px solid maroon;
-    display: inline-block
-  }
-
    /*This sets the css for †he navigation bar and its css after popping out*/
 .sidenav {
   height: 100%; 
@@ -138,6 +131,7 @@ font-family: brandon-grotesque, sans-serif;
 font-feature-settings: "liga";
   color: black;
   border: 2px solid white;
+
 
 }
 

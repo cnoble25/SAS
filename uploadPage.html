@@ -34,6 +34,7 @@
             ul.appendChild(li);
         }
     }
+    //gives a maximum amount of password tries before not allowing them to go further
     function checkSecurity(limit) {
     if (limit > 0){
     let password = prompt("please enter password", "");
@@ -44,9 +45,10 @@
     }
 }else{
     alert("you have reached the limit on number of attempts");
+    location.replace("index.html");
 }
 }
-checkSecurity(20);
+checkSecurity(10);
 </script>
 <!-- adding the button that uploading to the firebase -->
 <button onclick="importCSVToDatabase()">upload file</button>

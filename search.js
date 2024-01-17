@@ -40,6 +40,7 @@ clearHistoryButton.onclick = function () {
     listobj.innerHTML = "";
     
 }
+//the function just shows the data for the students
 async function displayStudentSearchData() {
     var input = document.getElementById("searchInput").value;
     var content = document.getElementById("content");
@@ -70,21 +71,25 @@ async function displayStudentSearchData() {
                 right.appendChild(title);
                 //creates the class part of the div
                 var classTitle = document.createElement("h3");
-                classTitle.innerHTML = "Class: ";
+                classTitle.innerHTML = "Course: ";
                 right.appendChild(classTitle);
                 var group = document.createElement("h4");
                 group.innerHTML = item.data().class;
                 right.appendChild(group);
                 //creates the year part of the div
+                var roomDiv = document.createElement("div");
+                roomDiv.setAttribute("class", "roomDiv");
                 var roomTitle = document.createElement("h3");
                 roomTitle.innerHTML = "Nearby-Room: ";
-                right.appendChild(roomTitle);
+                roomDiv.appendChild(roomTitle);
                 var rgroup = document.createElement("h4");
                 rgroup.innerHTML = item.data().room;
-                right.appendChild(rgroup);
+                roomDiv.appendChild(rgroup);
+                right.appendChild(roomDiv);
                 var goToPage = document.createElement('button');
                 goToPage.setAttribute("class", "personPageButton");
                 goToPage.innerHTML = 'click here to get more info';
+                //locale storage stuff for people's personal page
                 goToPage.onclick = function () {
                     localStorage.setItem("itemId", item.id);
                     //just makes url so that the thing goes to person page properly cause i dont knwo what the url will be called in the end
@@ -178,6 +183,7 @@ function displaySearchHistory() {
         });
     }
 }
+//run once to make sure working
 displayStudentSearchData();
 
 

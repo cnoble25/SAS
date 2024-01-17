@@ -115,8 +115,7 @@ export async function importCSVToDatabase () {
 
   //poosition can only be accessed asyncronesly so to find someones position in accordance to the buildings would be 
  
-
-  //gets the location of the person then returns the building they're in
+//converts the personal copied share link for google drive into links that work universally so that anyone can see the photos
  function makeImageUsable(imgURL){
   return "https://drive.google.com/uc?export=view&id=" + imgURL.substring(32, 65);
  }

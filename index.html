@@ -74,11 +74,17 @@
       //This function set the display of the button from none back to flex after clicking on the close button of the navigation bar
       function appearButton(){
         var button = document.getElementById("myButtons");
+        if(button != null){
         button.style.display = "flex";
+        }
       }
       //This function allow you to open the navigation bar and set the button's display to none(make it disappear)
       function openNav() {
+        if(window.innerWidth > window.innerHeight){
         document.getElementById("mySidenav").style.width = "50vw";
+        }else{
+          document.getElementById("mySidenav").style.width = "100vw";
+        }
         var button = document.getElementById("myButtons");
         button.style.display = "none";
       }

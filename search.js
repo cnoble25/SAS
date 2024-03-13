@@ -41,7 +41,7 @@ clearHistoryButton.onclick = function () {
     
 }
 //the function just shows the data for the students
-async function displayStudentSearchData() {
+export async function displayStudentSearchData() {
     var input = document.getElementById("searchInput").value;
     var content = document.getElementById("content");
 
@@ -86,11 +86,15 @@ async function displayStudentSearchData() {
                 rgroup.innerHTML = item.data().room;
                 roomDiv.appendChild(rgroup);
                 right.appendChild(roomDiv);
-                var goToPage = document.createElement('button');
+                var goToPage = document.createElement('div');
                 goToPage.setAttribute("class", "personPageButton");
-                goToPage.innerHTML = 'click here to get more info';
+
+                if (item.data().ArtistStatement){
+                var goToPageButton = document.createElement('button');
+                goToPageButton.setAttribute("id", "personPageButtonActualButton")
+                goToPageButton.innerHTML = 'click here to get more info';
                 //locale storage stuff for people's personal page
-                goToPage.onclick = function () {
+                goToPageButton.onclick = function () {
                     localStorage.setItem("itemId", item.id);
                     //just makes url so that the thing goes to person page properly cause i dont knwo what the url will be called in the end
                     var uRL = location.href;
@@ -98,6 +102,43 @@ async function displayStudentSearchData() {
                     console.log(localStorage.getItem("itemId"));
                     location.replace(uRL + "personPage.html");
                 };
+                goToPage.appendChild(goToPageButton);
+                }
+                    var locationShower = document.createElement('p');
+                    locationShower.setAttribute("class", "personPageButton");
+                    locationShower.setAttribute("id", "personPageButtonlocation");
+                    
+                    const successCallback = (position) => {
+                        var latitude =  position.coords.latitude;
+                        var longitude =  position.coords.longitude;
+                        longitude = longitude.toPrecision(5);
+                        latitude = latitude.toPrecision(5);
+                        console.log(latitude + ", " + longitude);
+                        //current campus is just to tell which campus the person is on 1 means lower school 2 means highschool
+                        var currentCampus = null;
+                        if(latitude > 38.05 && longitude < -78.518){
+                          currentCampus = "Lower School";
+                        }else if(latitude < 38.05 && longitude > -78.518){
+                          currentCampus = "Upper School";
+                        }
+                        
+                        if(currentCampus == item.data().campus){
+                            locationShower.innerHTML = "YOU ARE ON THE RIGHT CAMPUS";
+                            locationShower.style.background = "Green";
+                        }else if(currentCampus != item.data().campus){
+                            locationShower.innerHTML = "YOU ARE NOT ON THE RIGHT CAMPUS";
+                            locationShower.style.background = "Red";
+                        }else{
+                            locationShower.innerHTML = "Error";
+                            locationShower.style.background = "Orange";
+                        }
+                      };
+                      //only called when the location of a person isn't given
+                      const errorCallback = (error) => {
+                        console.log(error);
+                      };
+                      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
+                      goToPage.appendChild(locationShower);
                 right.appendChild(goToPage);
                 //appending the stuff into the row area
                 content.appendChild(document.createElement("br"));

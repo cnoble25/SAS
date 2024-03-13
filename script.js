@@ -55,7 +55,7 @@ export async function importCSVToDatabase () {
                   floor: BFCList[2],
                   room: BFCList[0],
                   picture: img,
-                  gif: cells[6],
+                  ArtistStatement: cells[6],
                 });
                 console.log("Document written with ID: ", docRef.id);
               } 
@@ -117,5 +117,5 @@ export async function importCSVToDatabase () {
  
 //converts the personal copied share link for google drive into links that work universally so that anyone can see the photos
  function makeImageUsable(imgURL){
-  return "https://drive.google.com/uc?export=view&id=" + imgURL.substring(32, 65);
+  return imgURL;
  }

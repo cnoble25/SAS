@@ -4,16 +4,48 @@ body{
     background-color: rgb(223, 216, 216); 
     
 }
+@media screen and (orientation: portrait) {
 
+  .everything{
+    display: flex;
+    flex-wrap: wrap;
+    top:10vw;
+  }
+
+  #PersonalPagePicture{
+    flex: 100%;
+    height: 100px;
+    border: 5px;
+    border-radius: 5px;
+    border-color: maroon;
+
+}
+#PersonalPagePicture img{
+  width: 100%;
+  height: auto;
+  border: 5px;
+  border-radius: 5px;
+  border-color: maroon;
+
+}
+  #PersonalPageDescription{
+    flex: 100%;
+
+    align-content: center;
+    font-family: brandon-grotesque, sans-serif;
+    font-feature-settings: "liga";
+    background-color: rgb(223, 216, 216); 
+  }
+}
 .everything{
   position: relative;
   top:10vw;
 }
+
 #PersonalPagePicture{
     float: left;
     width: 50%;
     height: auto;
-    background-color: maroon;
     border: 5px;
     border-radius: 5px;
     border-color: maroon;

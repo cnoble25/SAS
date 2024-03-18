@@ -47,7 +47,15 @@ html {
         left: 0%;
         display: block;
   } 
-
+  .classTitleDiv{
+    display: flex;
+    overflow: none;
+    
+  }
+  .roomDiv{
+    display: flex;
+    overflow: none;
+  }
   .imagesForSearch{
       max-width: 100%;
       height: auto;

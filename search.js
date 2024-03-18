@@ -85,7 +85,7 @@ export async function displayStudentSearchData() {
                 roomDiv.setAttribute("class", "roomDiv");
                 var roomTitle = document.createElement("h3");
                 roomTitle.innerHTML = "Nearby-Room: ";
-                classTitle.setAttribute("class", "roomTitle");
+                roomTitle.setAttribute("class", "roomTitle");
                 roomDiv.appendChild(roomTitle);
                 var rgroup = document.createElement("h4");
                 rgroup.innerHTML = item.data().room;

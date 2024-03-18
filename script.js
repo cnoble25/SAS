@@ -21,8 +21,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 
-
-
 //makes it so you can add csv data to a database
 export async function importCSVToDatabase () {
   const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
@@ -82,7 +80,7 @@ export async function importCSVToDatabase () {
       try{ 
         if(stuff.substring(i,i+1) == "-"){
           if(stuff.substring(0, i).toUpperCase() == "SCAS" || stuff.substring(0, i).toUpperCase() == "AS" || stuff.substring(0, i).toUpperCase() == "RH" || stuff.substring(0, i).toUpperCase() == "LLC" || stuff.substring(0, i).toUpperCase() == "GH" || stuff.substring(0, i).toUpperCase() == "LC" || stuff.substring(0, i).toUpperCase() == "LD"){
-            list.push(stuff.substring(i+1));
+            list.push(stuff.substring(0));
             list.push(stuff.substring(0,i));
             list.push(stuff.substring(i+1, i+2));
             list.push("Upper School");

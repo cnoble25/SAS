@@ -70,17 +70,22 @@ export async function displayStudentSearchData() {
                 title.setAttribute("class", "titleForArtwork");
                 right.appendChild(title);
                 //creates the class part of the div
+                var classTitleDiv = document.createElement("div");
+                classTitleDiv.setAttribute("class", "classTitleDiv");
                 var classTitle = document.createElement("h3");
-                classTitle.innerHTML = "Course: ";
-                right.appendChild(classTitle);
+                classTitle.setAttribute("class", "classTitle");
+                classTitle.innerHTML = "Course: " + String.fromCharCode(32);
+                classTitleDiv.appendChild(classTitle);
                 var group = document.createElement("h4");
                 group.innerHTML = item.data().class;
-                right.appendChild(group);
+                classTitleDiv.appendChild(group);
+                right.appendChild(classTitleDiv);
                 //creates the year part of the div
                 var roomDiv = document.createElement("div");
                 roomDiv.setAttribute("class", "roomDiv");
                 var roomTitle = document.createElement("h3");
                 roomTitle.innerHTML = "Nearby-Room: ";
+                roomTitle.setAttribute("class", "roomTitle");
                 roomDiv.appendChild(roomTitle);
                 var rgroup = document.createElement("h4");
                 rgroup.innerHTML = item.data().room;

@@ -59,7 +59,17 @@ html {
   }
 
   .profileright button{
+      text-align: center;
       font-size: 2vw;
+       font-family: brandon-grotesque, sans-serif;
+      font-feature-settings: "liga";
+      color: white;
+      background: #9F212C;
+      border: 2px solid white;
+  }
+  .profileright p {
+    text-align: center;
+    font-size: 2vw;
        font-family: brandon-grotesque, sans-serif;
       font-feature-settings: "liga";
       color: white;

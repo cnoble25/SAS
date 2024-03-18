@@ -56,15 +56,11 @@ html {
     display: flex;
     overflow: none;
   }
-  .imagesForSearch{
-      max-width: 100%;
-      height: auto;
-      padding: 1%;
-      border: 5px grey;
-  }
+
+
   .profileright{
       font-size: 2vw;
-     width: 48%;
+      width: 48%;
       background: #9F212C;
       border: 3px solid #9F212C;
       padding: 1%;
@@ -93,13 +89,20 @@ html {
      background: white;
   }
 
+  .imagesForSearch{
+    max-width: 100%;
+    height: 100%;
+    padding: 1%;
+    border: 5px grey;
+    bottom:0;
+  }
+
   .profileleft{
       position: relative;
       /* left: 0%; */
       max-width: 48%;
-      
-
   }
+
   .row{
       display: flex;
       flex-wrap:nowrap;

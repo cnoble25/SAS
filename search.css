@@ -57,6 +57,10 @@ html {
     overflow: none;
   }
 
+  .classTitle{
+    
+  }
+
 
   .profileright{
       font-size: 2vw;
@@ -101,6 +105,7 @@ html {
       position: relative;
       /* left: 0%; */
       max-width: 48%;
+      padding: 1%;
   }
 
   .row{

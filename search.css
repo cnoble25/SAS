@@ -18,19 +18,25 @@ html {
     /* the width is 10% of the height */
   #searchInput {
             font-size: 150%;
-        height: 1500%;
+        height: 50%;
         width:50%;
-        position: relative;
-        top:0%;
-        left: 0%;
+        position: absolute;
+        top: 15%;
+        left: 25%;
         
   } 
   #searchButtonPic{
       max-width: 5%;
+      position: absolute;
+      left: 77%;
+      top: 15%;
   }
   #menuButtonPic{
     max-width: 5%;
     height: auto;
+    position: absolute;
+    left: 19%;
+    top: 15%;
    
 }
   #searchButton {

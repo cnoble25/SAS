@@ -33,13 +33,13 @@ searchInput.onblur = function () {
 searchInput.onclick = function () {
     startInput();
 }
-var clearHistoryButton = document.getElementById("clearHistoryButton");
-clearHistoryButton.onclick = function () {
-    localStorage.removeItem("searchHistory");
-    var listobj = document.getElementById("searchList");
-    listobj.innerHTML = "";
+// var clearHistoryButton = document.getElementById("clearHistoryButton");
+// clearHistoryButton.onclick = function () {
+//     localStorage.removeItem("searchHistory");
+//     var listobj = document.getElementById("searchList");
+//     listobj.innerHTML = "";
     
-}
+// }
 //the function just shows the data for the students
 export async function displayStudentSearchData() {
     var input = document.getElementById("searchInput").value;

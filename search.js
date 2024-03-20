@@ -74,7 +74,7 @@ export async function displayStudentSearchData() {
                 classTitleDiv.setAttribute("class", "classTitleDiv");
                 var classTitle = document.createElement("h3");
                 classTitle.setAttribute("class", "classTitle");
-                classTitle.innerHTML = "Course: " + String.fromCharCode(32);
+                classTitle.innerHTML = "Course:" + String.fromCharCode(160);
                 classTitleDiv.appendChild(classTitle);
                 var group = document.createElement("h4");
                 group.innerHTML = item.data().class.substring(0,1).toLocaleUpperCase() + item.data().class.substring(1);
@@ -84,7 +84,7 @@ export async function displayStudentSearchData() {
                 var roomDiv = document.createElement("div");
                 roomDiv.setAttribute("class", "roomDiv");
                 var roomTitle = document.createElement("h3");
-                roomTitle.innerHTML = "Nearby-Room: ";
+                roomTitle.innerHTML = "Nearby-Room:" + String.fromCharCode(160);
                 roomTitle.setAttribute("class", "roomTitle");
                 roomDiv.appendChild(roomTitle);
                 var rgroup = document.createElement("h4");

@@ -19,7 +19,7 @@ html {
   #searchInput {
             font-size: 3vw;
         height: 50%;
-        width:45%;
+        width:50%;
         position: absolute;
         top: 15%;
         left: 25%;
@@ -28,7 +28,7 @@ html {
   #searchButtonPic{
       max-width: 5%;
       position: absolute;
-      left: 77%;
+      left: 77.5%;
       top: 15%;
   }
   #menuButtonPic{

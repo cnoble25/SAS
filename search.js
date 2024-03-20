@@ -66,7 +66,7 @@ export async function displayStudentSearchData() {
                 right.setAttribute("class", "profileright");
                 //make title for each person's artwork (is just their name)
                 var title = document.createElement("h1");
-                title.innerHTML = item.data().name;
+                title.innerHTML = item.data().name.substring(0,1).toLocaleUpperCase() + item.data().name.substring(1);
                 title.setAttribute("class", "titleForArtwork");
                 right.appendChild(title);
                 //creates the class part of the div
@@ -77,7 +77,7 @@ export async function displayStudentSearchData() {
                 classTitle.innerHTML = "Course: " + String.fromCharCode(32);
                 classTitleDiv.appendChild(classTitle);
                 var group = document.createElement("h4");
-                group.innerHTML = item.data().class;
+                group.innerHTML = item.data().class.substring(0,1).toLocaleUpperCase() + item.data().class.substring(1);
                 classTitleDiv.appendChild(group);
                 right.appendChild(classTitleDiv);
                 //creates the year part of the div

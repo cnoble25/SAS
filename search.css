@@ -17,9 +17,9 @@ html {
     
     /* the width is 10% of the height */
   #searchInput {
-            font-size: 100%;
+            font-size: 3vw;
         height: 50%;
-        width:50%;
+        width:45%;
         position: absolute;
         top: 15%;
         left: 25%;

@@ -91,6 +91,9 @@ export async function displayStudentSearchData() {
                 rgroup.innerHTML = item.data().room;
                 roomDiv.appendChild(rgroup);
                 right.appendChild(roomDiv);
+                //this is the go to page thing for the artiststatment page
+                //has conditional because only some people have artist
+                //statements
                 var goToPage = document.createElement('div');
                 goToPage.setAttribute("class", "personPageButton");
 
@@ -109,10 +112,12 @@ export async function displayStudentSearchData() {
                 };
                 goToPage.appendChild(goToPageButton);
                 }
+                //location shower to see which paintings are on the campus
+                //you are on
                     var locationShower = document.createElement('p');
                     locationShower.setAttribute("class", "personPageButton");
                     locationShower.setAttribute("id", "personPageButtonlocation");
-                    
+                
                     const successCallback = (position) => {
                         var latitude =  position.coords.latitude;
                         var longitude =  position.coords.longitude;

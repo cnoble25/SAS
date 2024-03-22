@@ -25,6 +25,7 @@ html {
         left: 25%;
         
   } 
+  /* make absolute so that it is always centered */
   #searchButtonPic{
       max-width: 5%;
       position: absolute;

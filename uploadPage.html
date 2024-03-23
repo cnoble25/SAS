@@ -22,6 +22,31 @@
 <ul id="fileList"></ul>
 <!-- showing the files name using texts -->
 <script>
+    
+    function hash(string) {
+        const utf8 = new TextEncoder().encode(string);
+        return crypto.subtle.digest('SHA-256', utf8).then((hashBuffer) => {
+        const hashArray = Array.from(new Uint8Array(hashBuffer));
+        const hashHex = hashArray
+            .map((bytes) => bytes.toString(16).padStart(2, '0'))
+            .join('');
+        return hashHex;
+        });
+       
+    }
+
+    async function thing(){
+        password = prompt("enter password", "")
+        hash(password).then((hex) => {if(hex == "03675ac53ff9cd1535ccc7dfcdfa2c458c5218371f418dc136f2d19ac1fbe8a5"){
+
+        }else{
+            thing();
+        }
+    });
+    }
+
+   
+
     function createFileNameList() {
         var input = document.getElementById("URL");
         var ul = document.getElementById("fileList");
@@ -35,7 +60,7 @@
         }
     }
     //gives a maximum amount of password tries before not allowing them to go further
-    function checkSecurity(limit) {
+    async function checkSecurity(limit) {
     if (limit > 0){
     let password = prompt("please enter password", "");
     if (password != "1111"){
@@ -43,12 +68,14 @@
     }else{
 
     }
+
 }else{
     alert("you have reached the limit on number of attempts");
     location.replace("index.html");
 }
 }
-checkSecurity(10);
+thing();
+// checkSecurity(10);
 </script>
 <!-- adding the button that uploading to the firebase -->
 <button onclick="importCSVToDatabase()">upload file</button>

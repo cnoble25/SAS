@@ -13,6 +13,7 @@ const firebaseConfig = {
     appId: "1:448958994593:web:aa904aab9761338e2e78e0",
     measurementId: "G-860F68ZWPM"
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -33,6 +34,7 @@ searchInput.onblur = function () {
 searchInput.onclick = function () {
     startInput();
 }
+
 // var clearHistoryButton = document.getElementById("clearHistoryButton");
 // clearHistoryButton.onclick = function () {
 //     localStorage.removeItem("searchHistory");
@@ -236,5 +238,16 @@ function displaySearchHistory() {
 }
 //run once to make sure working
 displayStudentSearchData();
+function hash(string) {
+    const utf8 = new TextEncoder().encode(string);
+    return crypto.subtle.digest('SHA-256', utf8).then((hashBuffer) => {
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      const hashHex = hashArray
+        .map((bytes) => bytes.toString(16).padStart(2, '0'))
+        .join('');
+      return hashHex;
+    });
+  }
 
+    hash("Hello, World").then((hex) => console.log(hex));
 

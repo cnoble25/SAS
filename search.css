@@ -40,6 +40,15 @@ html {
     top: 15%;
    
 }
+ #logoPic{
+  max-width: 5%;
+  height: auto;
+  position: absolute;
+  left: 2%;
+  top: 15%;
+  border-radius: 50%;
+  border: white;
+ }
   #searchButton {
         height: 100%;
         width:10%;

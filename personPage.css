@@ -157,6 +157,15 @@ max-width: 5%;
 height: auto;
 
 }
+#logoPic{
+  max-width: 5%;
+  height: auto;
+  position: absolute;
+  left: 15%;
+  top: 10%;
+  border-radius: 50%;
+  border: white;
+ }
 #GoBackButton{
 font-size: 2vw;
 font-family: brandon-grotesque, sans-serif;

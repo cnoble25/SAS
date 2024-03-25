@@ -249,5 +249,5 @@ function hash(string) {
     });
   }
 
-    hash("Hello, World").then((hex) => console.log(hex));
+hash("stabls").then((hex) => console.log(hex));
 

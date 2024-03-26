@@ -102,7 +102,7 @@ html {
       font-feature-settings: "liga";
       color: white;
       background: #9F212C;
-      border: 2px solid white;
+      border: 0.5vw solid white;
   }
   .profileright button :hover{
      color: #9F212C;
@@ -129,7 +129,7 @@ html {
       flex-wrap:nowrap;
       overflow: none;
       color: whitesmoke;
-      border: 5px solid grey;
+      border:  1vw solid grey;
 
       
   }

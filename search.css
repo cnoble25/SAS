@@ -186,7 +186,7 @@ html {
   }
   /* styling for the navibar stuff */
  .header{
-    background-color:#9F212C;
+   background-color:rgba(254, 165, 0, 1);
     padding: 1vw;
     height: 6.5vw;
  }

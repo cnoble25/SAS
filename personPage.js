@@ -81,7 +81,7 @@ export async function DisplayPersonalPageInfo(){
   var descriptionDivName = document.createElement("div");
   descriptionDivName.setAttribute("id", "descriptionDivName");
   var nameTitle = document.createElement("h4");
-  nameTitle.innerHTML = "Name: ";
+  nameTitle.innerHTML = "Name:" + String.fromCharCode(160);
   var name = document.createElement("h5");
   name.innerHTML = item.data().name;
   descriptionDivName.appendChild(nameTitle);
@@ -91,7 +91,7 @@ export async function DisplayPersonalPageInfo(){
   var descriptionDivYear = document.createElement("div");
   descriptionDivYear.id = "descriptionDivYear";
   var yearTitle = document.createElement("h4");
-  yearTitle.innerHTML = "Year: ";
+  yearTitle.innerHTML = "Year:" + String.fromCharCode(160);
   var year = document.createElement("h5");
   year.innerHTML = item.data().year;
   descriptionDivYear.appendChild(yearTitle);
@@ -101,7 +101,7 @@ export async function DisplayPersonalPageInfo(){
   var descriptionDivBuilding = document.createElement("div");
   descriptionDivBuilding.id = "descriptionDivBuilding";
   var buildingTitle = document.createElement("h4");
-  buildingTitle.innerHTML = "Building: ";
+  buildingTitle.innerHTML = "Building:" + String.fromCharCode(160);
   var building = document.createElement("h5");
  var buildingFullName = ''
 //  switch(item.data().building.toLowerCase()){
@@ -146,7 +146,7 @@ export async function DisplayPersonalPageInfo(){
   var descriptionDivCampus = document.createElement("div");
   descriptionDivCampus.id = "descriptionDivCampus";
   var campusTitle = document.createElement("h4");
-  campusTitle.innerHTML = "Campus: ";
+  campusTitle.innerHTML = "Campus:" + String.fromCharCode(160);
   var campus = document.createElement("h5");
   campus.innerHTML = item.data().campus;
   descriptionDivCampus.appendChild(campusTitle);
@@ -156,10 +156,10 @@ export async function DisplayPersonalPageInfo(){
   var descriptionDivRoom = document.createElement("div");
   descriptionDivRoom.id = "descriptionDivRoom";
   var roomTitle = document.createElement("h4");
-  roomTitle.innerHTML = "Nearest Room: ";
+  roomTitle.innerHTML = "Nearest Room:" + String.fromCharCode(160);
   var room = document.createElement("h5");
   // if(item.data().room.length > 1){
-  room.innerHTML = item.data().building + "-" + item.data().room;
+  room.innerHTML = item.data().room;
   // }else if(item.data().room.length == 1){
     // room.innerHTML = realLocation
   // }
@@ -170,7 +170,7 @@ export async function DisplayPersonalPageInfo(){
   var descriptionDivMedium = document.createElement("div");
   descriptionDivMedium.id = "descriptionDivMedium";
   var mediumTitle = document.createElement("h4");
-  mediumTitle.innerHTML = "Medium: ";
+  mediumTitle.innerHTML = "Medium:" + String.fromCharCode(160);
   var medium = document.createElement("h5");
   medium.innerHTML = item.data().medium;
   descriptionDivMedium.appendChild(mediumTitle);
@@ -180,7 +180,7 @@ export async function DisplayPersonalPageInfo(){
   var descriptionDivCourse = document.createElement("div");
   descriptionDivCourse.id = "descriptionDivCourse";
   var courseTitle = document.createElement("h4");
-  courseTitle.innerHTML = "Class: ";
+  courseTitle.innerHTML = "Class:" + String.fromCharCode(160);
   var course = document.createElement("h5");
   course.innerHTML = item.data().class;
   descriptionDivCourse.appendChild(courseTitle);
@@ -190,7 +190,7 @@ export async function DisplayPersonalPageInfo(){
   var menu = document.getElementById("headerID");
   
   var NaviCheckCampusButton = document.createElement("button");
-  NaviCheckCampusButton.innerHTML = "CLICK HERE TO CHECK IF YOU ARE ON THE CORRECT CAMPUS FOR THIS ARTWORK";
+  NaviCheckCampusButton.innerHTML = "Check Campus";
   NaviCheckCampusButton.onclick = async function(){navigator.geolocation.getCurrentPosition(successCallback, errorCallback);};
   menu.appendChild(NaviCheckCampusButton);
 

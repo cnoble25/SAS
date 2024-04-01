@@ -2,6 +2,7 @@ body{
     font-family: brandon-grotesque, sans-serif;
     font-feature-settings: "liga";
     background-color: rgba(216, 215, 217, 1);
+    margin:0%;
     
 }
 @media screen and (orientation: portrait) {
@@ -178,8 +179,8 @@ margin: 2vw;
   max-width: 5%;
   height: auto;
   position: absolute;
-  left: 15%;
-  top: 10%;
+  left: 2.5%;
+  top: 25%;
   border-radius: 50%;
   border: white;
  }

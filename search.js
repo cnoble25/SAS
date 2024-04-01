@@ -13,6 +13,7 @@ const firebaseConfig = {
     appId: "1:448958994593:web:aa904aab9761338e2e78e0",
     measurementId: "G-860F68ZWPM"
 };
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
@@ -33,6 +34,7 @@ searchInput.onblur = function () {
 searchInput.onclick = function () {
     startInput();
 }
+
 // var clearHistoryButton = document.getElementById("clearHistoryButton");
 // clearHistoryButton.onclick = function () {
 //     localStorage.removeItem("searchHistory");
@@ -66,7 +68,7 @@ export async function displayStudentSearchData() {
                 right.setAttribute("class", "profileright");
                 //make title for each person's artwork (is just their name)
                 var title = document.createElement("h1");
-                title.innerHTML = item.data().name;
+                title.innerHTML = item.data().name.substring(0,1).toLocaleUpperCase() + item.data().name.substring(1);
                 title.setAttribute("class", "titleForArtwork");
                 right.appendChild(title);
                 //creates the class part of the div
@@ -74,23 +76,26 @@ export async function displayStudentSearchData() {
                 classTitleDiv.setAttribute("class", "classTitleDiv");
                 var classTitle = document.createElement("h3");
                 classTitle.setAttribute("class", "classTitle");
-                classTitle.innerHTML = "Course: " + String.fromCharCode(32);
+                classTitle.innerHTML = "Course:" + String.fromCharCode(160);
                 classTitleDiv.appendChild(classTitle);
                 var group = document.createElement("h4");
-                group.innerHTML = item.data().class;
+                group.innerHTML = item.data().class.substring(0,1).toLocaleUpperCase() + item.data().class.substring(1);
                 classTitleDiv.appendChild(group);
                 right.appendChild(classTitleDiv);
                 //creates the year part of the div
                 var roomDiv = document.createElement("div");
                 roomDiv.setAttribute("class", "roomDiv");
                 var roomTitle = document.createElement("h3");
-                roomTitle.innerHTML = "Nearby-Room: ";
+                roomTitle.innerHTML = "Nearby-Room:" + String.fromCharCode(160);
                 roomTitle.setAttribute("class", "roomTitle");
                 roomDiv.appendChild(roomTitle);
                 var rgroup = document.createElement("h4");
                 rgroup.innerHTML = item.data().room;
                 roomDiv.appendChild(rgroup);
                 right.appendChild(roomDiv);
+                //this is the go to page thing for the artiststatment page
+                //has conditional because only some people have artist
+                //statements
                 var goToPage = document.createElement('div');
                 goToPage.setAttribute("class", "personPageButton");
 
@@ -109,10 +114,12 @@ export async function displayStudentSearchData() {
                 };
                 goToPage.appendChild(goToPageButton);
                 }
+                //location shower to see which paintings are on the campus
+                //you are on
                     var locationShower = document.createElement('p');
                     locationShower.setAttribute("class", "personPageButton");
                     locationShower.setAttribute("id", "personPageButtonlocation");
-                    
+                
                     const successCallback = (position) => {
                         var latitude =  position.coords.latitude;
                         var longitude =  position.coords.longitude;
@@ -231,5 +238,3 @@ function displaySearchHistory() {
 }
 //run once to make sure working
 displayStudentSearchData();
-
-

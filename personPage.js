@@ -26,14 +26,13 @@ export async function DisplayPersonalPageInfo(){
   var description = document.getElementById("PersonalPageDescription");
   var Navi = document.getElementById("PersonalPageNavi");
   var itemId = localStorage.getItem("itemId");
-  var  item = await doc(db, "Student Art Pieces", itemId);
+  var  item;
   //needed to set the variable because doc does not get the doc as an item that you can find the data of for some god damn reason
   studentPieces.forEach((items) => {
     if(items.id == itemId){
       item = items;
     }
   })
-  console.log(item);
   Picture.innerHTML = "";
   description.innerHTML = "";
   //happens when you do get geo location position and tells you if you are on the right campus

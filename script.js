@@ -79,7 +79,7 @@ export async function importCSVToDatabase () {
     for(var i = 0; i<stuff.length; i++ ){
       try{ 
         if(stuff.substring(i,i+1) == "-"){
-          if(stuff.substring(0, i).toUpperCase() == "SCAS" || stuff.substring(0, i).toUpperCase() == "AS" || stuff.substring(0, i).toUpperCase() == "RH" || stuff.substring(0, i).toUpperCase() == "LLC" || stuff.substring(0, i).toUpperCase() == "GH" || stuff.substring(0, i).toUpperCase() == "LC" || stuff.substring(0, i).toUpperCase() == "LD"){
+          if(stuff.substring(0, i).toUpperCase() == "SCAS" || stuff.substring(0, i).toUpperCase() == "AS" || stuff.substring(0, i).toUpperCase() == "RH" || stuff.substring(0, i).toUpperCase() == "LLC" || stuff.substring(0, i).toUpperCase() == "GH" || stuff.substring(0, i).toUpperCase() == "LC" || stuff.substring(0, i).toUpperCase() == "LD" || stuff.substring(0, i).toUpperCase() == "GR"){
             list.push(stuff.substring(0));
             list.push(stuff.substring(0,i));
             list.push(stuff.substring(i+1, i+2));

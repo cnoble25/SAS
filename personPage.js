@@ -179,7 +179,7 @@ export async function DisplayPersonalPageInfo(){
   var descriptionDivCourse = document.createElement("div");
   descriptionDivCourse.id = "descriptionDivCourse";
   var courseTitle = document.createElement("h4");
-  courseTitle.innerHTML = "Class:" + String.fromCharCode(160);
+  courseTitle.innerHTML = "Course:" + String.fromCharCode(160);
   var course = document.createElement("h5");
   course.innerHTML = item.data().class;
   descriptionDivCourse.appendChild(courseTitle);

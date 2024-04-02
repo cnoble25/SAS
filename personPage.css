@@ -10,7 +10,8 @@ body{
   .everything{
     display: flex;
     flex-wrap: wrap;
-    top:10vw;
+    position: relative;
+    top: 7vh;
     flex-direction: column;
     font-size: 1.5vh;
   }

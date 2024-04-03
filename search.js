@@ -60,7 +60,11 @@ export async function displayStudentSearchData() {
                 var left = document.createElement("div");
                 left.setAttribute("class", "profileleft");
                 var image = document.createElement("img")
-                image.setAttribute("src", item.data().picture);
+                if(item.data().picture == ""){
+                    image.setAttribute("src", "imgnotfound.jpg");
+                }else{
+                    image.setAttribute("src", item.data().picture);
+                }
                 image.setAttribute("class", "imagesForSearch");
                 left.appendChild(image);
                 // makes div for info for each artwork

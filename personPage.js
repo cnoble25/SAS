@@ -165,16 +165,6 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivYear.appendChild(roomTitle);
   descriptionDivYear.appendChild(room);
   description.appendChild(descriptionDivRoom);
-  //makes info div for what medium the art is in
-  var descriptionDivMedium = document.createElement("div");
-  descriptionDivMedium.id = "descriptionDivMedium";
-  var mediumTitle = document.createElement("h4");
-  mediumTitle.innerHTML = "Medium:" + String.fromCharCode(160);
-  var medium = document.createElement("h5");
-  medium.innerHTML = item.data().medium;
-  descriptionDivMedium.appendChild(mediumTitle);
-  descriptionDivMedium.appendChild(medium);
-  description.appendChild(descriptionDivMedium);
  // makes info div for what course the artwork was made in
   var descriptionDivCourse = document.createElement("div");
   descriptionDivCourse.id = "descriptionDivCourse";

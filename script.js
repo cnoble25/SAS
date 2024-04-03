@@ -40,23 +40,22 @@ export async function importCSVToDatabase () {
             for (var i = 0; i < rows.length; i++) {
               var cells = rows[i].split(",");
              BFCList = getBFC(cells[4]);
-             img = makeImageUsable(cells[5]);
-
               try {
+                if(cells[5].toUpperCase() == "Y"){
                 const docRef = addDoc(collection(db, "Student Art Pieces"), {
-                  name: cells[0],
-                  year: cells[1],
-                  class: cells[2],
-                  medium: cells[3],
-                  campus: BFCList[3],
-                  building: BFCList[1],
-                  floor: BFCList[2],
-                  room: BFCList[0],
-                  picture: img,
-                  ArtistStatement: cells[6],
+                  name: cells[2] + " " + cells[1].substring(0,1),
+                  year: cells[3],
+                  class: cells[4],
+                  campus: cells[6],
+                  building: cells[7],
+                  floor: cells[8],
+                  room: cells[9],
+                  picture: cells[11],
+                  ArtistStatement: cells[10],
                 });
                 console.log("Document written with ID: ", docRef.id);
               } 
+            }
               catch (e) {
                 console.error("Error adding student to database: ", e);
               }

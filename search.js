@@ -111,7 +111,7 @@ export async function displayStudentSearchData() {
                     localStorage.setItem("itemId", item.id);
                     //just makes url so that the thing goes to person page properly cause i dont knwo what the url will be called in the end
                     var uRL = location.href;
-                    uRL = uRL.substring(0, uRL.length - 11);
+                    uRL = uRL.substring(0, uRL.length - 6);
                     console.log(localStorage.getItem("itemId"));
                     location.replace(uRL + "personPage.html");
                 };

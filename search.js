@@ -197,7 +197,7 @@ function leaveInput() {
 async function updateRecommendation() {
     var input = document.getElementById("searchInput").value;
     if (input.length > 0) {
-        const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
+        const studentPieces = await getDocs(collection(db, "student-art-show"));
         var listobj = document.getElementById("searchList");
         listobj.innerHTML = "";
         if (input.length > 0) {

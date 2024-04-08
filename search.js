@@ -5,14 +5,13 @@ import { getFirestore, collection, getDocs, } from "https://www.gstatic.com/fire
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBvCDMq7-FjtGDB8-GbftTbo6uJhkG9rXU",
-    authDomain: "student-art-show.firebaseapp.com",
-    projectId: "student-art-show",
-    storageBucket: "student-art-show.appspot.com",
-    messagingSenderId: "448958994593",
-    appId: "1:448958994593:web:aa904aab9761338e2e78e0",
-    measurementId: "G-860F68ZWPM"
-};
+    apiKey: "AIzaSyDDuxw8usHrNnpBSFVG7QL4VQ0Iqwj3W2g",
+    authDomain: "softwareengineering-e29f1.firebaseapp.com",
+    projectId: "softwareengineering-e29f1",
+    storageBucket: "softwareengineering-e29f1.appspot.com",
+    messagingSenderId: "232142952313",
+    appId: "1:232142952313:web:dff5ac81bad1bce13c81a8"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -49,7 +48,7 @@ export async function displayStudentSearchData() {
 
     content.innerHTML = "";
 
-        const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
+        const studentPieces = await getDocs(collection(db, "student-art-show"));
         var flag = false;
         studentPieces.forEach(item => {
             if (item.data().name.toLocaleUpperCase().includes(input.toUpperCase())) {

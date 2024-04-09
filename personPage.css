@@ -155,46 +155,42 @@ img{
 .header{
   background-color:rgba(254, 165, 0, 1);
   padding: 1vw;
-  height: 7.5vw;
+  height: 5vh;
   display: flex; 
   justify-content: center; 
   align-items: center;
 }
 
 .header button{
-  font-size: 2vw;
+  font-size: 1.25vh;
   font-family: brandon-grotesque, sans-serif;
 font-feature-settings: "liga";
   color: white;
   background: rgb(233, 157, 173);
   border: 2px solid rgba(34, 38, 77, 1);
   margin: 2vw;
+  position: absolute;
+  top: 0.5vh
   
 }
 
 
 #menuButtonPic{
-max-width: 20%;
-height: auto;
-margin: 2vw;
-
-}
-#logoPic{
-  max-width: 5%;
+  width: 5vh;
   height: auto;
   position: absolute;
-  left: 2.5%;
-  top: 25%;
-  border-radius: 50%;
-  border: white;
- }
+  left: 12vw;
+  top: 0.5vh;  
+}
+
 #GoBackButton{
-font-size: 2vw;
+font-size: 1.25vh;
 font-family: brandon-grotesque, sans-serif;
 font-feature-settings: "liga";
   color: white;
 
   border: 2px solid rgba(34, 38, 77, 1);
+  top: 3vh;
 
 
 }

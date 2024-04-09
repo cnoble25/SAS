@@ -28,6 +28,11 @@ searchInput.oninput = function () {
     updateRecommendation();
 }
 
+searchInput.addEventListener("keypress", function(event){
+if(event.key == "Enter"){
+   displayStudentSearchData();
+}
+});
 
 // var clearHistoryButton = document.getElementById("clearHistoryButton");
 // clearHistoryButton.onclick = function () {

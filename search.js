@@ -32,6 +32,9 @@ searchInput.addEventListener("keypress", function(event){
 if(event.key == "Enter"){
    displayStudentSearchData();
 }
+if (event.keyCode === 13) {
+    displayStudentSearchData();
+}
 });
 
 // var clearHistoryButton = document.getElementById("clearHistoryButton");

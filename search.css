@@ -17,35 +17,37 @@ html {
     
     /* the width is 10% of the height */
   #searchInput {
-            font-size: 3vw;
-        height: 50%;
-        width:50%;
+        font-size: 1.5vh;
+        height: 5vh;
+        width: 30vw;
         position: absolute;
-        top: 15%;
-        left: 25%;
+        top: 2vh;
+        left: 35vw;
+        
         
   } 
   /* make absolute so that it is always centered */
   #searchButtonPic{
-      max-width: 5%;
+      max-width: 5vh;
+      max-height: 5vh;
       position: absolute;
-      left: 77.5%;
-      top: 15%;
+      left: 77.5vw;
+      top: 2vh;
   }
   #menuButtonPic{
-    max-width: 5%;
+    max-width: 5vh;
     height: auto;
     position: absolute;
-    left: 19%;
-    top: 15%;
+    left: 19vw;
+    top: 2vh;
    
 }
  #logoPic{
-  max-width: 5%;
+  max-width: 5vh;
   height: auto;
   position: absolute;
-  left: 2%;
-  top: 15%;
+  left: 2vw;
+  top: 2vh;
   border-radius: 50%;
   border: white;
  }
@@ -59,7 +61,7 @@ html {
   
   #content{
         position: relative;
-        top: 8vw;
+        top: 7vh;
         left: 0%;
         display: block;
   } 
@@ -81,8 +83,8 @@ html {
   .profileright{
       font-size: 2vw;
       width: 48%;
-      background: #9F212C;
-      border: 3px solid #9F212C;
+      background:  gray;
+      border: 3px solid gray;
       padding: 1%;
   }
 
@@ -156,7 +158,7 @@ html {
   .sidenav a {
     padding: 5% 5% 5% 20%;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 2vh;
 
     color: black;
     display: block;
@@ -171,7 +173,7 @@ html {
     position: absolute;
     top: 0;
     right: 25px;
-    font-size: 36px;
+    font-size: 3.2vh;
     margin-left: 50px;
   }
   /* fix the navi bar to the top of the screen with this */
@@ -186,8 +188,8 @@ html {
   }
   /* styling for the navibar stuff */
  .header{
-    background-color:#9F212C;
-    padding: 1vw;
-    height: 6.5vw;
+   background-color:rgba(254, 165, 0, 1);
+    padding: 1vh;
+    height: 6.5vh;
  }
  

@@ -1,18 +1,17 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 // TODO: import libraries for Cloud Firestore Database
 // https://firebase.google.com/docs/firestore
-import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-    apiKey: "AIzaSyBvCDMq7-FjtGDB8-GbftTbo6uJhkG9rXU",
-    authDomain: "student-art-show.firebaseapp.com",
-    projectId: "student-art-show",
-    storageBucket: "student-art-show.appspot.com",
-    messagingSenderId: "448958994593",
-    appId: "1:448958994593:web:aa904aab9761338e2e78e0",
-    measurementId: "G-860F68ZWPM"
-};
+    apiKey: "AIzaSyDDuxw8usHrNnpBSFVG7QL4VQ0Iqwj3W2g",
+    authDomain: "softwareengineering-e29f1.firebaseapp.com",
+    projectId: "softwareengineering-e29f1",
+    storageBucket: "softwareengineering-e29f1.appspot.com",
+    messagingSenderId: "232142952313",
+    appId: "1:232142952313:web:dff5ac81bad1bce13c81a8"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -49,7 +48,7 @@ export async function displayStudentSearchData() {
 
     content.innerHTML = "";
 
-        const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
+        const studentPieces = await getDocs(collection(db, "student-art-show"));
         var flag = false;
         studentPieces.forEach(item => {
             if (item.data().name.toLocaleUpperCase().includes(input.toUpperCase())) {
@@ -60,7 +59,11 @@ export async function displayStudentSearchData() {
                 var left = document.createElement("div");
                 left.setAttribute("class", "profileleft");
                 var image = document.createElement("img")
-                image.setAttribute("src", item.data().picture);
+                if(item.data().picture == ""){
+                    image.setAttribute("src", "imgnotfound.jpg");
+                }else{
+                    image.setAttribute("src", item.data().picture);
+                }
                 image.setAttribute("class", "imagesForSearch");
                 left.appendChild(image);
                 // makes div for info for each artwork
@@ -108,7 +111,7 @@ export async function displayStudentSearchData() {
                     localStorage.setItem("itemId", item.id);
                     //just makes url so that the thing goes to person page properly cause i dont knwo what the url will be called in the end
                     var uRL = location.href;
-                    uRL = uRL.substring(0, uRL.length - 11);
+                    uRL = uRL.substring(0, uRL.length - 6);
                     console.log(localStorage.getItem("itemId"));
                     location.replace(uRL + "personPage.html");
                 };
@@ -194,7 +197,7 @@ function leaveInput() {
 async function updateRecommendation() {
     var input = document.getElementById("searchInput").value;
     if (input.length > 0) {
-        const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
+        const studentPieces = await getDocs(collection(db, "student-art-show"));
         var listobj = document.getElementById("searchList");
         listobj.innerHTML = "";
         if (input.length > 0) {

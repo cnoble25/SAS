@@ -5,13 +5,12 @@ import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, }
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyBvCDMq7-FjtGDB8-GbftTbo6uJhkG9rXU",
-  authDomain: "student-art-show.firebaseapp.com",
-  projectId: "student-art-show",
-  storageBucket: "student-art-show.appspot.com",
-  messagingSenderId: "448958994593",
-  appId: "1:448958994593:web:aa904aab9761338e2e78e0",
-  measurementId: "G-860F68ZWPM"
+  apiKey: "AIzaSyDDuxw8usHrNnpBSFVG7QL4VQ0Iqwj3W2g",
+  authDomain: "softwareengineering-e29f1.firebaseapp.com",
+  projectId: "softwareengineering-e29f1",
+  storageBucket: "softwareengineering-e29f1.appspot.com",
+  messagingSenderId: "232142952313",
+  appId: "1:232142952313:web:dff5ac81bad1bce13c81a8"
 };
 
 
@@ -21,19 +20,18 @@ const db = getFirestore(app);
 
 //displays the information of an artwork for and individual page
 export async function DisplayPersonalPageInfo(){
-  const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
+  const studentPieces = await getDocs(collection(db, "student-art-show"));
   var Picture = document.getElementById("PersonalPagePicture");
   var description = document.getElementById("PersonalPageDescription");
   var Navi = document.getElementById("PersonalPageNavi");
   var itemId = localStorage.getItem("itemId");
-  var  item = await doc(db, "Student Art Pieces", itemId);
+  var  item;
   //needed to set the variable because doc does not get the doc as an item that you can find the data of for some god damn reason
   studentPieces.forEach((items) => {
     if(items.id == itemId){
       item = items;
     }
   })
-  console.log(item);
   Picture.innerHTML = "";
   description.innerHTML = "";
   //happens when you do get geo location position and tells you if you are on the right campus
@@ -166,21 +164,11 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivYear.appendChild(roomTitle);
   descriptionDivYear.appendChild(room);
   description.appendChild(descriptionDivRoom);
-  //makes info div for what medium the art is in
-  var descriptionDivMedium = document.createElement("div");
-  descriptionDivMedium.id = "descriptionDivMedium";
-  var mediumTitle = document.createElement("h4");
-  mediumTitle.innerHTML = "Medium:" + String.fromCharCode(160);
-  var medium = document.createElement("h5");
-  medium.innerHTML = item.data().medium;
-  descriptionDivMedium.appendChild(mediumTitle);
-  descriptionDivMedium.appendChild(medium);
-  description.appendChild(descriptionDivMedium);
  // makes info div for what course the artwork was made in
   var descriptionDivCourse = document.createElement("div");
   descriptionDivCourse.id = "descriptionDivCourse";
   var courseTitle = document.createElement("h4");
-  courseTitle.innerHTML = "Class:" + String.fromCharCode(160);
+  courseTitle.innerHTML = "Course:" + String.fromCharCode(160);
   var course = document.createElement("h5");
   course.innerHTML = item.data().class;
   descriptionDivCourse.appendChild(courseTitle);

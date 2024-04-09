@@ -7,13 +7,12 @@ import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc} f
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBvCDMq7-FjtGDB8-GbftTbo6uJhkG9rXU",
-  authDomain: "student-art-show.firebaseapp.com",
-  projectId: "student-art-show",
-  storageBucket: "student-art-show.appspot.com",
-  messagingSenderId: "448958994593",
-  appId: "1:448958994593:web:aa904aab9761338e2e78e0",
-  measurementId: "G-860F68ZWPM"
+  apiKey: "AIzaSyDDuxw8usHrNnpBSFVG7QL4VQ0Iqwj3W2g",
+  authDomain: "softwareengineering-e29f1.firebaseapp.com",
+  projectId: "softwareengineering-e29f1",
+  storageBucket: "softwareengineering-e29f1.appspot.com",
+  messagingSenderId: "232142952313",
+  appId: "1:232142952313:web:dff5ac81bad1bce13c81a8"
 };
 
 // Initialize Firebase
@@ -23,9 +22,9 @@ const db = getFirestore(app);
 
 //makes it so you can add csv data to a database
 export async function importCSVToDatabase () {
-  const studentPieces = await getDocs(collection(db, "Student Art Pieces"));
+  const studentPieces = await getDocs(collection(db, "student-art-show"));
     studentPieces.forEach((piece) =>{
-      deleteDoc(doc(db, "Student Art Pieces", piece.id));
+      deleteDoc(doc(db, "student-art-show", piece.id));
     } );
     // try{
      var file = document.getElementById("URL").files[0];
@@ -42,7 +41,7 @@ export async function importCSVToDatabase () {
              BFCList = getBFC(cells[4]);
               try {
                 if(cells[5].toUpperCase() == "Y"){
-                const docRef = addDoc(collection(db, "Student Art Pieces"), {
+                const docRef = addDoc(collection(db, "student-art-show"), {
                   name: cells[2] + " " + cells[1].substring(0,1),
                   year: cells[3],
                   class: cells[4],
@@ -65,7 +64,6 @@ export async function importCSVToDatabase () {
           reader.readAsText(file);
           file.innerHTML = null;
   
-    document.getElementsByTagName("body").style.cursor = "auto";
         }else{
           console.log(file.innerHTML);
           alert("file not uploaded for safety")
@@ -97,8 +95,6 @@ export async function importCSVToDatabase () {
     }
     return list;
   }
-  var latitude;
-  var longitude;
  // made tp get which campus a painting is on when asked through the firebase doesn't need to be asyncronys because it will work only in async functions in the first place so its redudant
   function getPaintingCampus(painting){
     if(painting.campus.toUpperCase() == "Upper School"){

@@ -171,7 +171,7 @@ export async function displayStudentSearchData() {
         // when the user search for a unexist result, the canvas will show no resource
         if (!flag) {
             var row = document.createElement("h1");
-            row.innerHTML = "no resource";
+            row.innerHTML = "No Results Found";
            
             content.appendChild(document.createElement("br"));
             content.appendChild(row);

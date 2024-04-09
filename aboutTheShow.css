@@ -6,8 +6,9 @@ body{
     top: 9vh;
     font-size: 1.5vh;
 }
-.showImgs{
-    width: 50vw;
+.showImg{
+    width: auto;
+    height:80vh;
 }
 .sidenav {
     height: 100%; 

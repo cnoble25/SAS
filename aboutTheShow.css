@@ -1,0 +1,108 @@
+body{
+    margin: 0%;
+}
+.show{
+    position: relative;
+    top: 9vh;
+    font-size: 1.5vh;
+}
+.showImgs{
+    width: 50vw;
+}
+.sidenav {
+    height: 100%; 
+    position: fixed; 
+    font-family: brandon-grotesque, sans-serif;
+    font-feature-settings: "liga";
+    top: 0%; 
+    left: 0%;
+    background-color: rgb(223, 216, 216); 
+    overflow-x: hidden; 
+    padding-top: 10%; 
+    transition: 0.5s; 
+    
+  }
+  
+
+   /*This sets the css for †he navigation bar and its css after popping out*/
+   .sidenav {
+    height: 100%; 
+    position: fixed; 
+     font-family: brandon-grotesque, sans-serif;
+      font-feature-settings: "liga";
+    top: 0; 
+    left: 0;
+    background-color: rgb(223, 216, 216); 
+    overflow-x: hidden; 
+    padding-top: 10%; 
+    transition: 0.5s; 
+    
+  }
+  /* side bar stuff */
+  .sidenav a {
+    padding: 5% 5% 5% 20%;
+    text-decoration: none;
+    font-size: 2vh;
+
+    color: black;
+    display: block;
+    transition: 0.3s;
+  }
+  /* side bar stuff */
+  .sidenav a:hover {
+    color: #747474;
+  }
+  /* side bar stuff */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 3.2vh;
+    margin-left: 50px;
+  }
+  /* fix the navi bar to the top of the screen with this */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+  }
+  /* padding to fix the cliping at the top of the screen  */
+  .sticky + .content {
+    padding-top: 102px;
+  }
+/* styling for the navibar stuff */
+.header{
+    background-color:rgba(254, 165, 0, 1);
+     padding: 1vh;
+     height: 6.5vh;
+  }
+
+.header button{
+  font-size: 2vw;
+  font-family: brandon-grotesque, sans-serif;
+font-feature-settings: "liga";
+  color: white;
+  background: rgb(233, 157, 173);
+  border: 2px solid rgba(34, 38, 77, 1);
+  margin: 2vw;
+  
+}
+
+#menuButtonPic{
+    max-width: 5vh;
+    height: auto;
+    position: absolute;
+    left: 19vw;
+    top: 2vh;
+   
+}
+ #logoPic{
+  max-width: 5vh;
+  height: auto;
+  position: absolute;
+  left: 2vw;
+  top: 2vh;
+  border-radius: 50%;
+  border: white;
+ }
+

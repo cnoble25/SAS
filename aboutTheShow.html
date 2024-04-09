@@ -1,0 +1,85 @@
+<html>
+    <link href="acknowledgement.css" rel="stylesheet" type="text/css" />
+    <body>
+
+        <div class="title">
+            
+        </div>
+        <center>
+        <div class="Show">
+            <div id="show1">
+                <img class="showImg" src="https://media.istockphoto.com/id/183821822/photo/say.jpg?s=612x612&w=0&k=20&c=kRmCjTzA9cq4amgRgeHkZsZuvxezUtC8wdDYfKg-mho="/>
+                <p class="description">
+                    random description or smtg
+                </p>
+            </div>
+
+            <div id="show2">
+                <img class="showImg" src="https://media.istockphoto.com/id/183821822/photo/say.jpg?s=612x612&w=0&k=20&c=kRmCjTzA9cq4amgRgeHkZsZuvxezUtC8wdDYfKg-mho="/>
+                <p class="description">
+                    this is a description of some random person; maybe like Dr. Graves Or
+                    someone else
+                </p>
+            </div>
+            
+            <div id="show3">
+                <img class="showImgs" src="https://media.istockphoto.com/id/183821822/photo/say.jpg?s=612x612&w=0&k=20&c=kRmCjTzA9cq4amgRgeHkZsZuvxezUtC8wdDYfKg-mho="/>
+                <p class="description">
+                    this is another description of some random person prolly like Mr. Philips
+                </p>
+            </div>
+        </div>
+    </center>
+        <div class="header" id="headerID">
+            <div class="searchBar">
+                 <img src="menu.png" id="menuButtonPic" onclick="openNav()"/>
+                 <img src="Logo.jpg" id ="logoPic">
+                  </a>
+                <datalist id="searchList">
+                </datalist>
+                <!-- <button id="searchButton" onclick="displayStudentSearchData();updateSearchHistory()">go</button> -->
+                    </div>
+            <div id="Navi"></div>
+    
+        </div>
+    
+        
+        <!-- show side nav in this page -->
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="./index.html">Home</a>
+            <a href="./aboutTheShow.html">About the show</a>
+            <a href="./search">Student Artwork Search</a>
+            <a href="./acknowledgements.html">Acknowledgements</a>
+          </div>
+    
+          <script>
+            
+            //This function set the display of the button from none back to flex after clicking on the close button of the navigation bar
+            //This function allow you to open the navigation bar and set the button's display to none(make it disappear)
+            function openNav() {
+              if(window.innerWidth > window.innerHeight){
+            document.getElementById("mySidenav").style.width = "50vw";
+            }else{
+              document.getElementById("mySidenav").style.width = "100vw";
+            }
+              var button = document.getElementById("myButtons");
+            //   button.style.display = "none";
+            }
+            //This function actives when the close btn on the navigation bar is clicked
+            //in that case, the navigation bar will close(width=0) 
+            //and will call the appearButton function to make the button appear
+            function closeNav() {
+              document.getElementById("mySidenav").style.width = "0";
+            //   appearButton();
+            }
+            closeNav();
+            
+            var header = document.getElementById("headerID");
+             header.classList.add("sticky");
+             header.classList.add("center");
+    
+          </script>
+    </body>
+
+</html>

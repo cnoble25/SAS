@@ -27,12 +27,7 @@ var searchInput = document.getElementById("searchInput");
 searchInput.oninput = function () {
     updateRecommendation();
 }
-searchInput.onblur = function () {
-    leaveInput();
-}
-searchInput.onclick = function () {
-    startInput();
-}
+
 
 // var clearHistoryButton = document.getElementById("clearHistoryButton");
 // clearHistoryButton.onclick = function () {
@@ -156,15 +151,12 @@ export async function displayStudentSearchData() {
                       goToPage.appendChild(locationShower);
                 right.appendChild(goToPage);
                 //appending the stuff into the row area
-                content.appendChild(document.createElement("br"));
+                content.appendChild(document.createElement("hr"));
                 content.appendChild(document.createElement("br"));
                 row.appendChild(left);
                 row.appendChild(right);
                 content.appendChild(row);
                 content.appendChild(document.createElement("br"));
-                content.appendChild(document.createElement("br"));
-                content.appendChild(document.createElement("hr"));
-
             }
 
         });

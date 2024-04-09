@@ -95,8 +95,6 @@ export async function importCSVToDatabase () {
     }
     return list;
   }
-  var latitude;
-  var longitude;
  // made tp get which campus a painting is on when asked through the firebase doesn't need to be asyncronys because it will work only in async functions in the first place so its redudant
   function getPaintingCampus(painting){
     if(painting.campus.toUpperCase() == "Upper School"){

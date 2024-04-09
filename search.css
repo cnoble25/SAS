@@ -19,10 +19,10 @@ html {
   #searchInput {
         font-size: 1.5vh;
         height: 5vh;
-        width: 30vw;
+        width: 50vw;
         position: absolute;
         top: 2vh;
-        left: 35vw;
+        left: 25vw
         
         
   } 
@@ -35,12 +35,11 @@ html {
       top: 2vh;
   }
   #menuButtonPic{
-    max-width: 5vh;
+    width: 5vh;
     height: auto;
     position: absolute;
-    left: 19vw;
-    top: 2vh;
-   
+    left: 15vw;
+    top: 2vh;  
 }
  #logoPic{
   max-width: 5vh;
@@ -54,9 +53,6 @@ html {
   #searchButton {
         height: 100%;
         width:10%;
-        position: relative;
-        top: 0%;
-        left: 0%;
   }
   
   #content{
@@ -112,10 +108,13 @@ html {
   }
 
   .imagesForSearch{
-    width: 100%;
-    height: 100%;
+    width: 104.9%;
+    height: 104.9%;
     padding: 1%;
     border: 5px grey;
+    position: relative;
+    top: -3.5%;
+    left: -3%;
   }
 
   .profileleft{
@@ -131,7 +130,7 @@ html {
       flex-wrap:nowrap;
       overflow: none;
       color: whitesmoke;
-      border:  1vw solid grey;
+      /* border:  1vw solid grey; */
 
       
   }

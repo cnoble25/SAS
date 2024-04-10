@@ -46,10 +46,10 @@ export async function loadArtpieces(){
             temp.push([item.data().name, item.data().room, item.data().class, item.data().picture, item.data().campus, item.data().year, item.data().ArtistStatement, item.data().building]);
         });
         
-        localStorage.setItem("ArtPieces", JSON.stringify(temp));
+        sessionStorage.setItem("ArtPieces", JSON.stringify(temp));
         displayStudentSearchData();
 }
-if(localStorage.getItem("ArtPieces") == null){
+if(sessionStorage.getItem("ArtPieces") == null){
 loadArtpieces();
 console.log("hi");
 }else{
@@ -69,7 +69,7 @@ export async function displayStudentSearchData() {
     
     content.innerHTML = "";
 
-        const studentPieces = JSON.parse(localStorage.getItem("ArtPieces"))
+        const studentPieces = JSON.parse(sessionStorage.getItem("ArtPieces"))
         var flag = false;
         studentPieces.forEach(item => {
             if (item[0].toLocaleUpperCase().includes(input.toUpperCase())) {
@@ -129,11 +129,11 @@ export async function displayStudentSearchData() {
                 goToPageButton.innerHTML = 'click here to get more info';
                 //locale storage stuff for people's personal page
                 goToPageButton.onclick = function () {
-                    localStorage.setItem("itemId", JSON.stringify(item));
+                    sessionStorage.setItem("itemId", JSON.stringify(item));
                     //just makes url so that the thing goes to person page properly cause i dont knwo what the url will be called in the end
                     var uRL = location.href;
                     uRL = uRL.substring(0, uRL.length - 6);
-                    console.log(localStorage.getItem("itemId"));
+                    console.log(sessionStorage.getItem("itemId"));
                     location.replace(uRL + "personPage.html");
                 };
                 goToPage.appendChild(goToPageButton);
@@ -215,7 +215,7 @@ function leaveInput() {
 async function updateRecommendation() {
     var input = document.getElementById("searchInput").value;
     if (input.length > 0) {
-        const studentPieces = JSON.parse(localStorage.getItem("ArtPieces"))
+        const studentPieces = JSON.parse(sessionStorage.getItem("ArtPieces"))
         var listobj = document.getElementById("searchList");
         listobj.innerHTML = "";
         if (input.length > 0) {
@@ -236,11 +236,11 @@ async function updateRecommendation() {
 function updateSearchHistory() {
     let input = document.getElementById("searchInput").value;
     // according to the input, update the search history list in local storage
-    let searchHistory = localStorage.getItem("searchHistory") ? JSON.parse(localStorage.getItem("searchHistory")) : [];
+    let searchHistory = sessionStorage.getItem("searchHistory") ? JSON.parse(sessionStorage.getItem("searchHistory")) : [];
     if (!searchHistory.includes(input)) {
         searchHistory.push(input);
     }
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    sessionStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
 //this function allows users to clear their local searching history
 function displaySearchHistory() {
@@ -249,7 +249,7 @@ function displaySearchHistory() {
         var listobj = document.getElementById("searchList");
         listobj.innerHTML = "";
         // according to the input, update the search history list in local storage
-        let searchHistory = localStorage.getItem("searchHistory") ? JSON.parse(localStorage.getItem("searchHistory")) : [];
+        let searchHistory = sessionStorage.getItem("searchHistory") ? JSON.parse(sessionStorage.getItem("searchHistory")) : [];
         searchHistory.forEach(str => {
             var obj = document.createElement("option");
             obj.innerHTML = str

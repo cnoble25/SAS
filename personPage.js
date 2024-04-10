@@ -23,7 +23,7 @@ export async function DisplayPersonalPageInfo(){
   var Picture = document.getElementById("PersonalPagePicture");
   var description = document.getElementById("PersonalPageDescription");
   var Navi = document.getElementById("PersonalPageNavi");
-  var item = JSON.parse(localStorage.getItem("itemId"));
+  var item = JSON.parse(sessionStorage.getItem("itemId"));
   //needed to set the variable because doc does not get the doc as an item that you can find the data of for some god damn reason
   
   Picture.innerHTML = "";

@@ -49,7 +49,7 @@ export async function loadArtpieces(){
         localStorage.setItem("ArtPieces", JSON.stringify(temp));
     console.log(JSON.parse(localStorage.getItem("ArtPieces"))[0][0]);
 }
-if(localStorage.getItem("ArtPieces" != null)){
+if(localStorage.getItem("ArtPieces" == null)){
 loadArtpieces();
 }
 // var clearHistoryButton = document.getElementById("clearHistoryButton");

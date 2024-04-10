@@ -47,10 +47,13 @@ export async function loadArtpieces(){
         });
         
         localStorage.setItem("ArtPieces", JSON.stringify(temp));
-    console.log(JSON.parse(localStorage.getItem("ArtPieces"))[0][0]);
+        displayStudentSearchData();
 }
-if(localStorage.getItem("ArtPieces" == null)){
+if(localStorage.getItem("ArtPieces") == null){
 loadArtpieces();
+console.log("hi");
+}else{
+    displayStudentSearchData();
 }
 // var clearHistoryButton = document.getElementById("clearHistoryButton");
 // clearHistoryButton.onclick = function () {
@@ -255,4 +258,3 @@ function displaySearchHistory() {
     }
 }
 //run once to make sure working
-displayStudentSearchData();

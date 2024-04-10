@@ -46,7 +46,7 @@ export async function importCSVToDatabase () {
                   year: cells[3],
                   class: cells[4],
                   campus: cells[6].toUpperCase(),
-                  building: cells[7].toUpperCase(),
+                  building: makeCampus(cells[7].toUpperCase()),
                   floor: cells[8],
                   room: cells[9],
                   picture: cells[11],
@@ -70,45 +70,10 @@ export async function importCSVToDatabase () {
         }
   }
 
-  //separates a room number into its building, floor and campus
-  function getBFC(stuff){
-    var list = [];
-    for(var i = 0; i<stuff.length; i++ ){
-      try{ 
-        if(stuff.substring(i,i+1) == "-"){
-          if(stuff.substring(0, i).toUpperCase() == "SCAS" || stuff.substring(0, i).toUpperCase() == "AS" || stuff.substring(0, i).toUpperCase() == "RH" || stuff.substring(0, i).toUpperCase() == "LLC" || stuff.substring(0, i).toUpperCase() == "GH" || stuff.substring(0, i).toUpperCase() == "LC" || stuff.substring(0, i).toUpperCase() == "LD" || stuff.substring(0, i).toUpperCase() == "GR"){
-            list.push(stuff.substring(0));
-            list.push(stuff.substring(0,i));
-            list.push(stuff.substring(i+1, i+2));
-            list.push("Upper School");
-          }else{
-            list.push(stuff.substring(i+1));
-            list.push(stuff.substring(0,i));
-            list.push(stuff.substring(i+1, i+2));
-            list.push("Lower School");
-          }
-          
-        }
-      } catch(e){
-        console.log(e);
-      }
-    }
-    return list;
-  }
- // made tp get which campus a painting is on when asked through the firebase doesn't need to be asyncronys because it will work only in async functions in the first place so its redudant
-  function getPaintingCampus(painting){
-    if(painting.campus.toUpperCase() == "Upper School"){
-      return 2;
-    }else if (painting.campus.toUpperCase() == "Lower School"){
-      return 1;
-    }else {
-      return -1;
+  function makeCampus(item){
+    if(item == "BEL"){
+      return "Lower School";
+    }else if(item == "GR"){
+      return "Upper School";
     }
   }
-
-  //poosition can only be accessed asyncronesly so to find someones position in accordance to the buildings would be 
- 
-//converts the personal copied share link for google drive into links that work universally so that anyone can see the photos
- function makeImageUsable(imgURL){
-  return imgURL;
- }

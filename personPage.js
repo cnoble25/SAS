@@ -20,18 +20,12 @@ const db = getFirestore(app);
 
 //displays the information of an artwork for and individual page
 export async function DisplayPersonalPageInfo(){
-  const studentPieces = await getDocs(collection(db, "student-art-show"));
   var Picture = document.getElementById("PersonalPagePicture");
   var description = document.getElementById("PersonalPageDescription");
   var Navi = document.getElementById("PersonalPageNavi");
-  var itemId = localStorage.getItem("itemId");
-  var  item;
+  var item = JSON.parse(sessionStorage.getItem("itemId"));
   //needed to set the variable because doc does not get the doc as an item that you can find the data of for some god damn reason
-  studentPieces.forEach((items) => {
-    if(items.id == itemId){
-      item = items;
-    }
-  })
+  
   Picture.innerHTML = "";
   description.innerHTML = "";
   //happens when you do get geo location position and tells you if you are on the right campus
@@ -52,9 +46,9 @@ export async function DisplayPersonalPageInfo(){
     // console.log(currentCampus + ", " + item.data().campus);
     // console.log(currentCampus == item.data().campus);
 
-    if(currentCampus == item.data().campus){
+    if(currentCampus == item[4]){
       NaviCheckCampusButton.innerHTML = "YOU ARE ON THE RIGHT CAMPUS";
-    }else if(currentCampus != item.data().campus){
+    }else if(currentCampus != item[4]){
       NaviCheckCampusButton.innerHTML = "YOU ARE NOT ON THE RIGHT CAMPUS";
     }else{
       NaviCheckCampusButton.innerHTML = "Error";
@@ -70,7 +64,7 @@ export async function DisplayPersonalPageInfo(){
 
   //makes the image for the actual page
   var image = document.createElement("img");
-  image.src = item.data().picture;
+  image.src = item[3];
   image.setAttribute("width", "100%");
   image.setAttribute('height', "auto");
   Picture.appendChild(image);
@@ -81,7 +75,7 @@ export async function DisplayPersonalPageInfo(){
   var nameTitle = document.createElement("h4");
   nameTitle.innerHTML = "Name:" + String.fromCharCode(160);
   var name = document.createElement("h5");
-  name.innerHTML = item.data().name;
+  name.innerHTML = item[0];
   descriptionDivName.appendChild(nameTitle);
   descriptionDivName.appendChild(name);
   description.appendChild(descriptionDivName);
@@ -91,7 +85,7 @@ export async function DisplayPersonalPageInfo(){
   var yearTitle = document.createElement("h4");
   yearTitle.innerHTML = "Year:" + String.fromCharCode(160);
   var year = document.createElement("h5");
-  year.innerHTML = item.data().year;
+  year.innerHTML = item[5];
   descriptionDivYear.appendChild(yearTitle);
   descriptionDivYear.appendChild(year);
   description.appendChild(descriptionDivYear);
@@ -146,7 +140,7 @@ export async function DisplayPersonalPageInfo(){
   var campusTitle = document.createElement("h4");
   campusTitle.innerHTML = "Campus:" + String.fromCharCode(160);
   var campus = document.createElement("h5");
-  campus.innerHTML = item.data().campus;
+  campus.innerHTML = item[4];
   descriptionDivCampus.appendChild(campusTitle);
   descriptionDivCampus.appendChild(campus);
   description.appendChild(descriptionDivCampus);
@@ -157,7 +151,7 @@ export async function DisplayPersonalPageInfo(){
   roomTitle.innerHTML = "Nearest Room:" + String.fromCharCode(160);
   var room = document.createElement("h5");
   // if(item.data().room.length > 1){
-  room.innerHTML = item.data().room;
+  room.innerHTML = item[1];
   // }else if(item.data().room.length == 1){
     // room.innerHTML = realLocation
   // }
@@ -170,7 +164,7 @@ export async function DisplayPersonalPageInfo(){
   var courseTitle = document.createElement("h4");
   courseTitle.innerHTML = "Course:" + String.fromCharCode(160);
   var course = document.createElement("h5");
-  course.innerHTML = item.data().class;
+  course.innerHTML = item[2];
   descriptionDivCourse.appendChild(courseTitle);
   descriptionDivCourse.appendChild(course);
   description.appendChild(descriptionDivCourse);

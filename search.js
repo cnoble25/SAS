@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-app.js";
 // TODO: import libraries for Cloud Firestore Database
 // https://firebase.google.com/docs/firestore
-import { getFirestore, collection, getDocs, } from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, where,} from "https://www.gstatic.com/firebasejs/10.0.0/firebase-firestore.js";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -17,7 +17,9 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 // this function is the search function for the search page it creates displays for each peice of artwork in the database in which it puts them into a dive and then divs the elements for organization
-var fixOnclick = false;
+
+
+
 var searchButtonPic = document.getElementById("searchButtonPic");
 searchButtonPic.onclick = function () {
     displayStudentSearchData();
@@ -36,7 +38,23 @@ if (event.keyCode === 13) {
     displayStudentSearchData();
 }
 });
-
+export async function loadArtpieces(){
+    const studentPieces = await getDocs(collection(db, "student-art-show"));
+        
+        var temp = []
+        studentPieces.forEach(item => {
+            temp.push([item.data().name, item.data().room, item.data().class, item.data().picture, item.data().campus, item.data().year, item.data().ArtistStatement, item.data().building]);
+        });
+        
+        sessionStorage.setItem("ArtPieces", JSON.stringify(temp));
+        displayStudentSearchData();
+}
+if(sessionStorage.getItem("ArtPieces") == null){
+loadArtpieces();
+console.log("hi");
+}else{
+    displayStudentSearchData();
+}
 // var clearHistoryButton = document.getElementById("clearHistoryButton");
 // clearHistoryButton.onclick = function () {
 //     localStorage.removeItem("searchHistory");
@@ -48,13 +66,13 @@ if (event.keyCode === 13) {
 export async function displayStudentSearchData() {
     var input = document.getElementById("searchInput").value;
     var content = document.getElementById("content");
-
+    
     content.innerHTML = "";
 
-        const studentPieces = await getDocs(collection(db, "student-art-show"));
+        const studentPieces = JSON.parse(sessionStorage.getItem("ArtPieces"))
         var flag = false;
         studentPieces.forEach(item => {
-            if (item.data().name.toLocaleUpperCase().includes(input.toUpperCase())) {
+            if (item[0].toLocaleUpperCase().includes(input.toUpperCase())) {
                 flag = true;
                 var row = document.createElement("div");
                 row.setAttribute('class', "row");
@@ -62,10 +80,10 @@ export async function displayStudentSearchData() {
                 var left = document.createElement("div");
                 left.setAttribute("class", "profileleft");
                 var image = document.createElement("img")
-                if(item.data().picture == ""){
+                if(item[3] == ""){
                     image.setAttribute("src", "imgnotfound.jpg");
                 }else{
-                    image.setAttribute("src", item.data().picture);
+                    image.setAttribute("src", item[3]);
                 }
                 image.setAttribute("class", "imagesForSearch");
                 left.appendChild(image);
@@ -74,7 +92,7 @@ export async function displayStudentSearchData() {
                 right.setAttribute("class", "profileright");
                 //make title for each person's artwork (is just their name)
                 var title = document.createElement("h1");
-                title.innerHTML = item.data().name.substring(0,1).toLocaleUpperCase() + item.data().name.substring(1);
+                title.innerHTML = item[0].substring(0,1).toLocaleUpperCase() + item[0].substring(1);
                 title.setAttribute("class", "titleForArtwork");
                 right.appendChild(title);
                 //creates the class part of the div
@@ -85,7 +103,7 @@ export async function displayStudentSearchData() {
                 classTitle.innerHTML = "Course:" + String.fromCharCode(160);
                 classTitleDiv.appendChild(classTitle);
                 var group = document.createElement("h4");
-                group.innerHTML = item.data().class.substring(0,1).toLocaleUpperCase() + item.data().class.substring(1);
+                group.innerHTML = item[2].substring(0,1).toLocaleUpperCase() + item[2].substring(1);
                 classTitleDiv.appendChild(group);
                 right.appendChild(classTitleDiv);
                 //creates the year part of the div
@@ -96,7 +114,7 @@ export async function displayStudentSearchData() {
                 roomTitle.setAttribute("class", "roomTitle");
                 roomDiv.appendChild(roomTitle);
                 var rgroup = document.createElement("h4");
-                rgroup.innerHTML = item.data().room;
+                rgroup.innerHTML = item[1];
                 roomDiv.appendChild(rgroup);
                 right.appendChild(roomDiv);
                 //this is the go to page thing for the artiststatment page
@@ -105,17 +123,17 @@ export async function displayStudentSearchData() {
                 var goToPage = document.createElement('div');
                 goToPage.setAttribute("class", "personPageButton");
 
-                if (item.data().ArtistStatement){
+                if (item[6]){
                 var goToPageButton = document.createElement('button');
                 goToPageButton.setAttribute("id", "personPageButtonActualButton")
                 goToPageButton.innerHTML = 'click here to get more info';
                 //locale storage stuff for people's personal page
                 goToPageButton.onclick = function () {
-                    localStorage.setItem("itemId", item.id);
+                    sessionStorage.setItem("itemId", JSON.stringify(item));
                     //just makes url so that the thing goes to person page properly cause i dont knwo what the url will be called in the end
                     var uRL = location.href;
                     uRL = uRL.substring(0, uRL.length - 6);
-                    console.log(localStorage.getItem("itemId"));
+                    console.log(sessionStorage.getItem("itemId"));
                     location.replace(uRL + "personPage.html");
                 };
                 goToPage.appendChild(goToPageButton);
@@ -140,10 +158,10 @@ export async function displayStudentSearchData() {
                           currentCampus = "Upper School";
                         }
                         
-                        if(currentCampus == item.data().campus){
+                        if(currentCampus == item[4]){
                             locationShower.innerHTML = "YOU ARE ON THE RIGHT CAMPUS";
                             locationShower.style.background = "Green";
-                        }else if(currentCampus != item.data().campus){
+                        }else if(currentCampus != item[4]){
                             locationShower.innerHTML = "YOU ARE NOT ON THE RIGHT CAMPUS";
                             locationShower.style.background = "Red";
                         }else{
@@ -197,14 +215,14 @@ function leaveInput() {
 async function updateRecommendation() {
     var input = document.getElementById("searchInput").value;
     if (input.length > 0) {
-        const studentPieces = await getDocs(collection(db, "student-art-show"));
+        const studentPieces = JSON.parse(sessionStorage.getItem("ArtPieces"))
         var listobj = document.getElementById("searchList");
         listobj.innerHTML = "";
         if (input.length > 0) {
             studentPieces.forEach(item => {
-                if (item.data().name.toLocaleUpperCase().includes(input.toUpperCase())) {
+                if (item[0].toLocaleUpperCase().includes(input.toUpperCase())) {
                     var obj = document.createElement("option");
-                    obj.innerHTML = item.data().name
+                    obj.innerHTML = item[0]
                     listobj.appendChild(obj);
                 }
             });
@@ -218,11 +236,11 @@ async function updateRecommendation() {
 function updateSearchHistory() {
     let input = document.getElementById("searchInput").value;
     // according to the input, update the search history list in local storage
-    let searchHistory = localStorage.getItem("searchHistory") ? JSON.parse(localStorage.getItem("searchHistory")) : [];
+    let searchHistory = sessionStorage.getItem("searchHistory") ? JSON.parse(sessionStorage.getItem("searchHistory")) : [];
     if (!searchHistory.includes(input)) {
         searchHistory.push(input);
     }
-    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    sessionStorage.setItem("searchHistory", JSON.stringify(searchHistory));
 }
 //this function allows users to clear their local searching history
 function displaySearchHistory() {
@@ -231,7 +249,7 @@ function displaySearchHistory() {
         var listobj = document.getElementById("searchList");
         listobj.innerHTML = "";
         // according to the input, update the search history list in local storage
-        let searchHistory = localStorage.getItem("searchHistory") ? JSON.parse(localStorage.getItem("searchHistory")) : [];
+        let searchHistory = sessionStorage.getItem("searchHistory") ? JSON.parse(sessionStorage.getItem("searchHistory")) : [];
         searchHistory.forEach(str => {
             var obj = document.createElement("option");
             obj.innerHTML = str
@@ -240,4 +258,3 @@ function displaySearchHistory() {
     }
 }
 //run once to make sure working
-displayStudentSearchData();

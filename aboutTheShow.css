@@ -4,7 +4,8 @@ body{
 .show{
     position: relative;
     top: 9vh;
-    font-size: 1.5vh;
+    font-size: 2vh;
+    margin: 5%;
 }
 .showImg{
     width: auto;

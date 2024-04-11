@@ -11,57 +11,43 @@ body{
     width: auto;
     height:100vw;
 }
+/*This sets the css for †he navigation bar and its css after popping out*/
 .sidenav {
-    height: 100%; 
-    position: fixed; 
-    font-family: brandon-grotesque, sans-serif;
+  height: 100%; 
+  position: fixed; 
+   font-family: brandon-grotesque, sans-serif;
     font-feature-settings: "liga";
-    top: 0%; 
-    left: 0%;
-    background-color: rgb(223, 216, 216); 
-    overflow-x: hidden; 
-    padding-top: 10%; 
-    transition: 0.5s; 
-    
-  }
+  top: 0; 
+  left: 0;
+  background-color: rgb(223, 216, 216); 
+  overflow-x: hidden; 
+  padding-top: 10%; 
+  transition: 0.5s; 
   
+}
+/* side bar stuff */
+.sidenav a {
+  padding: 5% 5% 5% 20%;
+  text-decoration: none;
+  font-size: 2vh;
 
-   /*This sets the css for †he navigation bar and its css after popping out*/
-   .sidenav {
-    height: 100%; 
-    position: fixed; 
-     font-family: brandon-grotesque, sans-serif;
-      font-feature-settings: "liga";
-    top: 0; 
-    left: 0;
-    background-color: rgb(223, 216, 216); 
-    overflow-x: hidden; 
-    padding-top: 10%; 
-    transition: 0.5s; 
-    
-  }
-  /* side bar stuff */
-  .sidenav a {
-    padding: 5% 5% 5% 20%;
-    text-decoration: none;
-    font-size: 2vh;
+  color: black;
+  display: block;
+  transition: 0.3s;
+}
+/* side bar stuff */
+.sidenav a:hover {
+  color: #747474;
+}
+/* side bar stuff */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 3.2vh;
+  margin-left: 50px;
+}
 
-    color: black;
-    display: block;
-    transition: 0.3s;
-  }
-  /* side bar stuff */
-  .sidenav a:hover {
-    color: #747474;
-  }
-  /* side bar stuff */
-  .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 3.2vh;
-    margin-left: 50px;
-  }
   /* fix the navi bar to the top of the screen with this */
   .sticky {
     position: fixed;

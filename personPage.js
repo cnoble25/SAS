@@ -70,6 +70,15 @@ export async function DisplayPersonalPageInfo(){
   Picture.appendChild(image);
   image.setAttribute("class", "image");
   //makes info div for name of student
+  var descriptionDivArtistStatement = document.createElement("div");
+  descriptionDivArtistStatement.setAttribute("id", "descriptionDivArtistStatement");
+  var ASTitle = document.createElement("h4");
+  ASTitle.innerHTML = "Artist Statement: ";
+  var AS = document.createElement("h5");
+  AS.innerHTML = item[6];
+  descriptionDivArtistStatement.appendChild(ASTitle);
+  descriptionDivArtistStatement.appendChild(AS);
+  description.appendChild(descriptionDivArtistStatement);
   var descriptionDivName = document.createElement("div");
   descriptionDivName.setAttribute("id", "descriptionDivName");
   var nameTitle = document.createElement("h4");

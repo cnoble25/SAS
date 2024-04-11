@@ -1,9 +1,14 @@
 body{
     margin: 0%;
 }
+.title{
+    position: relative;
+    top: 15vh;
+    font-size: 3vw;
+}
 .people{
     position: relative;
-    top: 9vh;
+    top: 18vh;
     font-size: 3vw;
 }
 .peopleimgs{

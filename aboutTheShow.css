@@ -4,12 +4,12 @@ body{
 .show{
     position: relative;
     top: 9vh;
-    font-size: 2vh;
+    font-size: 3vw;
     margin: 5%;
 }
 .showImg{
     width: auto;
-    height:80vh;
+    height:100vw;
 }
 /*This sets the css for †he navigation bar and its css after popping out*/
 .sidenav {

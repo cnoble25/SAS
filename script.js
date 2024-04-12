@@ -55,7 +55,7 @@ export async function importCSVToDatabase () {
                   name: cells[2] + " " + cells[1].substring(0,1),
                   year: cells[3],
                   class: cells[4],
-                  campus: cells[6].toUpperCase(),
+                  campus: makeCampus(cells[6].toUpperCase()),
                   building: cells[7].toUpperCase(),
                   floor: cells[8],
                   room: cells[9],
@@ -68,7 +68,7 @@ export async function importCSVToDatabase () {
                   name: cells[2] + " " + cells[1].substring(0,1),
                   year: cells[3],
                   class: cells[4],
-                  campus: cells[6].toUpperCase(),
+                  campus: makeCampus(cells[6].toUpperCase()),
                   building: cells[7].toUpperCase(),
                   floor: cells[8],
                   room: cells[9],
@@ -137,3 +137,12 @@ export async function importCSVToDatabase () {
  function makeImageUsable(imgURL){
   return imgURL;
  }
+
+function makeCampus(thing){
+  if(thing.toUpperCase() == "BEL"){
+    return "Lower School";
+  }
+  if(thing.toUpperCase() == "GR"){
+    return "Upper School";
+  }
+}

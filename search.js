@@ -63,6 +63,8 @@ console.log("hi");
     
 // }
 //the function just shows the data for the students
+
+
 export async function displayStudentSearchData() {
     var input = document.getElementById("searchInput").value;
     var content = document.getElementById("content");
@@ -79,14 +81,19 @@ export async function displayStudentSearchData() {
                 //make div for image and adds image to div
                 var left = document.createElement("div");
                 left.setAttribute("class", "profileleft");
-                var image = document.createElement("img")
-                if(item[3] == ""){
-                    image.setAttribute("src", "imgnotfound.jpg");
-                }else{
-                    image.setAttribute("src", item[3]);
+                var image = document.createElement("img");
+                var noPhoto = false;
+                var setNoPhoto = () =>{
+                    noPhoto = true;
                 }
+               image.setAttribute("onerror", "this.onerror=null; this.remove();");
+                image.setAttribute("src", item[3]);
                 image.setAttribute("class", "imagesForSearch");
                 left.appendChild(image);
+                image.addEventListener('error', () =>{
+                    console.log("hi");
+                    document.getElementsByClassName("profileright")[0].style.width = '85vw';
+                });
                 // makes div for info for each artwork
                 var right = document.createElement("div");
                 right.setAttribute("class", "profileright");
@@ -189,7 +196,7 @@ export async function displayStudentSearchData() {
         // when the user search for a unexist result, the canvas will show no resource
         if (!flag) {
             var row = document.createElement("h1");
-            row.innerHTML = "No Results Found";
+            row.innerHTML = "No Results Found Servers May be Down";
            
             content.appendChild(document.createElement("br"));
             content.appendChild(row);

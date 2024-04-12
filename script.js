@@ -19,6 +19,13 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+export async function clearDatabase () {
+  const studentPieces = await getDocs(collection(db, "student-art-show"));
+  studentPieces.forEach((piece) =>{
+    deleteDoc(doc(db, "student-art-show", piece.id));
+  } );
+}
+
 
 //makes it so you can add csv data to a database
 export async function importCSVToDatabase () {
@@ -32,7 +39,7 @@ export async function importCSVToDatabase () {
           var BFCList;
           var img;
           var makeSure = prompt("please enter the name of the file to upload the file to the database");
-          if(makeSure != file.innerHTML || file.innerHTML.subtring(file.innerHTML.length-1) == "v"){
+          if(makeSure != file.innerHTML){
           reader.onload = function(event) {
             var csvData = event.target.result;
             var rows = csvData.split("\n");
@@ -41,22 +48,40 @@ export async function importCSVToDatabase () {
              BFCList = getBFC(cells[4]);
               try {
                 if(cells[5].toUpperCase() == "Y"){
+                  console.log(cells.length);
+                if(cells.length === 12){
+                  console.log("hi");
                 const docRef = addDoc(collection(db, "student-art-show"), {
                   name: cells[2] + " " + cells[1].substring(0,1),
                   year: cells[3],
                   class: cells[4],
                   campus: cells[6].toUpperCase(),
-                  building: makeCampus(cells[7].toUpperCase()),
+                  building: cells[7].toUpperCase(),
                   floor: cells[8],
                   room: cells[9],
                   picture: cells[11],
                   ArtistStatement: cells[10],
                 });
                 console.log("Document written with ID: ", docRef.id);
+              }else{
+                const docRef = addDoc(collection(db, "student-art-show"), {
+                  name: cells[2] + " " + cells[1].substring(0,1),
+                  year: cells[3],
+                  class: cells[4],
+                  campus: cells[6].toUpperCase(),
+                  building: cells[7].toUpperCase(),
+                  floor: cells[8],
+                  room: cells[9],
+                  ArtistStatement: cells[10],
+                });
+                console.log("Document written with ID: ", docRef.id);
+              }
+                // console.log("Document written with ID: ", docRef.id);
               } 
             }
               catch (e) {
                 console.error("Error adding student to database: ", e);
+                alert("file not uploaded for safety")
               }
               
             }
@@ -70,10 +95,45 @@ export async function importCSVToDatabase () {
         }
   }
 
-  function makeCampus(item){
-    if(item == "BEL"){
-      return "Lower School";
-    }else if(item == "GR"){
-      return "Upper School";
+  //separates a room number into its building, floor and campus
+  function getBFC(stuff){
+    var list = [];
+    for(var i = 0; i<stuff.length; i++ ){
+      try{ 
+        if(stuff.substring(i,i+1) == "-"){
+          if(stuff.substring(0, i).toUpperCase() == "SCAS" || stuff.substring(0, i).toUpperCase() == "AS" || stuff.substring(0, i).toUpperCase() == "RH" || stuff.substring(0, i).toUpperCase() == "LLC" || stuff.substring(0, i).toUpperCase() == "GH" || stuff.substring(0, i).toUpperCase() == "LC" || stuff.substring(0, i).toUpperCase() == "LD" || stuff.substring(0, i).toUpperCase() == "GR"){
+            list.push(stuff.substring(0));
+            list.push(stuff.substring(0,i));
+            list.push(stuff.substring(i+1, i+2));
+            list.push("Upper School");
+          }else{
+            list.push(stuff.substring(i+1));
+            list.push(stuff.substring(0,i));
+            list.push(stuff.substring(i+1, i+2));
+            list.push("Lower School");
+          }
+          
+        }
+      } catch(e){
+        console.log(e);
+      }
+    }
+    return list;
+  }
+ // made tp get which campus a painting is on when asked through the firebase doesn't need to be asyncronys because it will work only in async functions in the first place so its redudant
+  function getPaintingCampus(painting){
+    if(painting.campus.toUpperCase() == "Upper School"){
+      return 2;
+    }else if (painting.campus.toUpperCase() == "Lower School"){
+      return 1;
+    }else {
+      return -1;
     }
   }
+
+  //poosition can only be accessed asyncronesly so to find someones position in accordance to the buildings would be 
+ 
+//converts the personal copied share link for google drive into links that work universally so that anyone can see the photos
+ function makeImageUsable(imgURL){
+  return imgURL;
+ }

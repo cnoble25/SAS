@@ -52,7 +52,7 @@ body{
 It takes three parts: the text/the lines/the drows. Each part has its own css format*/
 .container{
   position: absolute;
-  display: flex;
+  /* display: flex; */
   flex-direction : column ;
   /* justify-content : center ; */
   /* align-items : center ; */

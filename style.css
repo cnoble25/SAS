@@ -59,6 +59,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
   cursor: pointer;
   border-radius : 300px ;
   border : solid 3px var(--line_color) ;
+  width: 90%;
 }
 
   .button{

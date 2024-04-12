@@ -76,7 +76,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     font-size : 7vw; 
     font-weight : bold ;
     color : var(--line_color) ;
-    letter-spacing : 2px ;
+    /* letter-spacing : 2px ; */
     /* transition : all .3s ease ; */
     white-space: nowrap;
     overflow: hidden;
@@ -84,6 +84,9 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     border-radius : 300px ;
     border : solid 3px var(--line_color) ;
     padding: 2vw;
+    padding-left: 4vw;
+    padding-right: 4vw;
+
     margin-bottom: 4vw;
 
   }

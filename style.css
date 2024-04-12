@@ -54,18 +54,20 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
   position: absolute;
   display: flex;
   flex-direction : column ;
-  justify-content : center ;
-  align-items : center ;
+  /* justify-content : center ; */
+  /* align-items : center ; */
   cursor: pointer;
   border-radius : 300px ;
   border : solid 3px var(--line_color) ;
-  width: 90%;
+  flex: 90%;
+  /* margin-left: 5vw; */
 }
 
   .button{
     --line_color : #000000 ;
     /* --back_color : red  ; */
-    position: relative;
+    /* position: relative; */
+    flex: 100%;
     cursor: pointer;
     z-index : 0 ;
     width : 100%;
@@ -81,7 +83,7 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     text-overflow: ellipsis;
     border-radius : 300px ;
     border : solid 3px var(--line_color) ;
-   
+
     margin-bottom: 2vw;;
   }
   .button_text{

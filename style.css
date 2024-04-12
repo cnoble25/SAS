@@ -293,16 +293,17 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
 
   /*This sets the padding and the style of the webtitle*/
   .webtitle { 
-      font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
 
       position: relative;
       left:0%;
       
       /*transform: translate(-50%, -50%); */
-      font-size: 12vw; 
+      width: 100vw;
+      height: auto;
       font-weight: 800; 
       letter-spacing: -2px; 
-      overflow: hidden;
+      
   } 
   /*From here on is animation for the animated title, the animations runs it once and stop*/
   .webtitle span { 

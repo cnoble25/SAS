@@ -64,10 +64,10 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     --back_color : #FFECF6  ;
     position: relative;
     z-index : 0 ;
-    width : 50vw;
-    height : 8vw;
+    width : 75vw;
+    height : 12vw;
     text-decoration : none ;
-    font-size : 2vw; 
+    font-size : 3vw; 
     font-weight : bold ;
     color : var(--line_color) ;
     letter-spacing : 2px ;

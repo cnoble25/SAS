@@ -83,8 +83,9 @@ It takes three parts: the text/the lines/the drows. Each part has its own css fo
     text-overflow: ellipsis;
     border-radius : 300px ;
     border : solid 3px var(--line_color) ;
+    padding: 2vw;
+    margin-bottom: 4vw;
 
-    margin-bottom: 2vw;;
   }
   .button_text{
     margin-top: 2%;

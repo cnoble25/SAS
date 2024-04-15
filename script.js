@@ -19,6 +19,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+//ONLY RUN IF THE DATABASE IS SCREWED
 export async function clearDatabase () {
   const studentPieces = await getDocs(collection(db, "student-art-show"));
   studentPieces.forEach((piece) =>{
@@ -96,6 +97,7 @@ export async function importCSVToDatabase () {
   }
 
   //separates a room number into its building, floor and campus
+  //NOT USED ANYMORE
   function getBFC(stuff){
     var list = [];
     for(var i = 0; i<stuff.length; i++ ){
@@ -120,7 +122,8 @@ export async function importCSVToDatabase () {
     }
     return list;
   }
- // made tp get which campus a painting is on when asked through the firebase doesn't need to be asyncronys because it will work only in async functions in the first place so its redudant
+
+  //doesn't do anything anymore
   function getPaintingCampus(painting){
     if(painting.campus.toUpperCase() == "Upper School"){
       return 2;
@@ -132,12 +135,13 @@ export async function importCSVToDatabase () {
   }
 
   //poosition can only be accessed asyncronesly so to find someones position in accordance to the buildings would be 
- 
-//converts the personal copied share link for google drive into links that work universally so that anyone can see the photos
+  //doesn't do anything anymore
  function makeImageUsable(imgURL){
   return imgURL;
  }
-
+//Used to Make the Campuses in the database fit with the Campuses
+//used for the geolocation api because the sheet takes in campuses
+//as GR and BEL for US and LS respectively
 function makeCampus(thing){
   if(thing.toUpperCase() == "BEL"){
     return "Lower School";

@@ -69,7 +69,7 @@ export async function DisplayPersonalPageInfo(){
   image.setAttribute('height', "auto");
   Picture.appendChild(image);
   image.setAttribute("class", "image");
-  //makes info div for name of student
+ //makes the artist statement piece of the person page
   var descriptionDivArtistStatement = document.createElement("div");
   descriptionDivArtistStatement.setAttribute("id", "descriptionDivArtistStatement");
   var ASTitle = document.createElement("h4");
@@ -79,6 +79,7 @@ export async function DisplayPersonalPageInfo(){
   descriptionDivArtistStatement.appendChild(ASTitle);
   descriptionDivArtistStatement.appendChild(AS);
   description.appendChild(descriptionDivArtistStatement);
+  //makes info div for name of student
   var descriptionDivName = document.createElement("div");
   descriptionDivName.setAttribute("id", "descriptionDivName");
   var nameTitle = document.createElement("h4");
@@ -105,6 +106,8 @@ export async function DisplayPersonalPageInfo(){
   buildingTitle.innerHTML = "Building:" + String.fromCharCode(160);
   var building = document.createElement("h5");
  var buildingFullName = ''
+
+ //SCRAPED WOULD HAVE SUCKED TO MAKE
 //  switch(item.data().building.toLowerCase()){
 //   case "rh":
 //     buildingFullName = "Randolph Hall";

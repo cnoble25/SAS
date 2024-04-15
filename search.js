@@ -25,11 +25,12 @@ searchButtonPic.onclick = function () {
     displayStudentSearchData();
     updateSearchHistory()
 }
+
 var searchInput = document.getElementById("searchInput");
 searchInput.oninput = function () {
     updateRecommendation();
 }
-
+//Made to make the keyboard enter and phone eneter work
 searchInput.addEventListener("keypress", function(event){
 if(event.key == "Enter"){
    displayStudentSearchData();
@@ -38,6 +39,7 @@ if (event.keyCode === 13) {
     displayStudentSearchData();
 }
 });
+//loadsthe artpieces in session storage to save on bandwidth
 export async function loadArtpieces(){
     const studentPieces = await getDocs(collection(db, "student-art-show"));
         
@@ -63,8 +65,8 @@ console.log("hi");
     
 // }
 //the function just shows the data for the students
-
-
+// NOTE: THE CHAR CODE 160 IS THE UNINTERRUPTABLE SPACE WHICH MAKES IT SO THAT THE SPACE IS NOT DELETED IF AT THE END
+//displays the data in the Artpieces session storage thing
 export async function displayStudentSearchData() {
     var input = document.getElementById("searchInput").value;
     var content = document.getElementById("content");
